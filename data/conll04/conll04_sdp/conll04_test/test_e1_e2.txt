@@ -1,0 +1,186 @@
+1  james earl ray <e>  martin luther king junior
+2  lee harvey oswald <e>  kennedy
+3  brutus <e>  roman emperor julius caesar
+4  sirhan sirhan <e>  sen. robert f. kennedy
+5  sirhan sirhan <e>  kennedy
+6  james earl ray <e>  dr. martin luther king jr
+7  leon czolgosz <e>  president william mckinley
+8  lee harvey oswald <e>  kennedy
+9  lee harvey oswald <e>  president john f. kennedy
+10  lee harvey oswald <e>  kennedy
+11  mark david chapman <e>  john lennon
+12  oswald <e>  kennedy
+13  lee harvey oswald <e>  president john f. kennedy
+14  lee harvey oswald <e>  kennedy
+15  booth <e>  lincoln
+16  jack ruby <e>  lee harvey oswald
+17  sirhan <e>  kennedy
+18  james earl ray <e>  martin luther king jr
+19  sirhan sirhan <e>  new york sen. robert f. kennedy
+20  sirhan sirhan <e>  sen. robert f. kennedy
+21  james earl ray <e>  dr. martin luther king jr
+22  john wilkes booth <e>  president abraham lincoln
+23  leon czolgosz <e>  president william mckinley
+24  john wilkes <e>  abraham lincoln
+25  leon czolgosz <e>  president mckinley
+26  lee harvey oswald <e>  president kennedy
+27  vasquez <e>  john walker
+28  john wilkes booth <e>  lincoln
+29  sirhan <e>  sen. robert kennedy
+30  brutus <e>  julius caesar
+31  jack ruby <e>  oswald
+32  jack ruby <e>  lee harvey oswald
+33  darly alves da silva <e>  mendes
+34  jack ruby <e>  oswald
+35  frank d. cuevas <e>  james miller
+36  jack ruby <e>  lee harvey oswald
+37  sirhan <e>  kennedy
+38  jack ruby <e>  lee harvey oswald
+39  john wilkes booth <e>  lincoln
+40  lee harvey oswald <e>  kennedy
+41  lee harvey oswald <e>  kennedy
+42  mark david chapman <e>  lennon
+43  oswald <e>  kennedy
+44  john wilkes booth <e>  lincoln
+45  oswald <e>  officer tippit
+46  charles guiteau <e>  president james garfield
+47  john wilkes booth <e>  abraham lincoln
+48  leon czolgosz <e>  william mckinley
+49  lee harvey oswald <e>  president kennedy
+50  andrew jackson <e>  waxhaw , south carolina
+51  elizabeth <e>  salisbury , n.c
+52  jesse jackson <e>  south carolina
+53  john tyler <e>  charles city county , va
+54  lowell thomas <e>  woodington , ohio
+55  harold lloyd <e>  burchard , neb
+56  eric sevareid <e>  velva
+57  helen keller <e>  tuscumbia , ala.
+58  gen. william c. westmoreland <e>  south carolina
+59  calvin coolidge <e>  plymouth , vt
+60  rogers <e>  fort worth , texas
+61  henry ford <e>  dearborn township , mich
+62  jerome robbins <e>  new york
+63  sydney j. freedberg <e>  boston
+64  dr. lee deforest <e>  council bluffs , iowa
+65  dwight d. eisenhower <e>  denison , texas
+66  james garfield <e>  orange , ohio
+67  martin van buren <e>  kinderhook , n.y.
+68  emily dickinson <e>  amherst , mass
+69  edgar allan poe <e>  boston
+70  sinclair lewis <e>  sauk center , minn
+71  lowell thomas <e>  woodington , ohio
+72  ulysses s. grant <e>  point pleasant , ohio
+73  lucille ball <e>  new york
+74  henry ford <e>  dearborn township , mich
+75  emily dickinson <e>  amherst , mass
+76  ulysses s. grant <e>  point pleasant , ohio
+77  calvin coolidge <e>  plymouth , vt
+78  emily dickinson <e>  amherst , mass.
+79  thurgood marshall <e>  baltimore
+80  jesse james <e>  kearney
+81  dwight d. eisenhower <e>  denison , tex.
+82  bette davis <e>  lowell , mass
+83  miller <e>  wilmington
+84  lawrence welk <e>  north dakota
+85  duane hanson <e>  minnesota
+86  fda <e>  associated press
+87  doc <e>  friday
+88  pushkar <e>  hindus
+89  nic jan jonker <e>  netherlands
+90  immigration <e>  cole
+91  semipalatinsk <e>  feb.
+92  gross <e>  brooklyn
+93  attorney general jim jones <e>  friday
+94  circuit judge sam monk <e>  thursday
+95  david w. roubik <e>  balboa , panama
+96  pentagon <e>  black sea
+97  lt. gov. evelyn murphy <e>  massachusetts
+98  west berlin <e>  winfried fest
+99  carl stevens <e>  knoxville
+100  roh tae woo <e>  united states
+101  tennessee sen. albert gore jr. <e>  lyndon h. larouche jr.
+102  nancy robinson <e>  texas
+103  anderson <e>  n.y.
+104  sunday <e>  worthington
+105  johnston <e>  northern ireland
+106  burger <e>  constitution
+107  greenland <e>  iceland
+108  spielberg <e>  sun
+109  sanchez <e>  god church
+110  pacific coast highway <e>  marvin davis
+111  chapman <e>  dade county public library tuesday
+112  miles <e>  snyder
+113  december <e>  gelli
+114  philippines <e>  aids
+115  miller <e>  march
+116  frankfurt <e>  mohammed hamadi
+117  american <e>  prime minister brian mulroney
+118  united states agency <e>  africa.
+119  jharkhali <e>  uni
+120  george j. annas <e>  wednesday
+121  bedford <e>  indiana
+122  campbellsville industries <e>  bennett
+123  nasa <e>  congress
+124  rep. richard gephardt <e>  tuesday
+125  central bank <e>  u.s.
+126  bernius <e>  rouch
+127  friday <e>  cmdr. dugald gillies
+128  nbc <e>  san francisco
+129  world chess festival <e>  canada
+130  loma linda <e>  arcadia , calif
+131  baby evelyn <e>  lackland air force base
+132  union pacific <e>  lamine river
+133  london <e>  friday
+134  lourdes high school <e>  david
+135  ferc <e>  lee
+136  president reagan <e>  canada
+137  zimbabwe <e>  africa
+138  dow jones <e>  wall street
+139  arco <e>  alaska
+140  william l. davis <e>  eep.
+141  pat robertson <e>  super tuesday
+142  thomas ballantine <e>  boston.
+143  supreme court <e>  missouri river basin
+144  supreme court <e>  west virginia
+145  americans <e>  eagle scout
+146  riverside county <e>  cupido
+147  alcor <e>  mrs. kent
+148  anthony lucas <e>  spindletop
+149  ward <e>  aids
+150  coolidge <e>  san francisco
+151  dynasty <e>  jackie collins
+152  orange river <e>  african press association
+153  u.s. <e>  eep
+154  aids <e>  medicine
+155  mrs. williams <e>  harris
+156  american cancer society <e>  edell
+157  thursday <e>  seattle
+158  john davis <e>  san diego
+159  jimmy swaggart <e>  friday
+160  sir georg solti <e>  d minor
+161  reagan <e>  nato
+162  monday <e>  utah
+163  u.s. <e>  tuesday
+164  georgia <e>  legislature
+165  reagan <e>  nato
+166  apostle <e>  ireland
+167  gov. evan mecham <e>  arizona senate
+168  monday <e>  south africa
+169  wadeville <e>  johannesburg
+170  nguyen van linh <e>  vietnam
+171  north atlantic <e>  whales
+172  turner <e>  christopher reeve
+173  pontiac <e>  associated press writer
+174  inf <e>  robertson
+175  ahmed kadry <e>  antiquities organization
+176  september <e>  manuel rodriguez front
+177  gop <e>  denny
+178  armenia <e>  russian republic
+179  proton <e>  mir
+180  markowski <e>  markowski
+181  saudi arabian <e>  merrill lynch energyfutures
+182  filipino <e>  thursday
+183  nairobi <e>  thursday
+184  vento <e>  interior department
+185  reynolds <e>  ms. anderson
+186  alice mclean stewart <e>  phoenix house

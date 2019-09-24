@@ -1,0 +1,739 @@
+1  lee harvey oswald <e>  kennedy
+2  lee harvey oswald <e>  kennedy
+3  lee harvey oswald <e>  kennedy
+4  james earl ray <e>  rev. martin luther king jr.
+5  ray <e>  king
+6  sirhan sirhan <e>  robert f. kennedy
+7  sirhan sirhan <e>  new york sen. robert f. kennedy
+8  william leonard jennings <e>  stephen
+9  sirhan <e>  kennedy
+10  sirhan <e>  kennedy
+11  john wilkes booth <e>  president abraham lincoln
+12  sirhan bishara sirhan <e>  kennedy
+13  sirhan <e>  kennedy
+14  sirhan bishara sirhan <e>  kennedy
+15  sirhan sirhan <e>  kennedy
+16  sirhan bishara sirhan <e>  kennedy
+17  sirhan bishara sirhan <e>  sen. robert f. kennedy
+18  sirhan bishara sirhan <e>  kennedy
+19  oswald <e>  kennedy
+20  lee harvey oswald <e>  president john f. kennedy
+21  james earl ray <e>  dr. martin luther king jr.
+22  sirhan sirhan <e>  robert kennedy
+23  mark david chapman <e>  john lennon
+24  yount <e>  pamela sue rimer
+25  gen. samuel k. doe <e>  president william tolbert
+26  john wilkes booth <e>  president abraham lincoln
+27  james earl ray <e>  dr. martin luther king jr.
+28  francisco pizarro <e>  atahualpa
+29  lee harvey oswald <e>  president kennedy
+30  mark david chapman <e>  lennon
+31  mark david chapman <e>  lennon
+32  mark david chapman <e>  lennon
+33  lee harvey oswald <e>  president john f. kennedy
+34  oswald <e>  president john f. kennedy
+35  mark david chapman <e>  lennon
+36  james earl ray <e>  martin luther king jr.
+37  ray <e>  king
+38  james earl ray <e>  rev. martin luther king jr.
+39  leon czolgosz <e>  president william mckinley
+40  herschel grynszpan <e>  german embassy third secretary ernst vom rath
+41  lee harvey oswald <e>  kennedy
+42  james earl ray <e>  martin luther king jr
+43  charles j. guiteau <e>  president james garfield
+44  lee harvey oswald <e>  president john f. kennedy
+45  oswald <e>  kennedy
+46  booth <e>  lincoln
+47  booth <e>  lincoln
+48  john wilkes booth <e>  abraham lincoln
+49  lee harvey oswald <e>  president john f. kennedy
+50  james earl ray <e>  king
+51  lee harvey oswald <e>  kennedy
+52  oswald <e>  kennedy
+53  oswald <e>  kennedy
+54  lee harvey oswald <e>  president john f. kennedy
+55  james earl ray <e>  king
+56  oswald <e>  president kennedy
+57  oswald <e>  president john f. kennedy
+58  john martini <e>  irving flax
+59  lee harvey oswald <e>  president kennedy
+60  of <e>  lee county circuit judge thomas gardner iii.
+61  sirhan sirhan <e>  sen. robert f. kennedy
+62  lee harvard oswald <e>  president john f. kennedy
+63  lee harvey oswald <e>  president kennedy
+64  lee harvey oswald <e>  president kennedy
+65  brutus <e>  roman emperor julius caesar
+66  robert ford <e>  jesse james
+67  james earl ray <e>  martin luther king iii
+68  john wilkes booth <e>  president abraham lincoln
+69  sirhan <e>  u.s. sen. robert kennedy
+70  sirhan <e>  kennedy
+71  sirhan <e>  kennedy
+72  sirhan b. sirhan <e>  sen. robert f. kennedy
+73  oswald <e>  kennedy
+74  sirhan bishara sirhan <e>  kennedy
+75  sirhan bishara sirhan <e>  kennedy
+76  james earl ray <e>  dr. martin luther king jr
+77  mark david chapman <e>  john lennon
+78  charles j. guiteau <e>  president james a. garfield
+79  mark david chapman <e>  beatle john lennon
+80  charlotte corday <e>  jean paul marat
+81  sirhan sirhan <e>  robert f. kennedy
+82  james earl ray <e>  dr. martin luther king jr.
+83  francisco pizarro <e>  atahualpa
+84  lee harvey oswald <e>  president john f. kennedy
+85  mark david chapman <e>  lennon
+86  john harvey adamson <e>  don bolles
+87  james earl ray <e>  rev. martin luther king
+88  ray <e>  king
+89  jack ruby <e>  lee harvey oswald
+90  lee harvey oswald <e>  kennedy
+91  jack ruby <e>  oswald
+92  oswald <e>  kennedy
+93  booth <e>  lincoln
+94  antonio vasquez ochoa <e>  john walker
+95  john wilkes booth <e>  lincoln
+96  james earl ray <e>  martin luther king jr.
+97  johnny campbell <e>  lattie mcgee.
+98  james earl ray <e>  martin luther king jr.
+99  lee harvey oswald <e>  president kennedy.
+100  jack ruby <e>  lee harvey oswald
+101  brutus <e>  roman emperor julius caesar
+102  john wilkes booth <e>  lincoln
+103  robert ford <e>  jesse james
+104  john wilkes booth <e>  president lincoln
+105  sirhan sirhan <e>  u.s. sen. robert f. kennedy
+106  john wilkes booth <e>  lincoln
+107  lee harvey oswald <e>  kennedy
+108  oswald <e>  kennedy
+109  sirhan b. sirhan <e>  kennedy
+110  sirhan b. sirhan <e>  kennedy
+111  kim jae kyu <e>  president park chung hee
+112  giuseppe zangara <e>  chicago mayor anton cermak
+113  john wilkes booth <e>  president lincoln
+114  sirhan b. sirhan <e>  sen. robert f. kennedy
+115  sirhan b. sirhan <e>  robert f. kennedy
+116  sirhan <e>  kennedy
+117  john harvey adamson <e>  don bolles
+118  john harvey adamson <e>  don bolles
+119  jack ruby <e>  lee harvey oswald
+120  ruby <e>  oswald
+121  lee harvey oswald <e>  kennedy
+122  oswald <e>  kennedy
+123  ruby <e>  oswald
+124  lee harvey oswald <e>  kennedy
+125  james earl ray <e>  dr. martin luther king jr.
+126  oswald <e>  kennedy
+127  lee harvey oswald <e>  president john f. kennedy
+128  kim jae kyu <e>  president park chung hee
+129  oswald <e>  president john f. kennedy
+130  gavrilo princip <e>  austrian archduke franz ferdinand
+131  lee harvey oswald <e>  president kennedy
+132  chapman <e>  lennon
+133  chapman <e>  lennon
+134  mark david chapman <e>  john lennon
+135  mark david chapman <e>  john lennon
+136  chapman <e>  john lennon
+137  mark david chapman <e>  lennon
+138  mark david chapman <e>  lennon
+139  mark david chapman <e>  lennon
+140  darci alves pereira <e>  mendes
+141  darly alves da silva <e>  mendes
+142  kleber elias gia bustamante <e>  jose antonio briz lopez.
+143  lee harvey oswald <e>  president john kennedy
+144  lee harvey oswald <e>  president kennedy
+145  gavrilo princip <e>  archduke franz ferdinand
+146  john wilkes booth <e>  president lincoln
+147  lee harvey oswald <e>  president kennedy
+148  james earl ray <e>  martin luther king
+149  lee harvey oswald <e>  mr kennedy
+150  gavrilo princip <e>  archduke ferdinand
+151  james earl ray <e>  martin luther king jr.
+152  lee harvey oswald <e>  president john f. kennedy
+153  sirhan b. sirhan <e>  kennedy
+154  rigoberto lopez perez <e>  somoza garcia
+155  john wilkes booth <e>  president abraham lincoln
+156  booth <e>  lincoln
+157  booth <e>  lincoln
+158  booth <e>  lincoln
+159  john wilkes booth <e>  lincoln
+160  sirhan b. sirhan <e>  sen. robert f. kennedy
+161  john harvey adamson <e>  don bolles
+162  james rovida <e>  robert brock
+163  james joseph rovida jr. <e>  robert brock
+164  sirhan sirhan <e>  robert f. kennedy
+165  sirhan sirhan <e>  sen. robert f. kennedy
+166  sirhan <e>  kennedy
+167  sirhan <e>  kennedy
+168  ray martinez <e>  charles whitman
+169  jack ruby <e>  lee harvey oswald
+170  jack ruby <e>  lee harvey oswald
+171  darci alves pereira <e>  mendes
+172  lee harvey oswald <e>  president john f. kennedy
+173  lee harvey oswald <e>  kennedy
+174  jack ruby <e>  oswald
+175  oswald <e>  kennedy
+176  lee harvey oswald <e>  president kennedy
+177  james earl ray <e>  rev. martin luther king jr.
+178  sirhan sirhan <e>  sen. robert f. kennedy
+179  weiss <e>  huey long
+180  james earl ray <e>  king
+181  lehi <e>  lord moyne
+182  kenneth earl millikan <e>  peter j. martinelli
+183  lee harvey oswald <e>  kennedy
+184  oswald <e>  kennedy.
+185  lee harvey oswald <e>  kennedy
+186  leon czolgosz <e>  president mckinley
+187  mark david chapman <e>  john lennon
+188  lee harvey oswald <e>  kennedy
+189  lee harvey oswald <e>  president kennedy
+190  lee harvey oswald <e>  kennedy
+191  oswald <e>  president kennedy
+192  ruby <e>  oswald
+193  lee harvey oswald <e>  kennedy
+194  lee harvey oswald <e>  kennedy
+195  oswald <e>  jack kennedy
+196  lee harvey oswald <e>  president kennedy
+197  elizabeth <e>  north carolina
+198  buffalo bill <e>  davenport , iowa.
+199  jimmy dorsey <e>  shenandoah , penn
+200  elizabeth. <e>  north carolina
+201  elizabeth <e>  north carolina
+202  elizabeth dole <e>  salisbury , n.c.
+203  jesse jackson <e>  south carolina
+204  jesse jackson <e>  south carolina
+205  jesse jackson <e>  south carolina
+206  jesse jackson <e>  south carolina
+207  jesse jackson <e>  south carolina
+208  jesse jackson <e>  south carolina
+209  frank b. colton <e>  poland
+210  louis w. parker <e>  budapest , hungary
+211  an wang <e>  shanghai , china
+212  ulysses s. grant <e>  point pleasant , ohio
+213  james monroe <e>  westmoreland county , va
+214  jesse jackson <e>  greenville , s.c.
+215  miss dickinson <e>  kulm
+216  john wayne <e>  winterset
+217  tom selleck <e>  detroit
+218  henry fonda <e>  grand island ,neb.
+219  hubert h. humphrey <e>  wallace , s.d.
+220  brigham young <e>  whitingham , vt
+221  harry reasoner <e>  iowa
+222  will rogers <e>  oklahoma
+223  henry david thoreau <e>  concord , mass
+224  annie oakley <e>  willowdell , darke county
+225  actress helen hayes <e>  washington
+226  gordon parks <e>  fort scott , kan.
+227  herbert clark hoover <e>  west branch , iowa
+228  benjamin harrison <e>  north bend , ohio
+229  buddy holly <e>  lubbock , texas
+230  jessica lange <e>  minnesota
+231  jesse owens <e>  danville , ala.
+232  george gershwin <e>  new york
+233  springsteen <e>  new jersey
+234  rutherford b. hayes <e>  delaware , ohio
+235  bush <e>  massachusetts
+236  bob dole <e>  russell , kan
+237  van buren <e>  kinderhook
+238  john deutschendorf <e>  roswell , n.m.
+239  atwater <e>  south carolina
+240  zachary taylor <e>  orange county , virginia
+241  joseph smith jr. <e>  sharon , vt
+242  thomas woodrow wilson <e>  staunton , va
+243  betsy ross <e>  philadelphia
+244  millard fillmore <e>  summerhill , n.y.
+245  elvis presley <e>  tupelo , miss
+246  fats domino <e>  new orleans
+247  cybill shepherd <e>  memphis
+248  william mckinley <e>  niles , ohio
+249  holly <e>  lubbock
+250  richardson <e>  beaumont , texas
+251  babe ruth <e>  baltimore
+252  thomas alva edison <e>  milan , ohio
+253  abraham lincoln <e>  larue county , kentucky
+254  john deere <e>  rutland , vt.
+255  buffalo bill <e>  davenport , iowa
+256  cybill shepherd <e>  memphis
+257  rev. jesse jackson <e>  south carolina
+258  andrew jackson <e>  waxhaw , s.c.
+259  washington irving <e>  new york city
+260  james monroe <e>  westmoreland county ,virginia
+261  lucille ball <e>  jamestown n.y.
+262  lucille ball <e>  new york
+263  sen. bob dole <e>  russell , kan.
+264  henry fonda <e>  grand island , neb
+265  brigham young <e>  whitingham , vt
+266  herbert clark hoover <e>  west branch , iowa
+267  helen keller <e>  tuscumbia , ala
+268  calvin coolidge <e>  plymouth , vt
+269  henry david thoreau <e>  concord , mass
+270  george eastman <e>  waterville , n. y.
+271  mrs. vogt <e>  akron ,ohio
+272  benjamin harrison <e>  north bend , ohio
+273  dr. lee deforest <e>  council bluffs , iowa
+274  buddy holly <e>  lubbock , texas
+275  jesse owens <e>  danville , ala.
+276  rutherford b. hayes <e>  delaware , ohio
+277  rev. jesse jackson <e>  south carolina
+278  dwight d. eisenhower <e>  denison , texas
+279  will rogers <e>  oologah , okla
+280  james garfield <e>  orange , ohio
+281  martin van buren <e>  kinderhook , n.y.
+282  paul revere <e>  boston
+283  betsy ross <e>  philadelphia
+284  elvis presley <e>  tupelo , miss
+285  edgar allan poe <e>  boston
+286  bob dylan <e>  duluth
+287  andrew jackson <e>  waxhaw , s.c.
+288  james madison <e>  port conway , va.
+289  tennessee williams <e>  columbus , miss.
+290  george lucas <e>  modesto
+291  george lucas <e>  modesto
+292  james monroe <e>  westmoreland county , va
+293  david abernathy <e>  linden , ala.
+294  brigham young <e>  whitingham , vt
+295  charlton heston <e>  illinois
+296  george lucas <e>  modesto
+297  lucy stone <e>  brookfield , mass
+298  herbert clark hoover <e>  west branch , iowa
+299  benjamin harrison <e>  north bend , ohio
+300  oliver hazard perry <e>  south kingstown , r.i.
+301  george gershwin <e>  brooklyn , n.y.
+302  rutherford b. hayes <e>  delaware , ohio
+303  eddie rickenbacker <e>  columbus , ohio
+304  dwight d. eisenhower <e>  denison , texas
+305  will rogers <e>  oologah , okla.
+306  james dickey <e>  georgia
+307  james garfield <e>  orange , ohio
+308  copland <e>  brooklyn
+309  nelson <e>  abbott
+310  martin van buren <e>  kinderhook , n.y.
+311  paul revere <e>  boston
+312  betsy ross <e>  philadelphia
+313  elvis presley <e>  tupelo , miss
+314  babe ruth <e>  camden yards
+315  robinson <e>  greenville
+316  ginsberg <e>  new jersey
+317  man ray <e>  philadelphia
+318  lucille ball <e>  jamestown , n.y.
+319  norton winfred simon <e>  portland , ore.
+320  woodrow wilson <e>  staunton , va
+321  gerald r. ford <e>  omaha , neb
+322  dwight d. eisenhower <e>  denison , tex
+323  andrew jackson <e>  waxhaw
+324  george washington <e>  westmoreland county
+325  abraham lincoln <e>  hodgenville , ky.
+326  ulysses s. grant <e>  point pleasant , ohio
+327  aldrin <e>  montclair , n.j.
+328  jesse alexander helms jr. <e>  monroe
+329  thomas wolfe <e>  north carolina
+330  muddy waters <e>  rolling fork
+331  frank lloyd wright <e>  wisconsin
+332  tom wolfe <e>  richmond
+333  jack nicklaus <e>  ohio
+334  actress angie dickinson <e>  kulm , n.d.
+335  mr. vee <e>  fargo
+336  woodrow wilson <e>  virginia
+337  man ray <e>  philadelphia
+338  madonna <e>  bay city , mich.
+339  lawrence welk <e>  north dakota
+340  drought <e>  africa
+341  defense secretary frank c. carlucci <e>  boone
+342  acting gov. rose mofford <e>  navajo reservation
+343  dallas <e>  willow creek apartment
+344  friday <e>  duluth , minn.
+345  mrs. thatcher <e>  northern ireland
+346  u.s. embassy <e>  friday
+347  harvey <e>  london , ky.
+348  richard marin <e>  u.s.
+349  frederick <e>  ellen appel
+350  lyubimov <e>  leos janacek
+351  wbzz fm manager tex meyer <e>  banana
+352  biden <e>  east coast
+353  new hampshire <e>  kansas sen. bob dole
+354  gephardt <e>  simon
+355  new york city <e>  soviet union
+356  washington <e>  idaho
+357  thailand <e>  customs department
+358  june <e>  september
+359  charles <e>  fannie forespring
+360  gov. bob martinez <e>  saturday
+361  bruce gardner <e>  wells
+362  livermore national laboratory <e>  ms. yoerg
+363  december <e>  feb.
+364  harold cassidy <e>  sterns
+365  viroj <e>  thai
+366  nasa <e>  sunday
+367  simon <e>  illinois
+368  january <e>  levitt
+369  walter poxon <e>  3m
+370  sunday <e>  dukakis
+371  florida supreme court <e>  hawkins
+372  iran <e>  iraq
+373  marine expeditionary <e>  hughes
+374  senate <e>  intermediate range nuclear
+375  iris massey <e>  allgood
+376  robertson <e>  aids
+377  communist party <e>  pravda
+378  marxism <e>  paraguay
+379  gallardo <e>  january
+380  sadunaite <e>  senderov
+381  dardanelles strait <e>  mediterranean.
+382  alabama <e>  capitol
+383  air force <e>  southern california.
+384  air force f 15 eagle <e>  monday.
+385  berlin morgenpost <e>  nazis
+386  saturday <e>  nancy
+387  smith <e>  sunday
+388  sheften <e>  soviet union
+389  idaho <e>  pocatello
+390  general cemetery <e>  managua
+391  bush <e>  social security
+392  sunday <e>  sunday
+393  r.n. meena <e>  ajmer
+394  united states <e>  washington.
+395  salk <e>  pittsburgh.
+396  katrine <e>  collet
+397  maxwell <e>  january
+398  america <e>  america
+399  tillotson <e>  dixville notch
+400  mardi gras <e>  care forgot
+401  senator biden <e>  ms. nutt
+402  bloomington <e>  james ratcliff
+403  mrs. defensor santiago <e>  refugees
+404  london <e>  northern ireland
+405  vietnam <e>  libya
+406  simon <e>  west berlin
+407  bristol <e>  memphis state university
+408  university <e>  u. umeh
+409  defense secretary george <e>  nato
+410  elaine baldwin <e>  infectious diseases
+411  yeutter <e>  u.s.
+412  edward j. ryder <e>  autumn
+413  tuesday <e>  reagan
+414  florida <e>  o ring
+415  ted williams <e>  gop
+416  new york times <e>  united states
+417  kristy <e>  elizabeth
+418  delaney <e>  andrew
+419  abc <e>  cbs
+420  dole <e>  bush
+421  bob dole <e>  south
+422  biden <e>  laws
+423  ethiopia <e>  kremlin
+424  bosch <e>  aug.
+425  mississippi river bridge authority <e>  mrba cpl. george eberhardt
+426  dole <e>  bush
+427  south <e>  jackson
+428  jerusalem <e>  tel aviv
+429  daily mail <e>  iowa
+430  justice department <e>  walsh
+431  sunday <e>  manchester
+432  president reagan <e>  u.s.
+433  roger mudd <e>  nbc nightly news
+434  little league <e>  westport little league secretary linda abraham
+435  u.s. <e>  wednesday
+436  white house <e>  robertson
+437  highs <e>  texas
+438  du pont <e>  new hampshire
+439  el salvador <e>  nicaragua
+440  united states <e>  wednesday
+441  dec. <e>  minpeco
+442  eec <e>  commission
+443  morton <e>  eurotunnel
+444  workers <e>  daily
+445  dorothy hart <e>  loewe
+446  president reagan <e>  congress
+447  richard wade farley <e>  santa clara county jail
+448  justice department <e>  lawrence e. walsh
+449  cftc <e>  oct.
+450  department <e>  california
+451  u.s. <e>  daily news
+452  tuesday <e>  south dakota.
+453  hearn <e>  february
+454  soviet union <e>  north korea
+455  justice lewis f. powell <e>  florida.
+456  stennis <e>  senate
+457  supreme soviet <e>  u.s.s.r.
+458  nuclear regulatory commission <e>  3m corp.
+459  miranda <e>  associated press.
+460  loyola <e>  united states.
+461  miss smith <e>  king.
+462  tmic <e>  april
+463  senate <e>  kennedy
+464  zuypdorp <e>  fremantle
+465  sgt. bob watts <e>  metro patrol
+466  city council <e>  hispanics
+467  pentagon <e>  higgins
+468  friday <e>  kemp
+469  nelson films <e>  beryl markham
+470  richard rosenheim <e>  richard rich
+471  united states <e>  january
+472  cdc <e>  aids
+473  wright <e>  house
+474  ucla medical center <e>  ms. rockwell
+475  mexico <e>  treasury department
+476  linzi hateley <e>  sissy spacek
+477  friday <e>  die presse
+478  united states <e>  alimina
+479  friday <e>  soviets
+480  tass <e>  sputniks
+481  karlsson <e>  colorado
+482  bailey <e>  october
+483  foundation <e>  leon
+484  u.s. food and drug administration <e>  fda
+485  dixon <e>  english
+486  joan hensley davis <e>  attorney john baricevic
+487  andes <e>  rcn
+488  king <e>  theology
+489  american <e>  december
+490  pilaski <e>  small
+491  u.s. conference <e>  louisville
+492  bangladesh <e>  east pakistan
+493  shultz <e>  middle east
+494  mills <e>  mary hayley bell
+495  american jews <e>  jewish reform
+496  waldheim <e>  world war ii
+497  makoto miike <e>  sunday
+498  garbage <e>  thursday
+499  feb. <e>  sanders
+500  sunday <e>  plains
+501  new mexico <e>  chicago river
+502  cliburn <e>  mikhail gorbachev
+503  ruddell <e>  haystack mountain
+504  hayes <e>  earth
+505  stewart <e>  washington
+506  u.s. <e>  middle east
+507  michael r. kagay <e>  harris
+508  dukakis <e>  south dakota
+509  dr. john allegro <e>  dead sea scrolls
+510  oklahoma <e>  ms. debo
+511  bta <e>  denmark
+512  nunn <e>  george p. shultz
+513  montana , wyoming <e>  maine
+514  united states <e>  myrtle beach , s.c.
+515  dole <e>  south dakota
+516  release tues <e>  feb.
+517  wednesday <e>  march
+518  associated press <e>  social security
+519  federal national mortgage association <e>  fannie mae
+520  larry shay <e>  monday
+521  joseph kennedy <e>  r ohio
+522  gephardt <e>  super tuesday
+523  toshiba <e>  u.s.
+524  yewene <e>  tieti
+525  navy <e>  reagan
+526  preston <e>  friday
+527  exner <e>  mafia princess.
+528  limerick county council <e>  mrs. heckler
+529  queen <e>  mrs. thatcher
+530  red sorghum field <e>  38th berlin film festival.
+531  ball <e>  navy.
+532  bradshaw <e>  moon
+533  white house <e>  house.
+534  kentucky <e>  new york.
+535  st jean <e>  january
+536  apple computer inc. <e>  laguna
+537  interior department <e>  national capital planning commission
+538  nudelman <e>  kalafut
+539  ireland <e>  ireland
+540  south dakota <e>  south dakota
+541  jackson <e>  hart
+542  vincennes <e>  sevres
+543  san francisco <e>  mrs. carson
+544  washington <e>  broadcasting
+545  maritza rentz <e>  rachael ann white
+546  navy <e>  fitzwater
+547  ohio river <e>  wednesday
+548  dmv <e>  march
+549  air force <e>  tuesday
+550  kemp <e>  south dakota
+551  senate <e>  sergeant at arms henry giugni
+552  gore <e>  paul risley
+553  eta <e>  spain
+554  national baptist convention <e>  jemison
+555  swaggart <e>  swaggart
+556  carlucci <e>  navy
+557  aids <e>  salmon
+558  jackson <e>  austin
+559  biaggi <e>  brooklyn , n.y.
+560  kim hyun hee <e>  abu dhabi
+561  wednesday <e>  florida
+562  herrington <e>  tmi
+563  hitchcock <e>  u.s. supreme court
+564  martinez <e>  mcalister
+565  phoenix <e>  tucson
+566  prime minister mamdouh salem <e>  london
+567  ketter <e>  west coast
+568  reagan <e>  cavaco silva
+569  dr. clifton bogardus <e>  national institutes of health
+570  super tuesday <e>  dixon
+571  derek humphry <e>  hemlock society
+572  cyprus <e>  nato
+573  linda squire <e>  london
+574  london <e>  smith
+575  edouard saouma <e>  fao
+576  mamula <e>  ethiopia
+577  adn <e>  soviet union
+578  worcester <e>  springsteen
+579  duffy <e>  duane duffy
+580  kennedy <e>  glass steagall
+581  delvalle <e>  panama
+582  thursday <e>  cleveland
+583  lemasters <e>  night heat
+584  reagan <e>  mars
+585  burlatsky <e>  literary gazette
+586  emiliano revilla sanza <e>  thursday
+587  whittle communications <e>  patti carr
+588  rio <e>  feb.
+589  brady <e>  gephardt
+590  u.s. district judge morris e. lasker <e>  lamar hunt
+591  march <e>  wednesday
+592  china <e>  vietnam
+593  fort sill , okla. <e>  rankin
+594  pentagon <e>  fidel castro
+595  jimmie powell <e>  epa
+596  new york times <e>  north point press
+597  w.c. fields productions <e>  w.c. fields
+598  long beach <e>  westwood
+599  cuomo <e>  abrams
+600  zimbabwe based <e>  wood
+601  state department <e>  panama.
+602  americans <e>  united states
+603  michael dukakis <e>  american
+604  james w. glosser <e>  plant health inspection service
+605  washington <e>  delvalle
+606  soviets <e>  communists
+607  noriega <e>  bush
+608  white house <e>  friday
+609  kyohei kakumoto <e>  japan transport economics research center
+610  eurostat <e>  greece
+611  chrysler <e>  beijing jeep co
+612  belgium <e>  groupe ag
+613  zhengzhou <e>  yellow river
+614  phoenix <e>  sun
+615  bartholomew gosnold <e>  massachusetts
+616  united states <e>  turkey
+617  upper michigan <e>  california
+618  nstl <e>  june
+619  weerts <e>  gainesville
+620  sen. david boren <e>  saturday
+621  l body omni horizon <e>  kenosha
+622  london <e>  iran
+623  u.s. <e>  delvalle
+624  thomas <e>  united states
+625  sunday <e>  britain
+626  gephardt <e>  america
+627  embakasi <e>  thursday
+628  april <e>  tobacco research
+629  albantours <e>  shkoder
+630  mexico <e>  heimlich institute
+631  evan <e>  great depression
+632  heritage preservation commission <e>  commission chairwoman marie abbott
+633  gibran <e>  new york
+634  bokassa <e>  june
+635  tehran <e>  tehran
+636  south africa <e>  botha
+637  sen. hubert humphrey <e>  schneider
+638  eula jones <e>  mrs. brown
+639  bokassa <e>  june
+640  poland <e>  nazi soviet
+641  czechoslovakia <e>  prague
+642  beatle paul mccartney <e>  london
+643  vampire <e>  amazon
+644  lisa nageleisen <e>  pelee island
+645  miriam mafai <e>  christian democrats
+646  alpine county <e>  south lake tahoe branch
+647  london <e>  paris
+648  de la madrid <e>  february
+649  maryland court <e>  october
+650  roh <e>  december
+651  waldheim <e>  balkans
+652  stuyvesant high school <e>  science talent search
+653  ferndo <e>  monday
+654  panama <e>  panama canal
+655  kenneth harris <e>  pennsylvania supreme court
+656  teamsters <e>  cook
+657  vermont <e>  john anderson
+658  mcanespie <e>  british
+659  president john f. kennedy <e>  dallas county commission
+660  chuck monroe <e>  california
+661  tuesday <e>  texas
+662  pascal <e>  lhote
+663  midler <e>  new york
+664  khaled nasser <e>  u.s.
+665  parliament peter rost <e>  education secretary kenneth baker
+666  globo <e>  wednesday
+667  libya <e>  chad
+668  martinez <e>  donna carlson
+669  circle k corp. <e>  southland corp.
+670  u.s. <e>  wednesday
+671  burger king <e>  december
+672  wiener <e>  israel
+673  comedie francaise <e>  leotard
+674  olympics <e>  thursday
+675  j.j. starbuck <e>  nbc
+676  cargill inc. <e>  mitsui grain corp.
+677  washington <e>  justice department
+678  kennedy <e>  americans
+679  sunday <e>  houston
+680  white house <e>  carter
+681  jackson <e>  virginia
+682  cohen <e>  associated press
+683  ms. schlossberg <e>  july
+684  loftus <e>  union pacific railroad
+685  mrs. shields <e>  monday
+686  city <e>  monday
+687  april <e>  arc
+688  hill <e>  illinois
+689  doherty <e>  scully
+690  army central identification laboratory <e>  vietnam war
+691  u.s. district judge terry hatter jr. <e>  assistant u.s. attorney george wu
+692  moscow <e>  moscow
+693  congress <e>  agricultural credit act
+694  koentoro <e>  tuesday
+695  macy <e>  monday
+696  cynthia weil <e>  barry mann
+697  terry erskine <e>  monday
+698  u.s. <e>  soviet union
+699  john f. bookout <e>  june
+700  mars <e>  mars
+701  super tuesday <e>  illinois
+702  ehrlichman <e>  tuesday
+703  walden <e>  michael jackson quincy jones
+704  austin <e>  demoratic
+705  jackson <e>  space administration
+706  olivier vanneste <e>  queen elizabeth ii
+707  world war ii <e>  army
+708  persian gulf <e>  september
+709  ferguson <e>  roger benson
+710  national weather service <e>  delta airlines flight
+711  news agency <e>  iraq
+712  craft <e>  mecham
+713  previn <e>  heather
+714  grand opera house <e>  u.s.
+715  polish born <e>  mexico
+716  burnley <e>  amtrak
+717  police chief s. wijesinghe <e>  ampara
+718  hebron <e>  jim hollander
+719  pta <e>  pta
+720  oklahoma <e>  missouri
+721  indiana <e>  indianapolis
+722  rowland hussey macy <e>  manhattan
+723  califoria <e>  jon fredriskson
+724  aids <e>  berglass
+725  sen. dan quayle <e>  r ind
+726  thursday <e>  mayview
+727  azt <e>  aids
+728  matthew <e>  swindall
+729  antarctica <e>  blake
+730  thursday <e>  sen. joseph mccarthy
+731  maine <e>  jackson
+732  matthews <e>  boston
+733  junejo <e>  kabul
+734  grace <e>  tech
+735  cohen <e>  nicaraguan contra
+736  zambia <e>  kafue river
+737  dukakis <e>  gephardt
+738  utah <e>  florida
+739  cbs new york times <e>  dole
