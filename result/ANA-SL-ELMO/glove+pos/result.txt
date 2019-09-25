@@ -1,0 +1,532 @@
+num_steps=107
+num_epochs=50
+num_classes=3
+cnn_gru_size=200
+gru_size=300
+keep_prob_input=0.5
+keep_prob_gru_output=0.3
+keep_prob_cnn=0.5
+keep_prob_cnn_gur_output=0.5
+batch_size=100
+learning_rate=0.002
+network_type=ordinary
+
+PI MODEL or Tempens model
+rampup_length=60
+rampdown_length=10
+scaled_unsup_weight_max=100.0
+learning_rate_max=0.002
+adam_beta1=0.9
+rampdown_beta1_target=0.5
+num_labels=all
+prediction_decay=0.6
+
+f1_max=0.977559865054,f1_max_num_epochs=27
+
+Epoch 1 of 50 took 7.388s
+  training loss:		1.798121
+  training accuracy:		78.00 %
+  test loss:			1.084501
+  test accuracy:		58.60 %
+  test precision:		75.11 %
+  test recall:		74.24 %
+  test f1:		74.67 %
+  max test f1:		74.67 %
+  f1 max num epochs:1
+Epoch 2 of 50 took 7.407s
+  training loss:		1.327967
+  training accuracy:		93.00 %
+  test loss:			0.642621
+  test accuracy:		95.70 %
+  test precision:		95.41 %
+  test recall:		94.98 %
+  test f1:		95.19 %
+  max test f1:		95.19 %
+  f1 max num epochs:2
+Epoch 3 of 50 took 7.325s
+  training loss:		1.215143
+  training accuracy:		94.71 %
+  test loss:			0.652057
+  test accuracy:		95.16 %
+  test precision:		96.04 %
+  test recall:		93.10 %
+  test f1:		94.55 %
+  max test f1:		95.19 %
+  f1 max num epochs:2
+Epoch 4 of 50 took 7.357s
+  training loss:		1.146977
+  training accuracy:		95.86 %
+  test loss:			0.621722
+  test accuracy:		96.77 %
+  test precision:		96.48 %
+  test recall:		96.48 %
+  test f1:		96.48 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 5 of 50 took 7.217s
+  training loss:		0.994302
+  training accuracy:		99.14 %
+  test loss:			0.649751
+  test accuracy:		94.62 %
+  test precision:		93.10 %
+  test recall:		95.51 %
+  test f1:		94.29 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 6 of 50 took 7.211s
+  training loss:		0.956944
+  training accuracy:		98.86 %
+  test loss:			0.675293
+  test accuracy:		92.47 %
+  test precision:		90.68 %
+  test recall:		94.19 %
+  test f1:		92.40 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 7 of 50 took 7.184s
+  training loss:		0.958056
+  training accuracy:		97.71 %
+  test loss:			0.645988
+  test accuracy:		94.62 %
+  test precision:		94.41 %
+  test recall:		93.72 %
+  test f1:		94.06 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 8 of 50 took 7.179s
+  training loss:		0.898100
+  training accuracy:		98.00 %
+  test loss:			0.627305
+  test accuracy:		96.24 %
+  test precision:		95.56 %
+  test recall:		95.90 %
+  test f1:		95.73 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 9 of 50 took 7.204s
+  training loss:		0.858355
+  training accuracy:		98.57 %
+  test loss:			0.662377
+  test accuracy:		93.01 %
+  test precision:		90.99 %
+  test recall:		95.11 %
+  test f1:		93.01 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 10 of 50 took 7.291s
+  training loss:		0.859975
+  training accuracy:		97.71 %
+  test loss:			0.632163
+  test accuracy:		96.24 %
+  test precision:		96.11 %
+  test recall:		95.55 %
+  test f1:		95.83 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 11 of 50 took 7.264s
+  training loss:		0.784008
+  training accuracy:		99.29 %
+  test loss:			0.635769
+  test accuracy:		94.62 %
+  test precision:		94.70 %
+  test recall:		93.37 %
+  test f1:		94.03 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 12 of 50 took 7.309s
+  training loss:		0.772583
+  training accuracy:		99.00 %
+  test loss:			0.646248
+  test accuracy:		94.09 %
+  test precision:		94.71 %
+  test recall:		91.85 %
+  test f1:		93.26 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 13 of 50 took 7.258s
+  training loss:		0.736940
+  training accuracy:		98.71 %
+  test loss:			0.645886
+  test accuracy:		94.62 %
+  test precision:		94.70 %
+  test recall:		93.37 %
+  test f1:		94.03 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 14 of 50 took 7.295s
+  training loss:		0.723000
+  training accuracy:		98.71 %
+  test loss:			0.671649
+  test accuracy:		92.47 %
+  test precision:		90.35 %
+  test recall:		94.78 %
+  test f1:		92.51 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 15 of 50 took 7.288s
+  training loss:		0.670330
+  training accuracy:		100.00 %
+  test loss:			0.644353
+  test accuracy:		95.16 %
+  test precision:		93.75 %
+  test recall:		96.08 %
+  test f1:		94.90 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 16 of 50 took 7.318s
+  training loss:		0.656475
+  training accuracy:		99.57 %
+  test loss:			0.623649
+  test accuracy:		96.24 %
+  test precision:		95.10 %
+  test recall:		97.09 %
+  test f1:		96.09 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 17 of 50 took 7.376s
+  training loss:		0.634355
+  training accuracy:		99.57 %
+  test loss:			0.626021
+  test accuracy:		96.77 %
+  test precision:		97.03 %
+  test recall:		95.64 %
+  test f1:		96.33 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 18 of 50 took 7.330s
+  training loss:		0.618634
+  training accuracy:		99.43 %
+  test loss:			0.626578
+  test accuracy:		96.24 %
+  test precision:		95.79 %
+  test recall:		95.90 %
+  test f1:		95.85 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 19 of 50 took 7.411s
+  training loss:		0.602415
+  training accuracy:		99.57 %
+  test loss:			0.622161
+  test accuracy:		96.24 %
+  test precision:		95.31 %
+  test recall:		96.50 %
+  test f1:		95.90 %
+  max test f1:		96.48 %
+  f1 max num epochs:4
+Epoch 20 of 50 took 7.242s
+  training loss:		0.606094
+  training accuracy:		98.86 %
+  test loss:			0.617084
+  test accuracy:		97.31 %
+  test precision:		97.07 %
+  test recall:		97.16 %
+  test f1:		97.12 %
+  max test f1:		97.12 %
+  f1 max num epochs:20
+Epoch 21 of 50 took 7.197s
+  training loss:		0.561545
+  training accuracy:		99.43 %
+  test loss:			0.611699
+  test accuracy:		97.85 %
+  test precision:		98.08 %
+  test recall:		97.14 %
+  test f1:		97.61 %
+  max test f1:		97.61 %
+  f1 max num epochs:21
+Epoch 22 of 50 took 7.195s
+  training loss:		0.580215
+  training accuracy:		99.00 %
+  test loss:			0.627138
+  test accuracy:		95.70 %
+  test precision:		94.69 %
+  test recall:		96.17 %
+  test f1:		95.42 %
+  max test f1:		97.61 %
+  f1 max num epochs:21
+Epoch 23 of 50 took 7.204s
+  training loss:		0.547149
+  training accuracy:		99.00 %
+  test loss:			0.641477
+  test accuracy:		94.62 %
+  test precision:		92.96 %
+  test recall:		96.10 %
+  test f1:		94.51 %
+  max test f1:		97.61 %
+  f1 max num epochs:21
+Epoch 24 of 50 took 7.178s
+  training loss:		0.535869
+  training accuracy:		99.00 %
+  test loss:			0.624307
+  test accuracy:		96.24 %
+  test precision:		95.14 %
+  test recall:		96.50 %
+  test f1:		95.82 %
+  max test f1:		97.61 %
+  f1 max num epochs:21
+Epoch 25 of 50 took 7.251s
+  training loss:		0.500546
+  training accuracy:		99.86 %
+  test loss:			0.629119
+  test accuracy:		96.24 %
+  test precision:		95.14 %
+  test recall:		96.50 %
+  test f1:		95.82 %
+  max test f1:		97.61 %
+  f1 max num epochs:21
+Epoch 26 of 50 took 7.211s
+  training loss:		0.496273
+  training accuracy:		99.57 %
+  test loss:			0.621136
+  test accuracy:		96.24 %
+  test precision:		95.31 %
+  test recall:		96.50 %
+  test f1:		95.90 %
+  max test f1:		97.61 %
+  f1 max num epochs:21
+Epoch 27 of 50 took 7.164s
+  training loss:		0.492860
+  training accuracy:		99.43 %
+  test loss:			0.611388
+  test accuracy:		97.85 %
+  test precision:		97.43 %
+  test recall:		98.08 %
+  test f1:		97.76 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 28 of 50 took 7.228s
+  training loss:		0.469398
+  training accuracy:		99.86 %
+  test loss:			0.607880
+  test accuracy:		97.85 %
+  test precision:		97.43 %
+  test recall:		98.08 %
+  test f1:		97.76 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 29 of 50 took 7.180s
+  training loss:		0.471494
+  training accuracy:		99.57 %
+  test loss:			0.621211
+  test accuracy:		96.77 %
+  test precision:		97.04 %
+  test recall:		95.88 %
+  test f1:		96.46 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 30 of 50 took 7.204s
+  training loss:		0.459545
+  training accuracy:		99.14 %
+  test loss:			0.637920
+  test accuracy:		95.16 %
+  test precision:		95.69 %
+  test recall:		93.10 %
+  test f1:		94.38 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 31 of 50 took 7.163s
+  training loss:		0.472205
+  training accuracy:		99.00 %
+  test loss:			0.625506
+  test accuracy:		95.70 %
+  test precision:		96.03 %
+  test recall:		94.38 %
+  test f1:		95.20 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 32 of 50 took 7.210s
+  training loss:		0.441712
+  training accuracy:		99.29 %
+  test loss:			0.628216
+  test accuracy:		95.70 %
+  test precision:		94.50 %
+  test recall:		96.17 %
+  test f1:		95.33 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 33 of 50 took 7.164s
+  training loss:		0.423476
+  training accuracy:		99.86 %
+  test loss:			0.622175
+  test accuracy:		96.24 %
+  test precision:		95.62 %
+  test recall:		96.15 %
+  test f1:		95.88 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 34 of 50 took 7.203s
+  training loss:		0.416302
+  training accuracy:		99.43 %
+  test loss:			0.621953
+  test accuracy:		96.77 %
+  test precision:		96.19 %
+  test recall:		97.07 %
+  test f1:		96.63 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 35 of 50 took 7.169s
+  training loss:		0.404663
+  training accuracy:		99.43 %
+  test loss:			0.624228
+  test accuracy:		96.24 %
+  test precision:		94.93 %
+  test recall:		97.09 %
+  test f1:		96.00 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 36 of 50 took 7.185s
+  training loss:		0.402796
+  training accuracy:		99.29 %
+  test loss:			0.633515
+  test accuracy:		95.16 %
+  test precision:		93.75 %
+  test recall:		96.08 %
+  test f1:		94.90 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 37 of 50 took 7.255s
+  training loss:		0.393522
+  training accuracy:		99.71 %
+  test loss:			0.619475
+  test accuracy:		96.77 %
+  test precision:		96.01 %
+  test recall:		97.07 %
+  test f1:		96.54 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 38 of 50 took 7.233s
+  training loss:		0.401318
+  training accuracy:		99.14 %
+  test loss:			0.615829
+  test accuracy:		97.31 %
+  test precision:		96.36 %
+  test recall:		97.75 %
+  test f1:		97.05 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 39 of 50 took 7.215s
+  training loss:		0.377304
+  training accuracy:		99.43 %
+  test loss:			0.654898
+  test accuracy:		94.62 %
+  test precision:		93.51 %
+  test recall:		95.51 %
+  test f1:		94.50 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 40 of 50 took 7.165s
+  training loss:		0.369443
+  training accuracy:		99.43 %
+  test loss:			0.618415
+  test accuracy:		97.31 %
+  test precision:		96.81 %
+  test recall:		97.16 %
+  test f1:		96.99 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 41 of 50 took 7.203s
+  training loss:		0.358983
+  training accuracy:		99.86 %
+  test loss:			0.614704
+  test accuracy:		96.77 %
+  test precision:		95.96 %
+  test recall:		96.83 %
+  test f1:		96.39 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 42 of 50 took 7.160s
+  training loss:		0.346520
+  training accuracy:		100.00 %
+  test loss:			0.619010
+  test accuracy:		96.77 %
+  test precision:		95.96 %
+  test recall:		96.83 %
+  test f1:		96.39 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 43 of 50 took 7.191s
+  training loss:		0.350206
+  training accuracy:		99.57 %
+  test loss:			0.617688
+  test accuracy:		96.77 %
+  test precision:		95.96 %
+  test recall:		96.83 %
+  test f1:		96.39 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 44 of 50 took 7.136s
+  training loss:		0.336952
+  training accuracy:		99.86 %
+  test loss:			0.618691
+  test accuracy:		96.24 %
+  test precision:		96.07 %
+  test recall:		95.31 %
+  test f1:		95.68 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 45 of 50 took 7.176s
+  training loss:		0.327074
+  training accuracy:		99.86 %
+  test loss:			0.620628
+  test accuracy:		96.77 %
+  test precision:		96.44 %
+  test recall:		96.23 %
+  test f1:		96.34 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 46 of 50 took 7.163s
+  training loss:		0.334817
+  training accuracy:		99.71 %
+  test loss:			0.619433
+  test accuracy:		96.77 %
+  test precision:		95.96 %
+  test recall:		96.83 %
+  test f1:		96.39 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 47 of 50 took 7.154s
+  training loss:		0.319130
+  training accuracy:		100.00 %
+  test loss:			0.620732
+  test accuracy:		96.24 %
+  test precision:		95.79 %
+  test recall:		95.90 %
+  test f1:		95.85 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 48 of 50 took 7.193s
+  training loss:		0.326092
+  training accuracy:		99.57 %
+  test loss:			0.623645
+  test accuracy:		95.70 %
+  test precision:		94.90 %
+  test recall:		95.57 %
+  test f1:		95.24 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 49 of 50 took 7.155s
+  training loss:		0.324083
+  training accuracy:		99.86 %
+  test loss:			0.623428
+  test accuracy:		95.70 %
+  test precision:		94.90 %
+  test recall:		95.57 %
+  test f1:		95.24 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Epoch 50 of 50 took 7.190s
+  training loss:		0.314032
+  training accuracy:		99.86 %
+  test loss:			0.623845
+  test accuracy:		95.70 %
+  test precision:		94.90 %
+  test recall:		95.57 %
+  test f1:		95.24 %
+  max test f1:		97.76 %
+  f1 max num epochs:27
+Final results:
+  test loss:			0.623845
+  test accuracy:		95.70 %
+  test precision:		94.90 %
+  test f1:		95.24 %
+  max test f1:		97.76 %
+  f1 max num epochs:27

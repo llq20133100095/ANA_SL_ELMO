@@ -1,0 +1,2717 @@
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	vmod	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+dobj	rcmod	pobj	prep	root	prep	pobj	rcmod	dobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+conj	nn	dobj	root	dobj	
+dobj	root	prep	pobj	
+nn	pobj	prep	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	dobj	root	dobj	rcmod	dobj	
+nsubj	root	prep	pobj	
+pcomp	prep	acomp	ccomp	root	ccomp	acomp	prep	pcomp	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	nn	
+nsubj	root	prep	pobj	
+nn	pobj	prep	vmod	dobj	root	dobj	vmod	prep	pobj	
+nsubj	root	nsubj	conj	
+nn	nsubj	root	nsubj	
+nn	pobj	prep	root	prep	pobj	
+nsubjpass	root	dobj	
+dobj	xcomp	root	prep	pcomp	pobj	
+dobj	root	dobj	rcmod	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	pobj	prep	pobj	prep	root	dobj	
+pobj	prep	nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	nn	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	conj	
+pobj	prep	appos	nsubj	root	nsubj	appos	prep	pobj	prep	pobj	
+nsubjpass	root	prep	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	pcomp	prep	root	prep	pcomp	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+pobj	prep	pobj	prep	root	nsubj	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	rcmod	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+nn	conj	nsubj	rcmod	root	rcmod	nsubj	conj	
+nn	nsubj	root	nsubj	
+nn	nsubj	root	nsubj	
+pobj	prep	root	prep	pobj	
+nsubj	root	xcomp	prep	pcomp	dobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	vmod	dobj	
+nsubj	root	xcomp	dobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+pobj	prep	root	dobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	rcmod	prep	pobj	
+nsubj	advcl	root	advcl	dobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	conj	root	conj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	ccomp	nsubj	vmod	dobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	conj	dep	root	dep	conj	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+xcomp	dep	pobj	prep	dep	root	dep	prep	pobj	dep	xcomp	prep	pobj	
+nsubjpass	root	xcomp	dobj	vmod	prep	pobj	vmod	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nn	pobj	prep	dobj	dep	root	dep	dobj	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	rcmod	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	root	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	conj	root	conj	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+dobj	xcomp	root	xcomp	dobj	rcmod	prep	pobj	
+pobj	prep	nsubj	root	root	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	conj	root	conj	dobj	
+nn	pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+root	root	vmod	prep	pcomp	dobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+poss	nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pcomp	
+nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	nn	
+nsubjpass	root	prep	pobj	
+nsubj	rcmod	pobj	prep	vmod	conj	pobj	prep	vmod	pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	conj	vmod	prep	pobj	rcmod	prep	pobj	
+nsubj	root	dobj	
+nn	pobj	prep	vmod	nsubjpass	root	nsubjpass	vmod	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nn	dobj	advcl	ccomp	root	ccomp	advcl	dobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	dep	root	dep	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+nn	nsubj	root	nsubj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	conj	
+nsubj	root	prep	pobj	
+nn	dobj	vmod	root	vmod	dobj	
+nsubj	root	dobj	
+nsubj	dep	root	dep	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+conj	pobj	prep	nsubj	root	dobj	
+nsubj	root	prep	pobj	
+dobj	advcl	root	advcl	dobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+conj	nsubj	ccomp	vmod	root	vmod	ccomp	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	xcomp	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+root	root	vmod	prep	pobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+pobj	prep	conj	rcmod	pobj	prep	root	prep	pobj	rcmod	conj	prep	pobj	prep	pobj	
+conj	pobj	prep	root	advcl	prep	root	root	
+nsubj	root	prep	pcomp	dobj	
+nsubj	root	prep	pobj	
+ccomp	root	ccomp	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	advcl	root	nsubj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	dobj	vmod	dobj	
+dobj	dep	pcomp	prep	root	prep	pcomp	dep	dobj	vmod	dobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	acomp	dep	root	dep	acomp	prep	pobj	rcmod	dobj	
+nsubjpass	root	prep	pobj	
+dobj	conj	root	conj	dobj	prep	pobj	
+dobj	root	prep	pobj	
+poss	appos	pobj	prep	dep	root	dep	prep	pobj	appos	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+amod	pobj	prep	pcomp	prep	root	prep	pcomp	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	acomp	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	advcl	root	advcl	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	nn	
+nsubj	root	prep	pobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	advcl	root	advcl	nsubjpass	prep	pobj	
+root	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	nn	
+pobj	prep	dobj	root	dobj	prep	pobj	vmod	prep	pobj	
+dobj	root	xcomp	prep	pobj	
+nn	pobj	prep	ccomp	root	ccomp	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	conj	root	conj	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	conj	root	conj	dobj	rcmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	prep	pobj	
+nsubj	root	acomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+rcmod	nsubj	root	nsubj	rcmod	prep	pobj	
+dobj	vmod	root	vmod	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	ccomp	root	ccomp	dobj	
+pobj	prep	root	prep	pobj	amod	prep	pobj	
+root	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	root	nsubj	
+nn	nsubj	root	nsubj	
+nsubj	ccomp	root	ccomp	nsubj	prep	pobj	
+poss	pobj	prep	dobj	pcomp	prep	appos	pobj	prep	root	prep	pobj	appos	prep	pcomp	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	rcmod	pobj	prep	root	prep	pobj	rcmod	dobj	prep	pobj	
+dobj	pcomp	prep	dobj	root	dobj	prep	pcomp	dobj	prep	pobj	
+dobj	conj	root	conj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	xcomp	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	xcomp	dobj	
+poss	dobj	rcmod	nsubjpass	root	nsubjpass	rcmod	dobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nn	nsubj	pcomp	prep	root	prep	pcomp	nsubj	
+dobj	root	prep	pobj	
+dobj	pcomp	prep	pobj	prep	dobj	root	dobj	prep	pobj	prep	pcomp	dobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+poss	pobj	prep	pobj	prep	amod	nsubjpass	root	nsubjpass	amod	prep	pobj	prep	pobj	
+nsubj	advcl	root	advcl	xcomp	nsubj	
+dobj	xcomp	root	xcomp	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	xcomp	root	xcomp	ccomp	nsubjpass	
+nsubj	root	xcomp	prep	pobj	
+pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	conj	
+xcomp	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+nn	dobj	pcomp	prep	xcomp	root	xcomp	prep	pcomp	dobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	vmod	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	vmod	prep	pobj	
+dobj	root	prep	dep	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	ccomp	nsubjpass	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pcomp	dobj	
+amod	pobj	prep	csubj	root	csubj	prep	pobj	
+poss	dobj	root	dobj	
+pobj	prep	pobj	prep	root	nsubj	
+nsubjpass	root	prep	pobj	
+nsubj	conj	root	conj	dobj	
+dobj	root	prep	pobj	
+nsubj	root	nsubj	conj	prep	pobj	
+nn	conj	pobj	prep	root	prep	pobj	conj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	rcmod	dobj	appos	
+pobj	prep	xcomp	dep	root	dep	xcomp	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	prep	pobj	
+amod	pobj	prep	advmod	pcomp	prep	dobj	dep	root	dep	dobj	prep	pcomp	advmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	vmod	root	vmod	dobj	prep	pobj	
+amod	dobj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pcomp	dobj	
+dobj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	
+dobj	advcl	root	advcl	dobj	vmod	prep	pobj	
+dobj	ccomp	vmod	dobj	root	dobj	vmod	ccomp	dobj	prep	pobj	
+root	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	rcmod	pobj	prep	ccomp	root	ccomp	prep	pobj	rcmod	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+conj	nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubjpass	rcmod	pobj	prep	pobj	prep	vmod	pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	prep	pobj	rcmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	root	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	nn	
+nsubjpass	root	prep	pobj	
+root	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	
+dobj	ccomp	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	conj	root	conj	nsubj	prep	pobj	
+nsubj	root	dobj	
+dobj	xcomp	advcl	root	advcl	xcomp	dobj	rcmod	prep	pobj	conj	
+nsubj	root	prep	pcomp	dobj	
+nsubj	advcl	root	advcl	prep	pobj	nn	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	rcmod	nsubj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubj	root	nsubj	rcmod	dobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nn	nsubj	root	nsubj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	nn	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	ccomp	prep	pobj	
+dobj	vmod	pobj	conj	prep	root	prep	conj	pobj	vmod	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	advcl	advcl	root	advcl	advcl	prep	pobj	
+nn	dobj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	dep	root	dep	prep	pobj	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	advmod	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	vmod	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	vmod	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	
+dobj	root	prep	pobj	amod	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+nn	nsubj	root	nsubj	
+pobj	prep	pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	vmod	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	ccomp	rcmod	pobj	prep	root	prep	pobj	rcmod	ccomp	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	dobj	vmod	
+nsubj	root	dobj	nn	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	dobj	
+nsubj	root	dobj	
+conj	conj	pobj	prep	nsubj	root	nsubj	prep	pobj	conj	prep	pobj	
+pobj	prep	pobj	prep	pobj	prep	pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	prep	pobj	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pcomp	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	dep	root	dep	dobj	prep	pobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubj	root	prep	pobj	
+dobj	xcomp	xcomp	xcomp	root	xcomp	xcomp	xcomp	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	ccomp	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	advcl	root	advcl	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	xcomp	prep	pobj	
+poss	nsubj	root	nsubj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	conj	root	conj	dobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	prep	pobj	vmod	prep	pobj	nn	
+nsubj	root	nsubj	ccomp	prep	pobj	
+amod	nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+iobj	ccomp	root	ccomp	iobj	prep	pobj	
+nn	dobj	rcmod	pobj	prep	dobj	root	dobj	prep	pobj	rcmod	dobj	
+pobj	prep	pobj	prep	vmod	pobj	prep	dobj	xcomp	xcomp	root	xcomp	xcomp	dobj	prep	pobj	vmod	prep	pobj	vmod	dobj	
+nsubj	root	dobj	
+pobj	prep	root	xcomp	dobj	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	conj	root	conj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nn	nsubjpass	root	nsubjpass	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+nsubj	parataxis	root	parataxis	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	advcl	root	advcl	dobj	conj	
+nsubj	root	xcomp	nsubj	
+dep	nsubj	dep	root	dep	prep	pobj	
+dobj	root	vmod	xcomp	nsubj	prep	pobj	
+dobj	root	dobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	appos	
+conj	nsubj	root	nsubj	prep	pobj	
+pobj	prep	root	prep	pobj	
+nsubjpass	ccomp	root	ccomp	nsubjpass	rcmod	prep	pobj	
+dobj	root	dobj	prep	pobj	
+root	root	dep	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	ccomp	root	ccomp	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	pcomp	prep	xcomp	rcmod	dobj	root	dobj	rcmod	xcomp	prep	pcomp	prep	pobj	amod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+pobj	prep	ccomp	root	ccomp	prep	pobj	
+appos	nsubjpass	root	prep	pobj	
+nsubj	conj	root	conj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	vmod	dobj	vmod	root	vmod	dobj	vmod	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pcomp	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	xcomp	dobj	vmod	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	amod	
+nsubj	root	dobj	
+pobj	prep	xcomp	advcl	root	advcl	xcomp	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	dobj	vmod	dobj	
+nsubjpass	root	prep	pobj	
+dobj	conj	root	conj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	conj	prep	pobj	
+pobj	prep	nsubj	root	root	
+nn	pobj	prep	root	prep	pobj	
+nsubjpass	dep	root	dep	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubj	root	dobj	
+nsubj	advcl	root	advcl	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	xcomp	root	xcomp	dobj	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nn	dobj	xcomp	root	xcomp	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	advcl	rcmod	dobj	root	dobj	rcmod	advcl	prep	pobj	
+nsubj	root	dobj	nn	
+pobj	prep	rcmod	appos	nsubj	root	nsubj	appos	rcmod	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	nn	
+nsubj	root	prep	pobj	
+pcomp	prep	root	prep	pcomp	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	prep	pobj	
+nn	dobj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	rcmod	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubj	advcl	dep	root	dep	advcl	nsubj	vmod	prep	pobj	
+root	root	rcmod	dobj	
+nsubj	root	xcomp	nsubj	
+nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	xcomp	prep	pobj	
+pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	
+nsubj	root	xcomp	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+conj	nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	
+pobj	prep	root	dobj	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	vmod	root	vmod	prep	pobj	prep	pobj	
+appos	root	appos	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	nsubj	root	root	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	xcomp	root	xcomp	prep	pobj	conj	
+root	root	prep	pobj	vmod	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	dobj	rcmod	dobj	root	dobj	rcmod	dobj	prep	pobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	nn	
+nsubj	root	ccomp	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	rcmod	dobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	advcl	ccomp	root	ccomp	advcl	prep	pobj	
+nsubj	root	xcomp	
+nsubj	root	nsubj	prep	pobj	
+root	root	vmod	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	xcomp	dobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	dep	root	dep	prep	pobj	vmod	prep	pobj	
+pobj	prep	dobj	root	prep	pcomp	
+nsubj	root	dobj	dep	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+dobj	pcomp	prep	conj	root	conj	prep	pcomp	dobj	prep	pobj	
+nsubj	advcl	root	advcl	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	xcomp	vmod	pobj	prep	root	prep	pobj	vmod	xcomp	dobj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	prep	pobj	
+pobj	prep	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+conj	pobj	prep	root	prep	pobj	conj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	vmod	dobj	
+dobj	root	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	amod	
+dobj	root	xcomp	prep	pobj	
+dobj	xcomp	ccomp	rcmod	dobj	vmod	pobj	prep	root	prep	pobj	vmod	dobj	rcmod	ccomp	xcomp	prep	pobj	nn	
+dobj	advcl	xcomp	root	xcomp	advcl	dobj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	dep	rcmod	pobj	prep	vmod	root	vmod	prep	pobj	rcmod	dep	prep	pobj	rcmod	prep	pobj	
+dobj	pcomp	prep	root	prep	pcomp	dobj	vmod	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	conj	root	conj	dobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	nn	
+nn	dobj	rcmod	pobj	prep	root	prep	pobj	rcmod	dobj	
+pobj	prep	dobj	pcomp	prep	root	prep	pcomp	dobj	prep	pobj	vmod	prep	pobj	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	vmod	dobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+root	root	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubj	root	nsubj	vmod	dobj	
+conj	nsubj	advcl	ccomp	root	ccomp	advcl	acomp	
+nsubj	root	dobj	
+root	root	vmod	prep	pobj	
+pcomp	prep	rcmod	nsubj	root	nsubj	rcmod	prep	pcomp	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	conj	
+nsubjpass	root	nsubjpass	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+advcl	root	advcl	vmod	dobj	
+nn	pobj	prep	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	xcomp	dobj	
+pobj	prep	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	pobj	prep	conj	root	conj	prep	pobj	prep	pobj	prep	pobj	
+poss	pobj	prep	root	prep	pobj	
+nn	nsubj	root	nsubj	
+amod	nsubj	root	nsubj	
+pobj	prep	nsubj	conj	root	conj	prep	pcomp	pobj	
+nn	nsubj	root	prep	pobj	
+nsubj	root	dep	pobj	
+nsubj	root	prep	pobj	nn	
+dobj	root	dobj	prep	pobj	
+pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	pcomp	prep	root	prep	pcomp	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	rcmod	dobj	root	dobj	rcmod	prep	pobj	prep	pobj	prep	pobj	
+root	root	vmod	dobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+poss	root	root	
+pobj	prep	appos	pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	appos	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+dobj	csubj	root	dobj	
+dobj	root	dobj	rcmod	prep	pobj	
+pobj	prep	rcmod	pobj	prep	nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	nn	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+dobj	xcomp	root	xcomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	rcmod	pobj	prep	root	prep	pobj	rcmod	nsubj	prep	pobj	
+pobj	prep	rcmod	pobj	prep	xcomp	root	xcomp	prep	pobj	rcmod	prep	pobj	prep	pobj	
+dobj	root	dobj	rcmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	ccomp	root	ccomp	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	dobj	
+advcl	root	advcl	rcmod	dobj	
+nsubj	root	dobj	
+pobj	prep	nsubj	root	dobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+dobj	root	dobj	vmod	prep	pobj	
+appos	pobj	prep	nsubj	root	dobj	
+dobj	xcomp	xcomp	root	xcomp	xcomp	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	rcmod	dobj	root	dobj	rcmod	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	prep	pobj	nn	
+nsubj	root	dep	prep	pobj	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	ccomp	root	ccomp	prep	pobj	prep	pobj	vmod	prep	pobj	
+nsubj	root	dobj	
+dobj	xcomp	root	xcomp	dobj	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	
+nsubj	advcl	conj	root	conj	advcl	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+dobj	ccomp	advcl	root	advcl	ccomp	dobj	prep	pcomp	dobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+dobj	xcomp	ccomp	root	ccomp	xcomp	dobj	prep	pobj	
+nsubj	ccomp	root	ccomp	nsubj	vmod	prep	pobj	
+nn	nsubjpass	root	nsubjpass	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	parataxis	root	parataxis	prep	pobj	
+nsubj	ccomp	vmod	dobj	root	dobj	vmod	ccomp	dobj	
+pobj	prep	vmod	root	nsubj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	poss	
+appos	nsubj	root	nsubj	appos	conj	
+dobj	root	dobj	rcmod	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+conj	nsubj	root	nsubj	vmod	prep	pobj	conj	
+nsubj	xcomp	root	xcomp	prep	pcomp	prep	pobj	
+dobj	root	dobj	vmod	prep	pobj	nn	
+root	root	rcmod	dobj	prep	pobj	
+dobj	root	dobj	rcmod	prep	pobj	
+nn	pobj	prep	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	vmod	dobj	
+nsubj	ccomp	root	ccomp	dobj	
+pobj	prep	root	xcomp	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	amod	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	root	
+amod	nsubj	ccomp	root	ccomp	nsubj	nn	
+pobj	prep	root	prep	pobj	rcmod	dobj	
+nsubj	root	dobj	
+nsubj	root	dobj	vmod	dobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	vmod	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	advcl	root	advcl	dobj	
+pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+appos	dobj	root	dobj	appos	rcmod	prep	pobj	
+pobj	prep	pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nn	dobj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	vmod	root	vmod	prep	pobj	prep	pobj	
+root	root	rcmod	dobj	nn	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+poss	nsubj	root	nsubj	
+dobj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	vmod	nsubj	ccomp	root	ccomp	nsubj	vmod	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nn	dobj	xcomp	root	xcomp	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	rcmod	pobj	prep	root	prep	pobj	rcmod	prep	pobj	prep	pobj	
+poss	dobj	root	dobj	
+nsubj	root	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+pobj	prep	pobj	prep	advmod	root	advmod	prep	pobj	prep	pobj	prep	pobj	
+nsubj	advcl	ccomp	root	ccomp	advcl	prep	pobj	
+pobj	prep	nsubj	root	root	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	conj	
+dobj	root	xcomp	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	pcomp	prep	root	prep	pcomp	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nn	nsubjpass	root	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	nn	
+nsubj	advcl	root	advcl	conj	
+nsubjpass	ccomp	advcl	ccomp	root	ccomp	advcl	ccomp	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+ccomp	root	ccomp	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	dobj	
+nsubj	root	dobj	conj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pcomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	advcl	root	advcl	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	vmod	nsubj	root	nsubj	vmod	prep	pobj	prep	pobj	
+nn	root	dep	
+nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubj	root	nsubj	vmod	dobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	vmod	pobj	prep	root	prep	pobj	vmod	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	nsubj	ccomp	root	ccomp	prep	pobj	
+pobj	prep	dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+amod	dobj	vmod	dobj	root	dobj	vmod	dobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	vmod	dobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nn	dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	rcmod	pobj	prep	root	prep	pobj	rcmod	prep	pobj	prep	pobj	
+amod	dobj	pcomp	prep	root	prep	pcomp	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pcomp	pobj	conj	prep	pobj	
+root	root	prep	pobj	
+nsubjpass	root	prep	pobj	num	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+amod	nsubjpass	root	nsubjpass	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	ccomp	root	ccomp	prep	pobj	vmod	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	conj	prep	pobj	
+pobj	prep	nsubjpass	advcl	root	advcl	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nn	nsubjpass	root	nsubjpass	
+nn	pobj	prep	dobj	conj	root	conj	dobj	prep	pobj	
+nsubj	root	dobj	
+amod	dobj	xcomp	conj	root	conj	xcomp	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nn	root	root	
+amod	conj	nsubj	conj	ccomp	root	ccomp	conj	nsubj	conj	
+nn	root	root	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	xcomp	xcomp	root	xcomp	xcomp	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nn	dobj	conj	root	conj	dobj	
+nsubj	conj	root	conj	dobj	
+nsubjpass	root	prep	pobj	
+dobj	advcl	root	advcl	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	acomp	prep	pobj	
+dobj	conj	root	conj	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nn	pobj	prep	nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	dep	conj	root	conj	dep	dobj	prep	pobj	
+nn	pobj	prep	root	prep	pobj	
+nsubj	root	prep	pobj	
+conj	pobj	prep	xcomp	root	xcomp	xcomp	dobj	
+conj	pobj	prep	dobj	root	dobj	prep	pobj	conj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	prep	pobj	
+pobj	prep	root	ccomp	nsubj	
+nsubj	ccomp	root	ccomp	nsubj	vmod	prep	pobj	vmod	dobj	
+nsubj	dep	dobj	root	dobj	dep	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	conj	root	conj	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nn	pobj	prep	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pcomp	prep	pobj	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	acomp	root	acomp	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	advcl	root	advcl	dep	prep	conj	pobj	
+pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	conj	root	conj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	dobj	conj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	conj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	nn	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	amod	
+nsubj	root	xcomp	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	dobj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	pcomp	prep	root	prep	pcomp	nsubj	prep	pobj	
+pobj	prep	ccomp	vmod	nsubj	root	prep	pobj	
+root	root	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nn	nsubj	root	nsubj	
+pobj	prep	nsubjpass	root	dobj	
+root	root	vmod	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	parataxis	root	parataxis	dobj	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+conj	pobj	prep	nsubj	root	nsubj	vmod	dobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	conj	root	conj	prep	pobj	
+poss	pobj	prep	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+dobj	pcomp	prep	nsubj	root	nsubj	prep	pcomp	dobj	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	rcmod	pobj	conj	prep	root	prep	conj	pobj	rcmod	prep	pobj	rcmod	prep	pobj	prep	pobj	
+conj	pobj	prep	pobj	prep	dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	advcl	root	advcl	xcomp	prep	pobj	
+dobj	root	dobj	vmod	dobj	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+conj	nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	amod	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	dobj	vmod	dobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	xcomp	dobj	
+dobj	pcomp	prep	ccomp	root	ccomp	prep	pcomp	dobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+root	root	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nn	nsubj	root	nsubj	
+nn	nsubj	root	root	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubj	root	dobj	
+conj	nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	amod	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	rcmod	dobj	amod	
+pobj	prep	root	nsubj	
+tmod	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pcomp	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	conj	
+root	root	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+dobj	conj	xcomp	root	xcomp	conj	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	conj	root	conj	dobj	rcmod	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+pobj	prep	vmod	root	vmod	prep	pobj	appos	
+nn	pobj	prep	ccomp	root	ccomp	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubj	root	dobj	prep	pobj	conj	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+conj	nsubj	ccomp	dep	root	dep	ccomp	nsubj	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+root	root	vmod	dobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	advcl	root	advcl	dobj	
+nsubjpass	root	xcomp	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+root	root	prep	pobj	
+nsubjpass	root	prep	pobj	nn	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	dobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+root	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pcomp	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nn	appos	nsubj	root	nsubj	appos	
+nsubjpass	root	prep	pobj	
+dobj	xcomp	root	xcomp	dobj	prep	pobj	
+pobj	prep	pobj	prep	acomp	root	acomp	prep	pobj	prep	pobj	rcmod	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	ccomp	prep	pobj	
+nsubj	root	dobj	conj	
+nsubj	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	dobj	
+nn	nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	prep	pobj	
+nsubj	root	dobj	vmod	prep	pobj	
+dobj	rcmod	dobj	root	dobj	rcmod	prep	pobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+dobj	pcomp	prep	root	prep	pcomp	dobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	dobj	
+dobj	root	prep	pobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+nsubjpass	root	nsubjpass	rcmod	dobj	
+ccomp	root	ccomp	xcomp	dobj	
+root	root	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	vmod	prep	pobj	
+dobj	pcomp	prep	pobj	prep	root	prep	pobj	prep	pcomp	dobj	vmod	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+dobj	vmod	pcomp	prep	root	prep	pcomp	vmod	prep	pobj	
+nsubj	root	prep	pobj	conj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+dobj	xcomp	root	xcomp	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+conj	nsubj	root	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubj	root	advcl	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nn	nsubj	root	nsubj	
+pobj	prep	pcomp	prep	root	prep	pcomp	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+nn	dobj	root	dobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubjpass	root	xcomp	prep	pobj	
+pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	xcomp	root	xcomp	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+dobj	xcomp	root	xcomp	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	vmod	prep	pobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+nsubj	ccomp	advmod	root	advmod	ccomp	dobj	
+nsubj	root	dobj	
+nn	nsubj	root	nsubj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	conj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pcomp	dobj	
+nsubj	root	dobj	conj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pcomp	nsubj	
+dobj	vmod	pobj	prep	nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	pcomp	prep	root	prep	pcomp	prep	pobj	
+conj	pobj	prep	nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+poss	appos	nsubj	root	nsubj	appos	nn	
+nsubj	root	ccomp	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	xcomp	ccomp	root	ccomp	xcomp	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	rcmod	dobj	
+nn	root	root	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	dep	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+dobj	rcmod	root	rcmod	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nn	pobj	prep	pobj	prep	pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	prep	pobj	
+root	root	prep	pobj	
+dobj	pcomp	prep	rcmod	root	rcmod	prep	pcomp	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dep	pobj	prep	ccomp	root	ccomp	prep	pobj	dep	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	nsubj	root	ccomp	dobj	
+nsubj	conj	dep	root	dep	conj	nsubj	prep	pobj	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+amod	nsubjpass	root	nsubjpass	
+dobj	vmod	pobj	prep	vmod	dobj	root	dobj	vmod	prep	pobj	vmod	dobj	prep	pobj	nn	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	
+nsubj	root	dobj	
+dobj	xcomp	root	xcomp	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	advcl	root	advcl	dobj	prep	pobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	vmod	prep	pobj	
+pobj	prep	dobj	xcomp	root	xcomp	dobj	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	vmod	dobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubj	root	prep	pcomp	nsubj	
+pobj	prep	conj	dobj	root	dobj	conj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+root	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	pcomp	prep	root	prep	pcomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	dep	root	dep	prep	pobj	
+nsubjpass	root	conj	dobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+dobj	advcl	advcl	root	advcl	advcl	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	
+nn	nsubj	ccomp	root	ccomp	nsubj	prep	pobj	
+nsubj	root	advmod	dep	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	dep	root	dep	prep	pobj	prep	pobj	
+nsubj	conj	root	conj	nsubj	rcmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	advcl	root	advcl	dobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pcomp	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	vmod	pobj	prep	pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	vmod	prep	pobj	prep	pobj	
+nsubj	root	vmod	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	dobj	root	dobj	prep	pobj	vmod	prep	pobj	conj	nn	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+conj	pobj	prep	pcomp	prep	root	prep	pcomp	prep	pobj	conj	prep	pobj	
+nsubjpass	root	prep	pobj	
+conj	pobj	prep	root	prep	pobj	rcmod	xcomp	prep	pobj	
+conj	nsubj	dep	nsubjpass	root	nsubjpass	dep	dobj	
+nn	nsubj	root	nsubj	
+nsubjpass	root	nsubjpass	vmod	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	advmod	prep	pobj	
+poss	pobj	prep	pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+nsubj	conj	root	conj	prep	pobj	
+dobj	root	prep	pobj	
+rcmod	nsubj	root	nsubj	rcmod	prep	pobj	
+nsubj	root	dobj	vmod	xcomp	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	amod	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	nn	
+dobj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	rcmod	prep	pobj	
+nsubj	root	prep	pobj	
+nn	pobj	prep	dobj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+nn	nsubj	root	root	
+nsubjpass	root	prep	pobj	prep	pobj	prep	pobj	
+xcomp	ccomp	root	ccomp	xcomp	prep	pobj	
+pobj	prep	rcmod	dobj	pcomp	prep	pobj	prep	root	prep	pobj	prep	pcomp	dobj	rcmod	prep	pobj	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	nn	
+nsubj	ccomp	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	dep	dobj	ccomp	root	ccomp	dobj	dep	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	xcomp	ccomp	nsubj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	nsubjpass	dep	root	dep	prep	pobj	prep	pobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	ccomp	root	ccomp	prep	pobj	rcmod	prep	pobj	
+nsubj	root	xcomp	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	ccomp	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+pobj	prep	nsubj	root	dobj	conj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	advcl	root	advcl	nsubj	vmod	dobj	
+nn	nsubjpass	ccomp	root	ccomp	nsubjpass	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	dobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+amod	pobj	prep	dobj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nn	pobj	prep	nsubj	root	nsubj	prep	pobj	
+poss	pobj	prep	dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	prep	pobj	prep	pobj	
+pobj	prep	vmod	nsubjpass	root	nsubjpass	rcmod	prep	pobj	
+nn	pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	
+amod	root	root	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	vmod	dobj	
+dobj	dep	root	dep	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	vmod	nsubj	root	nsubj	vmod	dobj	vmod	prep	pobj	
+conj	pobj	prep	nsubj	root	dobj	rcmod	dobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	xcomp	dobj	
+nn	pobj	prep	pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	
+nsubj	ccomp	root	ccomp	dobj	
+dobj	rcmod	dobj	vmod	root	vmod	dobj	rcmod	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pcomp	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	vmod	conj	dobj	root	dobj	conj	vmod	dobj	prep	pobj	
+poss	dobj	rcmod	dobj	xcomp	root	xcomp	dobj	rcmod	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nn	nsubj	rcmod	root	rcmod	nsubj	
+dobj	root	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	dobj	
+nn	nsubj	root	nsubj	nn	
+nsubj	root	dobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	vmod	
+nsubjpass	root	prep	pobj	
+conj	nsubj	root	acomp	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+appos	pobj	prep	dobj	xcomp	root	xcomp	dobj	prep	pobj	appos	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+dobj	xcomp	root	xcomp	dobj	prep	pobj	
+pobj	prep	pobj	prep	conj	root	conj	prep	pobj	prep	pobj	vmod	prep	pobj	
+dobj	advcl	vmod	root	vmod	advcl	dobj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	xcomp	prep	pobj	
+nn	dobj	pcomp	prep	pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pcomp	dobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+poss	dobj	xcomp	root	xcomp	prep	pobj	nn	
+root	root	vmod	prep	pobj	conj	
+pobj	prep	root	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	rcmod	root	rcmod	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nn	conj	nsubj	root	nsubj	conj	
+nsubj	root	dobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+conj	nsubjpass	root	prep	pobj	
+nsubj	conj	root	conj	prep	pobj	
+pobj	prep	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	nsubj	root	ccomp	dobj	
+dobj	root	dobj	prep	pobj	
+nsubj	rcmod	root	rcmod	nsubj	prep	pobj	
+conj	dobj	root	prep	pobj	
+pobj	prep	appos	dobj	xcomp	conj	root	conj	xcomp	dobj	appos	rcmod	dobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	conj	root	conj	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	
+nsubj	root	ccomp	ccomp	
+nsubj	root	prep	pobj	amod	
+nsubjpass	root	prep	pobj	
+dobj	vmod	root	vmod	prep	pobj	conj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nn	pobj	prep	nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+vmod	nsubj	root	dobj	
+pobj	prep	root	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nn	nsubj	root	nsubj	prep	pobj	
+nsubj	root	conj	pobj	
+dobj	root	dobj	rcmod	xcomp	nsubj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	xcomp	xcomp	prep	pobj	
+appos	nsubj	root	nsubj	appos	prep	pobj	
+root	root	prep	pobj	
+dobj	pcomp	prep	pcomp	prep	pobj	prep	root	prep	pobj	prep	pcomp	prep	pcomp	dobj	vmod	prep	pobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+conj	pobj	prep	nsubj	root	nsubj	prep	pobj	conj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	dobj	vmod	dobj	
+dobj	root	dobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	ccomp	
+nsubjpass	root	advmod	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	pobj	prep	nsubjpass	ccomp	root	ccomp	nsubjpass	prep	pobj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+amod	nsubjpass	root	prep	pobj	
+conj	pobj	dep	root	dep	pobj	conj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	csubj	root	dobj	
+pobj	prep	root	advmod	
+dobj	xcomp	root	xcomp	dobj	prep	pobj	
+dobj	root	xcomp	dobj	
+nsubj	advcl	vmod	root	vmod	advcl	prep	pobj	
+dobj	root	dobj	vmod	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+dobj	advcl	root	advcl	dobj	prep	pobj	
+nsubj	root	ccomp	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	conj	root	conj	nsubj	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	vmod	prep	pobj	
+dobj	conj	root	conj	prep	pobj	
+nsubj	ccomp	root	ccomp	nsubj	prep	pobj	
+dobj	root	prep	pobj	nn	
+root	root	vmod	prep	pobj	
+root	root	vmod	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	nn	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pcomp	dobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	advcl	prep	pobj	
+nsubjpass	conj	root	conj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	
+pobj	prep	nsubj	root	root	
+nsubj	root	dobj	conj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	advcl	root	advcl	dobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	rcmod	dobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+conj	dobj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+nn	nsubj	root	nsubj	
+dobj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	conj	root	conj	dobj	
+dobj	root	dobj	prep	pobj	
+pobj	prep	nsubj	root	dobj	prep	pobj	
+xcomp	root	xcomp	prep	pcomp	
+dobj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+nsubj	root	prep	pcomp	dobj	
+nsubj	root	acomp	prep	pcomp	npadvmod	
+pobj	prep	pobj	prep	dobj	root	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+conj	root	conj	rcmod	prep	pobj	vmod	dobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	nsubj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+conj	pobj	prep	nsubj	root	prep	pobj	
+nn	pobj	prep	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pcomp	nsubj	
+dobj	root	dobj	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubj	root	dobj	conj	dep	
+nsubjpass	root	prep	pobj	
+nn	nsubj	root	nsubj	
+pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	
+nn	nsubjpass	rcmod	nsubj	root	nsubj	rcmod	nsubjpass	
+nsubjpass	root	prep	pobj	
+nsubj	root	ccomp	
+dobj	root	prep	pobj	
+dobj	advcl	root	advcl	dobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nn	pobj	prep	nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	
+pobj	prep	pcomp	prep	pobj	prep	advcl	xcomp	root	xcomp	advcl	prep	pobj	prep	pcomp	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+conj	root	prep	pobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+root	root	rcmod	prep	pobj	
+pobj	prep	root	rcmod	nsubjpass	
+dobj	vmod	dobj	root	dobj	vmod	dobj	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+amod	pobj	prep	dobj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	nn	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	
+root	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	acomp	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+dobj	conj	ccomp	root	ccomp	conj	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	vmod	nsubj	root	nsubj	vmod	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	dobj	root	dobj	prep	pobj	vmod	prep	pobj	
+nsubj	root	nsubj	rcmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+root	root	vmod	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nn	conj	nsubj	root	nsubj	conj	
+pobj	prep	dobj	conj	root	conj	dobj	prep	pobj	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	
+pobj	prep	vmod	root	nsubjpass	
+appos	pobj	prep	root	prep	pobj	appos	prep	pobj	
+nsubj	root	xcomp	
+nsubjpass	root	prep	pobj	
+pobj	prep	dobj	xcomp	root	xcomp	dobj	prep	pobj	vmod	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	conj	parataxis	dep	root	dep	parataxis	conj	prep	pobj	conj	
+rcmod	dobj	root	dobj	rcmod	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubjpass	root	prep	pobj	
+conj	nn	nsubjpass	root	nsubjpass	
+nn	conj	pobj	prep	root	nsubj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	conj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+conj	pobj	prep	root	prep	pobj	prep	pobj	
+conj	ccomp	root	ccomp	conj	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	root	dobj	
+dobj	xcomp	root	xcomp	dobj	prep	pobj	
+poss	nsubj	root	nsubj	
+pobj	prep	pobj	prep	root	prep	pobj	conj	
+root	root	prep	pobj	
+nn	nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	ccomp	nsubj	
+pobj	prep	dep	root	nsubj	
+nn	pobj	prep	nsubj	root	root	
+nsubj	root	dobj	conj	
+root	root	rcmod	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	
+nsubj	root	prep	pcomp	dobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+conj	nsubj	ccomp	root	ccomp	dobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+nsubj	root	dobj	
+dobj	xcomp	root	xcomp	prep	pobj	
+nsubj	conj	root	conj	dobj	conj	
+pobj	prep	root	ccomp	nsubj	
+pobj	prep	nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	vmod	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	prep	pobj	
+conj	dobj	xcomp	root	xcomp	dobj	conj	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	conj	rcmod	dobj	
+dobj	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	vmod	prep	pobj	
+dobj	root	dobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nn	dobj	rcmod	pobj	prep	nsubj	root	nsubj	prep	pobj	rcmod	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+xcomp	rcmod	pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	rcmod	xcomp	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	ccomp	conj	root	conj	ccomp	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pcomp	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	
+dobj	vmod	nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+dobj	xcomp	vmod	pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	vmod	xcomp	dobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	dobj	vmod	dobj	
+nsubj	root	tmod	
+nsubj	root	dobj	prep	pobj	
+dobj	root	xcomp	dobj	
+pobj	prep	appos	nsubj	root	nsubj	appos	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	vmod	dobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	ccomp	root	ccomp	nsubj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+poss	pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	ccomp	nsubj	
+pobj	prep	pcomp	prep	root	prep	pcomp	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+root	root	prep	pobj	rcmod	xcomp	dobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+nn	nsubjpass	root	nsubjpass	
+nsubjpass	root	prep	pobj	
+pobj	prep	rcmod	pobj	prep	root	prep	pobj	rcmod	prep	pobj	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	conj	root	conj	prep	pobj	
+pobj	prep	vmod	rcmod	appos	dobj	root	dobj	appos	rcmod	vmod	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	xcomp	rcmod	root	rcmod	xcomp	prep	pobj	
+nsubj	root	dobj	
+dobj	parataxis	root	parataxis	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	prep	pobj	
+dobj	vmod	dobj	root	dobj	vmod	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+root	root	vmod	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	vmod	dobj	
+dobj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	dobj	
+dobj	pcomp	prep	dobj	root	dobj	prep	pcomp	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nn	appos	nsubj	root	nsubj	appos	
+nsubj	root	prep	pobj	prep	pobj	
+amod	pobj	prep	xcomp	conj	root	conj	xcomp	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	ccomp	root	ccomp	prep	pobj	prep	pobj	prep	pobj	
+pobj	prep	vmod	rcmod	root	rcmod	vmod	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	pobj	prep	root	prep	pobj	rcmod	prep	pobj	prep	pobj	
+nn	pobj	prep	nsubjpass	root	prep	pobj	nn	
+nsubj	root	nsubj	prep	pobj	conj	
+nsubj	root	xcomp	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+poss	nsubj	root	acomp	conj	
+nsubj	root	rcmod	nsubj	
+pobj	prep	ccomp	root	ccomp	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	xcomp	prep	pobj	
+pobj	prep	dobj	pcomp	prep	vmod	dobj	root	dobj	vmod	prep	pcomp	dobj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+root	root	prep	pobj	vmod	dobj	
+xcomp	root	xcomp	prep	pobj	
+pobj	prep	pobj	prep	vmod	pobj	prep	root	prep	pobj	vmod	prep	pobj	prep	pobj	vmod	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	nn	
+nsubjpass	ccomp	root	ccomp	nsubjpass	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	dobj	root	prep	pobj	
+pobj	prep	dobj	root	dobj	prep	pobj	vmod	prep	pobj	
+nn	appos	nsubj	ccomp	root	ccomp	nsubj	appos	
+nsubj	root	prep	pobj	
+pobj	prep	dobj	root	prep	pobj	amod	
+nsubjpass	root	prep	pobj	nn	
+nn	nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	dep	prep	vmod	root	vmod	prep	dep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	root	advcl	nsubjpass	
+nsubjpass	root	prep	pobj	vmod	prep	pobj	
+pobj	prep	dobj	dep	root	dobj	rcmod	nsubj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	pcomp	prep	ccomp	root	ccomp	prep	pcomp	pobj	rcmod	prep	pobj	rcmod	dobj	
+poss	pobj	prep	rcmod	pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	rcmod	prep	pobj	
+pobj	prep	advmod	advcl	root	advcl	advmod	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	dobj	root	prep	pobj	
+nsubj	root	ccomp	prep	pcomp	dobj	
+pobj	prep	root	dobj	prep	pobj	
+dobj	vmod	root	vmod	prep	pobj	
+dobj	root	dobj	prep	pobj	
+xcomp	conj	root	conj	xcomp	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	dep	conj	root	conj	dep	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	conj	root	conj	prep	pobj	
+nsubj	root	xcomp	dobj	
+nsubjpass	root	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	ccomp	root	ccomp	nsubj	vmod	prep	pobj	
+dobj	root	dobj	rcmod	dobj	conj	
+pobj	prep	vmod	root	vmod	prep	pobj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	root	
+nsubj	root	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	
+nsubj	root	xcomp	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	vmod	prep	pobj	
+dobj	root	dobj	vmod	dobj	
+dobj	conj	ccomp	root	ccomp	conj	dobj	rcmod	prep	pobj	
+conj	dobj	ccomp	root	ccomp	dobj	conj	prep	pobj	
+pobj	prep	dobj	xcomp	root	xcomp	prep	pobj	
+nsubjpass	root	prep	pobj	
+poss	pobj	prep	root	prep	pobj	
+root	root	prep	pobj	
+nsubjpass	root	prep	pcomp	
+nn	nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nn	root	root	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+dobj	pcomp	prep	root	prep	pcomp	prep	pobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	nsubj	root	xcomp	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	ccomp	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	dep	root	dep	prep	pobj	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+dobj	advcl	ccomp	ccomp	root	ccomp	ccomp	advcl	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+dobj	root	dobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+pobj	prep	pobj	prep	vmod	ccomp	root	ccomp	vmod	prep	pobj	prep	pobj	rcmod	prep	pobj	
+dobj	vmod	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubj	root	ccomp	nsubjpass	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nn	dobj	root	dobj	
+ccomp	root	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	rcmod	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	nn	
+root	root	prep	pobj	appos	appos	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	ccomp	nsubj	
+nsubjpass	root	prep	pobj	
+dobj	root	vmod	dobj	
+nsubj	root	ccomp	dobj	
+nn	nsubjpass	root	nsubjpass	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	nsubj	root	root	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+conj	dobj	ccomp	root	ccomp	dobj	conj	prep	pobj	
+nsubj	root	xcomp	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+root	root	vmod	prep	pobj	
+conj	nsubj	root	nsubj	conj	prep	pobj	
+pobj	prep	dobj	xcomp	root	xcomp	dobj	prep	pobj	vmod	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	nn	
+dobj	xcomp	root	xcomp	prep	pobj	
+dobj	root	dobj	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	
+dobj	root	dobj	vmod	dobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+root	root	rcmod	dobj	
+nsubjpass	conj	root	conj	prep	pobj	amod	
+dobj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+root	root	prep	pcomp	npadvmod	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	vmod	dobj	xcomp	root	xcomp	dobj	vmod	prep	pobj	prep	pobj	
+dobj	conj	root	conj	prep	pobj	rcmod	prep	pobj	
+root	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+dobj	root	prep	pobj	nn	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	conj	root	conj	dobj	
+pobj	prep	root	rcmod	dobj	
+pobj	prep	vmod	root	vmod	prep	pobj	prep	pobj	
+nsubj	root	xcomp	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	xcomp	dobj	
+pobj	prep	pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	prep	pobj	
+nsubj	ccomp	root	ccomp	nsubj	vmod	prep	pobj	amod	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+poss	nsubj	root	nsubj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	ccomp	root	ccomp	dobj	prep	pobj	
+dobj	root	prep	pobj	
+conj	nsubj	root	dobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	root	dobj	rcmod	nsubj	
+dobj	root	prep	pobj	
+pobj	prep	pobj	prep	vmod	dobj	csubj	root	root	
+dobj	vmod	pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	dobj	prep	pobj	
+dobj	advcl	root	advcl	prep	pobj	
+dobj	parataxis	root	parataxis	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	conj	dep	root	dep	conj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	advcl	csubj	dobj	
+nsubjpass	advcl	root	advcl	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	ccomp	nsubj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	conj	
+nsubj	root	dep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+dobj	conj	ccomp	root	ccomp	conj	dobj	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	
+nsubj	root	conj	dobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+nsubj	root	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	vmod	dobj	
+dobj	ccomp	root	ccomp	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	pobj	prep	rcmod	root	rcmod	prep	pobj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+dep	root	dep	prep	pobj	
+nsubj	conj	root	conj	dobj	conj	
+nsubj	root	prep	pobj	
+nn	dep	root	prep	pcomp	dobj	
+nsubj	root	dobj	
+conj	dobj	root	dep	conj	dobj	nn	
+amod	pobj	prep	conj	dobj	root	dobj	conj	prep	pobj	
+nsubj	advcl	root	advcl	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nn	dobj	rcmod	pobj	prep	root	prep	pobj	rcmod	dobj	
+dobj	root	dobj	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nn	pobj	prep	nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+dobj	root	dobj	vmod	dobj	
+dobj	root	dobj	prep	pobj	
+pobj	conj	prep	root	prep	conj	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	dep	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	ccomp	vmod	xcomp	root	xcomp	vmod	ccomp	prep	pobj	
+nsubj	ccomp	root	ccomp	nsubj	vmod	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nn	dobj	xcomp	root	xcomp	dobj	nn	
+nsubj	root	dobj	
+nsubj	root	dobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	xcomp	nsubj	
+dobj	vmod	root	vmod	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	
+dobj	root	dobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+root	root	rcmod	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	xcomp	nsubj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	nsubj	
+nsubj	root	ccomp	nsubj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pcomp	dobj	
+nsubj	root	dobj	
+root	root	vmod	dobj	
+amod	nsubj	root	nsubj	
+nsubj	root	dobj	
+nsubj	root	xcomp	prep	pcomp	dobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	prep	pobj	
+poss	root	dep	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+conj	nsubj	root	nsubj	prep	pobj	
+root	root	vmod	dobj	
+nsubj	root	dobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	xcomp	dobj	
+nsubj	root	dobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubj	root	nsubj	rcmod	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubjpass	root	dep	prep	pobj	
+dobj	root	dobj	prep	pobj	
+dobj	root	dobj	rcmod	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	nsubjpass	vmod	prep	pcomp	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+appos	nsubjpass	root	nsubjpass	appos	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nn	pobj	prep	nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+pobj	prep	dobj	xcomp	root	xcomp	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	xcomp	dobj	
+root	root	vmod	prep	pobj	
+nsubj	dep	root	dobj	
+poss	nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+root	root	prep	pobj	
+nsubj	root	prep	pcomp	dobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nn	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+amod	nsubj	root	nsubj	
+nn	dobj	vmod	root	vmod	dobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	rcmod	dobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	prep	pobj	
+nsubj	ccomp	root	ccomp	dobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+nsubj	ccomp	rcmod	dobj	dep	amod	pobj	prep	nsubj	root	nsubj	prep	pobj	amod	dep	dobj	rcmod	ccomp	prep	pobj	
+pobj	prep	dobj	root	prep	pobj	conj	
+dobj	root	prep	pobj	
+dep	dobj	xcomp	root	xcomp	dobj	dep	rcmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	xcomp	dobj	
+dobj	xcomp	root	xcomp	dobj	prep	pobj	
+dobj	parataxis	root	parataxis	dobj	prep	pobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	nsubj	root	nsubj	vmod	prep	pobj	
+nsubj	root	dobj	
+nsubj	advcl	xcomp	root	xcomp	advcl	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	prep	pobj	conj	
+nsubj	root	nsubj	prep	pobj	
+pobj	prep	root	prep	pobj	
+root	root	vmod	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	conj	root	conj	dobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	rcmod	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nn	pobj	prep	nsubj	root	nsubj	prep	pobj	
+dobj	pcomp	prep	root	prep	pcomp	prep	pcomp	dobj	
+conj	nsubj	root	dobj	
+nsubj	root	dobj	
+conj	dobj	xcomp	vmod	pobj	prep	root	prep	pobj	vmod	xcomp	dobj	conj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubj	root	root	
+nsubj	root	prep	pobj	
+nn	nsubj	root	nsubj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+conj	nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	vmod	prep	pobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	vmod	nsubjpass	root	prep	pobj	prep	pobj	
+nn	pobj	prep	root	prep	pobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+appos	pobj	prep	root	prep	pobj	appos	rcmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	pcomp	prep	dobj	root	dobj	prep	pcomp	prep	pobj	
+nsubjpass	root	prep	pobj	nn	
+dobj	root	dobj	prep	pobj	appos	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	xcomp	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	xcomp	dobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubj	pcomp	prep	xcomp	ccomp	root	ccomp	xcomp	prep	pcomp	nsubj	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+root	root	prep	pobj	
+pobj	prep	pobj	prep	nsubj	root	root	
+pobj	prep	pobj	prep	pobj	prep	pobj	prep	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	ccomp	xcomp	root	xcomp	ccomp	nsubj	prep	pobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	pcomp	prep	dobj	rcmod	root	rcmod	dobj	prep	pcomp	dobj	prep	pobj	nn	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	ccomp	root	ccomp	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	vmod	root	vmod	dobj	prep	pobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	rcmod	pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	pobj	prep	nsubj	root	conj	nsubjpass	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nn	conj	pobj	prep	dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	vmod	root	vmod	prep	pobj	prep	pobj	
+acomp	root	prep	pobj	
+pobj	prep	ccomp	root	ccomp	prep	pobj	vmod	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	vmod	dobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+dobj	advcl	advcl	root	advcl	advcl	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	amod	
+nsubj	root	xcomp	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	vmod	root	vmod	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	pcomp	prep	root	prep	pcomp	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+pobj	prep	vmod	root	vmod	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	prep	pobj	
+pobj	prep	root	nsubj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	ccomp	root	ccomp	nsubj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	ccomp	nsubj	
+pobj	prep	vmod	nsubj	conj	root	conj	advmod	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	rcmod	dobj	conj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	pobj	prep	root	prep	pobj	prep	pobj	conj	
+appos	nsubj	root	nsubj	appos	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	advcl	root	advcl	xcomp	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	advcl	root	advcl	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	parataxis	root	parataxis	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pcomp	dobj	nn	
+appos	nsubj	root	nsubj	appos	rcmod	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+poss	vmod	dobj	root	dobj	vmod	
+dobj	root	dobj	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+advmod	root	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+dobj	xcomp	amod	pobj	prep	root	prep	pobj	
+conj	root	conj	prep	conj	pobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+nsubj	ccomp	root	ccomp	nsubj	vmod	dobj	
+pobj	prep	vmod	root	vmod	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+pobj	prep	nsubj	root	dobj	
+nsubj	ccomp	root	ccomp	dobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+dobj	pcomp	prep	xcomp	rcmod	nsubj	root	nsubj	rcmod	xcomp	prep	pcomp	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	xcomp	xcomp	rcmod	dobj	root	dobj	rcmod	xcomp	xcomp	dobj	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+root	root	prep	pobj	amod	
+nsubj	root	prep	pobj	
+appos	pobj	prep	root	prep	pobj	appos	prep	pobj	
+nsubj	root	root	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	vmod	dobj	
+nsubj	root	vmod	prep	pobj	nn	
+nsubj	parataxis	root	parataxis	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+nsubj	ccomp	advcl	root	advcl	ccomp	dobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	dobj	rcmod	dobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	ccomp	root	ccomp	ccomp	xcomp	
+nn	dobj	root	dobj	
+dobj	ccomp	xcomp	root	xcomp	ccomp	dobj	prep	pobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	pcomp	prep	root	prep	pcomp	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	conj	root	conj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	nsubj	dep	nsubj	
+nsubjpass	root	prep	pobj	
+dobj	xcomp	root	xcomp	dobj	vmod	prep	pobj	
+dobj	pcomp	prep	conj	root	conj	prep	pcomp	dobj	prep	pobj	
+root	root	prep	pobj	
+nsubj	root	prep	pobj	
+root	root	vmod	dobj	
+nsubj	ccomp	root	ccomp	prep	pobj	
+pobj	prep	nsubjpass	root	prep	pobj	
+nsubj	root	ccomp	nsubj	
+nn	pobj	prep	advcl	conj	root	conj	advcl	prep	pobj	
+nsubjpass	root	nsubjpass	rcmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	root	
+pobj	prep	conj	root	conj	prep	pobj	prep	pobj	
+nsubjpass	conj	root	conj	nsubjpass	vmod	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+advcl	root	advcl	prep	pobj	
+pobj	prep	root	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	advcl	root	advcl	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubj	parataxis	root	parataxis	dobj	
+poss	pobj	prep	nsubj	root	nsubj	prep	pobj	
+nn	dobj	root	dobj	
+pobj	prep	dobj	root	dobj	prep	pobj	vmod	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	pcomp	prep	root	prep	pcomp	prep	pobj	prep	pobj	
+nsubj	root	nsubj	rcmod	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	prep	pobj	
+dobj	root	prep	pobj	
+root	root	dep	
+nsubjpass	root	nsubjpass	vmod	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	pcomp	prep	nsubj	root	prep	pobj	
+dobj	conj	root	conj	dobj	prep	pobj	conj	
+nsubjpass	root	nsubjpass	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+appos	nsubj	root	nsubj	appos	rcmod	dobj	
+nsubj	root	nsubj	vmod	prep	pobj	
+amod	amod	dobj	root	dobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	vmod	pobj	prep	nsubj	root	nsubj	prep	pobj	vmod	xcomp	dobj	
+pobj	prep	pobj	prep	root	prep	pobj	
+root	root	vmod	prep	pobj	
+root	root	prep	pobj	
+root	root	rcmod	dobj	
+nn	nsubjpass	root	nsubjpass	prep	pobj	
+dobj	pcomp	prep	appos	dobj	vmod	pobj	prep	root	prep	pobj	vmod	dobj	appos	prep	pcomp	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	dobj	rcmod	prep	pobj	
+nsubj	dep	pobj	prep	advcl	root	advcl	prep	pobj	dep	
+nsubjpass	root	nsubjpass	prep	pobj	
+nn	pobj	prep	root	prep	pobj	conj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+conj	pobj	prep	dobj	root	dobj	prep	pobj	
+pobj	prep	nsubjpass	root	nsubjpass	prep	pobj	vmod	prep	pobj	
+nsubj	root	dobj	
+dobj	advcl	root	advcl	dobj	vmod	prep	pobj	
+nsubj	root	dobj	conj	
+nsubj	root	dobj	prep	pobj	vmod	dobj	
+root	root	rcmod	dobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	vmod	dobj	root	dobj	vmod	prep	pobj	prep	pobj	
+nn	pobj	prep	root	prep	pobj	prep	pobj	
+pobj	prep	dobj	pcomp	prep	pobj	prep	root	prep	pobj	prep	pcomp	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	root	prep	pobj	conj	nn	
+nsubj	root	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubjpass	root	prep	pobj	prep	pobj	
+nn	pobj	prep	dobj	root	dobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+root	root	rcmod	dobj	prep	pobj	
+nsubj	root	xcomp	prep	pcomp	prep	pobj	amod	
+nsubj	root	prep	pobj	
+nsubj	root	dep	dobj	
+nsubjpass	root	prep	pobj	amod	
+pobj	prep	vmod	pobj	prep	root	prep	pobj	vmod	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+dobj	root	dobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+conj	nsubj	root	dobj	
+dobj	advcl	root	advcl	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+conj	nn	dobj	root	dobj	
+nsubj	root	dobj	
+pobj	prep	advcl	rcmod	dobj	root	dobj	rcmod	prep	pobj	
+nn	nsubj	root	nsubj	
+dobj	vmod	pobj	conj	prep	ccomp	root	ccomp	prep	conj	pobj	vmod	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+pobj	prep	xcomp	root	xcomp	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+dobj	root	prep	pobj	
+nn	pobj	prep	vmod	dobj	conj	root	conj	dobj	vmod	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+dobj	root	dobj	rcmod	prep	pobj	
+nsubj	conj	dep	root	dep	conj	vmod	dobj	
+nsubj	root	dobj	
+pobj	prep	dobj	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	advmod	pcomp	prep	root	prep	pcomp	advmod	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	root	prep	pobj	
+dobj	conj	ccomp	root	ccomp	conj	dobj	prep	pobj	
+dobj	root	ccomp	nsubj	
+dobj	root	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+root	root	vmod	dobj	conj	
+csubj	root	csubj	prep	pobj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	nsubjpass	ccomp	root	ccomp	prep	pobj	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	pcomp	prep	root	prep	pcomp	dobj	conj	
+nsubjpass	root	prep	pobj	
+pobj	prep	dobj	root	dobj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+pobj	prep	vmod	root	vmod	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dobj	root	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	nsubjpass	prep	pobj	
+nsubj	root	prep	pobj	nn	
+nsubj	root	conj	
+pobj	prep	nsubjpass	root	prep	pobj	amod	
+nsubj	root	prep	pobj	nn	
+nsubjpass	root	prep	pobj	prep	pobj	
+pobj	prep	root	prep	pobj	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nn	pobj	prep	root	prep	pobj	
+nsubjpass	ccomp	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	nsubjpass	prep	pobj	vmod	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+root	root	prep	pcomp	npadvmod	
+dobj	root	dobj	prep	pobj	
+nsubj	root	prep	pobj	
+ccomp	root	ccomp	prep	pobj	
+root	root	prep	pobj	prep	pobj	vmod	dobj	
+root	root	prep	pobj	
+nsubj	advcl	root	advcl	nsubj	prep	pobj	
+nsubj	root	ccomp	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubj	root	dobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	xcomp	
+pobj	prep	nsubj	root	nsubj	prep	pobj	prep	pobj	
+nsubj	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+root	root	vmod	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+dep	conj	pcomp	conj	prep	root	prep	conj	pcomp	conj	dep	prep	pobj	
+nsubjpass	conj	root	conj	prep	pobj	
+root	root	prep	pobj	prep	pobj	
+nsubj	root	vmod	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubj	ccomp	conj	dobj	root	dobj	conj	ccomp	dobj	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	
+nsubj	root	prep	pobj	
+nsubj	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	conj	root	conj	prep	pobj	
+nsubjpass	conj	root	conj	prep	pobj	
+pobj	prep	nsubj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	dobj	vmod	dobj	
+pobj	prep	nsubj	root	root	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	conj	root	conj	prep	pobj	vmod	prep	pobj	
+pobj	prep	pobj	prep	vmod	nsubj	root	nsubj	vmod	prep	pobj	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	dep	root	dep	prep	pobj	
+pobj	prep	root	prep	pobj	rcmod	prep	pobj	
+dobj	root	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubjpass	root	prep	pobj	
+pobj	prep	root	prep	pobj	prep	pobj	
+nsubj	root	nsubj	prep	pobj	
+nsubj	root	prep	pobj	
+nsubj	conj	root	conj	nsubj	prep	pobj	vmod	prep	pobj	
+nsubj	root	dobj	prep	pobj	
+pobj	prep	dobj	root	prep	pobj	
+nn	nsubjpass	root	nsubjpass	
+dep	root	dep	vmod	prep	pobj	nn	
+pobj	prep	root	dobj	

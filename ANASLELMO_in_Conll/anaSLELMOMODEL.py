@@ -60,7 +60,8 @@ class Network:
         # learning rate
         self.learning_rate = 0.002
         # input shape
-        self.input_shape = (None, self.num_steps, 1364)
+        self.embedding_len = 1364 # 1364
+        self.input_shape = (None, self.num_steps, self.embedding_len)
         # mask shape
         self.mask_shape = (None, self.num_steps)
         # All gradients above this will be clipped
@@ -103,6 +104,19 @@ class Network:
         self.prediction_decay = 0.6
 
         """Save Picture"""
+        # # save ACCURACY picture path
+        # self.save_picAcc_path = "../result/1/train-test-accuracy.jpg"
+        # # save F1 picture path
+        # self.save_picF1_path = "../result/1/f1.jpg"
+        # self.save_picAllAcc_path = "../result/1/test_all_accuracy.jpg"
+        # self.save_picAllRec_path = "../result/1/test_all_recall.jpg"
+        # # save train loss picture path
+        # self.save_lossTrain_path = "../result/1/train_loss.jpg"
+        # # save test loss picture path
+        # self.save_lossTest_path = "../result/1/test_loss.jpg"
+        # # save result file
+        # self.save_result = "../result/1/result.txt"
+
         # save ACCURACY picture path
         self.save_picAcc_path = "../result/train-test-accuracy.jpg"
         # save F1 picture path
@@ -121,8 +135,12 @@ class Network:
         self.negative_loss_lamda = 1
 
         """Self Attention"""
-        self.input_shape_att = (None, 1364)  # 1364
+        self.input_shape_att = (None, self.embedding_len)  # 1364
         self.attention_size2 = 3
+
+        """ PR-data """
+        # self.pr_data = '../result/experiment_PR/1/ANA-SL-ElAtBiGRU_conll04.npz'
+        self.pr_data = '../result/experiment_PR/ANA-SL-ElAtBiGRU_conll04.npz'
 
     def bulit_gru(self, input_var=None, mask_var=None, input_root=None, input_e1=None, input_e2=None):
         """
@@ -358,9 +376,11 @@ if __name__ == "__main__":
 
     """ 4.merge the all embedding """
     train_word_pos_vec3D = elmo_conll.merge_glove_elmo(train_word_pos_vec3D, train_pos_vec, elmo_conll.train_elmo_file)
+    # train_word_pos_vec3D = np.concatenate((train_word_pos_vec3D, train_pos_vec), axis=2)
     train_word_pos_vec3D = np.float32(train_word_pos_vec3D)
     del train_pos_vec
     test_word_pos_vec3D = elmo_conll.merge_glove_elmo(test_word_pos_vec3D, test_pos_vec, elmo_conll.test_elmo_file)
+    # test_word_pos_vec3D = np.concatenate((test_word_pos_vec3D, test_pos_vec), axis=2)
     test_word_pos_vec3D = np.float32(test_word_pos_vec3D)
     del test_pos_vec
     print("merge the all embedding: %f s" % (time.time() - start_time))
@@ -377,10 +397,16 @@ if __name__ == "__main__":
     """ 6.load the embedding of root, e1 and e2. """
     train_root_embedding, train_e1_embedding, train_e2_embedding = \
         elmo_conll.embedding_looking_root_e1_e2(elmo_conll.e1_sdp_train_file, elmo_conll.e2_sdp_train_file, elmo_conll.train_sen_number, train_sen_list2D, elmo_conll.train_elmo_file)
+    # train_root_embedding = np.concatenate((train_root_embedding[:, :300], train_root_embedding[:, -40:]), axis=1)
+    # train_e1_embedding = np.concatenate((train_e1_embedding[:, :300], train_e1_embedding[:, -40:]), axis=1)
+    # train_e2_embedding = np.concatenate((train_e2_embedding[:, :300], train_e2_embedding[:, -40:]), axis=1)
 
     test_root_embedding, test_e1_embedding, test_e2_embedding=\
         elmo_conll.embedding_looking_root_e1_e2(elmo_conll.e1_sdp_test_file, elmo_conll.e2_sdp_test_file, elmo_conll.test_sen_number, test_sen_list2D, elmo_conll.test_elmo_file)
     print("load the embedding of root, e1 and e2: %f s" % (time.time() - start_time))
+    # test_root_embedding = np.concatenate((test_root_embedding[:, :300], test_root_embedding[:, -40:]), axis=1)
+    # test_e1_embedding = np.concatenate((test_e1_embedding[:, :300], test_e1_embedding[:, -40:]), axis=1)
+    # test_e2_embedding = np.concatenate((test_e2_embedding[:, :300], test_e2_embedding[:, -40:]), axis=1)
 
     """ 7.label id value and one-hot """
     label2id = elmo_conll.label2id
@@ -528,7 +554,7 @@ if __name__ == "__main__":
         train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, wrong_pre, true_pre, loss_batch, prediction_batch], updates=updates, on_unused_input='warn')
 
     # Compile a second function computing the validation loss and accuracy and F1-score:
-    val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [test_loss, test_acc, test_predicted_classid], on_unused_input='warn')
+    val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [test_loss, test_acc, test_predicted_classid, test_prediction], on_unused_input='warn')
 
     """
     5.start train
@@ -646,7 +672,7 @@ if __name__ == "__main__":
         test_predicted_classi_all=np.array([0])
 
         mark_input = model.mask(test_sen_length, len(test_sen_length))
-        err, acc, test_predicted_classid = val_fn(test_word_pos_vec3D, test_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, test_root_embedding, test_e1_embedding, test_e2_embedding)
+        err, acc, test_predicted_classid, test_prediction_all = val_fn(test_word_pos_vec3D, test_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, test_root_embedding, test_e1_embedding, test_e2_embedding)
 
         # for batch in elmo_conll.iterate_minibatches_inputAttRootE1E2(test_word_pos_vec3D, \
         #   test_label_1hot, test_sen_length, model.batch_size, test_root_embedding, test_e1_embedding, test_e2_embedding, shuffle=False):
@@ -726,6 +752,12 @@ if __name__ == "__main__":
             model.save_plt(num_epochs,train_loss_listplt,'train loss',"Train Loss","loss",model.save_lossTrain_path,showflag=False)
             #save loss picture(test)
             model.save_plt(num_epochs,test_loss_listplt,'test loss',"Test Loss","loss",model.save_lossTest_path,showflag=False)
+
+        # save the prediction
+        save_data = dict(
+            testing_label_1hot=test_label_1hot,
+            test_prediction_all=test_prediction_all)
+        np.savez(model.pr_data, **save_data)
 
     print("Final results:")
     print("  test loss:\t\t\t{:.6f}".format(test_err / test_batches))
