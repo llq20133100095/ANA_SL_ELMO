@@ -1,12 +1,13 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 10 20:43:00 2018
+Created on Fri Apr 20 08:57:20 2018
 
-KBP dataset in relation classification
+BiLSTM
 
 @author: llq
 """
+
 import numpy as np
 import theano
 import theano.tensor as T
@@ -46,24 +47,24 @@ class Network:
         # the number of class
         self.num_classes = 3
         # the number of GRU units?
-        self.cnn_gru_size = 340  # use in cnn
+        self.cnn_gru_size = 200  # use in cnn
         self.gru_size = 300  # use in gru
         # dropout probability
-        self.keep_prob_input = 0.4  # use in input
+        self.keep_prob_input = 0.5  # use in input
         self.keep_prob_gru_output = 0.5  # use in gru
         self.keep_prob_cnn = 0.5  # use in cnn
         self.keep_prob_cnn_gur_output = 0.5  # use in output
         # the number of entity pairs of each batch during training or testing
         self.batch_size = 100
         # learning rate
-        self.learning_rate = 0.002
+        self.learning_rate = 0.001
         # input shape
         self.embedding_len = 340
         self.input_shape = (None, self.num_steps, self.embedding_len)
         # mask shape
         self.mask_shape = (None, self.num_steps)
         # All gradients above this will be clipped
-        self.grad_clip = 0.5
+        self.grad_clip = 5
         # l2_loss
         self.l2_loss = 1e-4
         # Choose "pi" or "tempens" or "ordinary"
@@ -87,7 +88,7 @@ class Network:
         # Ramp learning rate and unsupervised loss weight up during first n epochs.
         self.rampup_length = 30
         # Ramp learning rate and Adam beta1 down during last n epochs.
-        self.rampdown_length = 30
+        self.rampdown_length = 10
         # Unsupervised loss maximum (w_max in paper). Set to 0.0 -> supervised loss only.
         self.scaled_unsup_weight_max = 100.0
         # Maximum learning rate.
@@ -103,26 +104,26 @@ class Network:
 
         """Save Picture"""
         # save ACCURACY picture path
-        self.save_picAcc_path = "../result/CNN/train-test-accuracy.jpg"
+        self.save_picAcc_path = "../result/BLSTM/train-test-accuracy.jpg"
         # save F1 picture path
-        self.save_picF1_path = "../result/CNN/f1.jpg"
-        self.save_picAllAcc_path = "../result/CNN/test all accuracy.jpg"
-        self.save_picAllRec_path = "../result/CNN/test all recall.jpg"
+        self.save_picF1_path = "../result/BLSTM/f1.jpg"
+        self.save_picAllAcc_path = "../result/BLSTM/test all accuracy.jpg"
+        self.save_picAllRec_path = "../result/BLSTM/test all recall.jpg"
         # save train loss picture path
-        self.save_lossTrain_path = "../result/CNN/train-loss.jpg"
+        self.save_lossTrain_path = "../result/BLSTM/train-loss.jpg"
         # save test loss picture path
-        self.save_lossTest_path = "../result/CNN/test-loss.jpg"
+        self.save_lossTest_path = "../result/BLSTM/test-loss.jpg"
         # save result file
-        self.save_result = "../result/CNN/result.txt"
+        self.save_result = "../result/BLSTM/result.txt"
 
         """Negtive loss"""
         self.negative_loss_alpha = np.float32(np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.82375]))
         self.negative_loss_lamda = 1
 
         """ PR-data """
-        self.pr_data = '../result/experiment_PR/CNN_conll04.npz'
+        self.pr_data = '../result/experiment_PR/BLSTM_conll04.npz'
 
-    def bulit_gru(self, input_var=None, mask_var=None, sen_length=None):
+    def bulit_gru(self, input_var=None, mask_var=None):
         """
         Bulit the GRU network
         """
@@ -135,40 +136,44 @@ class Network:
         # inpute dropout
         l_input_drop = lasagne.layers.DropoutLayer(l_in, p=self.keep_prob_input)
 
-        """
-        CNN
-        """
-        # the length of sentences
-        l_sen_length = lasagne.layers.InputLayer(shape=(None, 1), input_var=sen_length, name="l_sen_length")
+        # Two lstm forward
+        l_lstm_forward = lasagne.layers.LSTMLayer(
+            l_input_drop, num_units=self.gru_size, grad_clipping=self.grad_clip,
+            ingate=self.gate_parameters, forgetgate=self.gate_parameters,
+            cell=self.cell_parameters, outgate=self.gate_parameters,
+            learn_init=True, only_return_final=True, name="l_lstm_forward2")
 
-        # split the global SDP
-        l_split_global_sdp = SplitInGlobal((l_sen_length, l_input_drop))
-        l_split_global_sdp = lasagne.layers.ReshapeLayer(l_split_global_sdp, ([0], 1, [1], [2]))
+        #        l_lstm_forward=lasagne.layers.LSTMLayer(
+        #            l_lstm_forward,num_units=self.gru_size,mask_input=l_mask,grad_clipping=self.grad_clip,
+        #            ingate=self.gate_parameters, forgetgate=self.gate_parameters,
+        #            cell=self.cell_parameters, outgate=self.gate_parameters,
+        #            learn_init=True,only_return_final=True,name="l_lstm_forward2")
 
-        l_global_sdp_cnn = lasagne.layers.Conv2DLayer(
-            l_split_global_sdp, num_filters=500, filter_size=(3, self.cnn_gru_size),
-            nonlinearity=lasagne.nonlinearities.rectify,
-            W=lasagne.init.GlorotUniform())
+        # Two lstm backward
+        l_lstm_backward = lasagne.layers.LSTMLayer(
+            l_input_drop, num_units=self.gru_size, grad_clipping=self.grad_clip,
+            ingate=self.gate_parameters, forgetgate=self.gate_parameters,
+            cell=self.cell_parameters, outgate=self.gate_parameters,
+            learn_init=True, only_return_final=True, backwards=True, name="l_lstm_backward2")
 
-        # MAX-pooling in global SDP
-        l_global_sdp_maxpooling = lasagne.layers.GlobalPoolLayer(l_global_sdp_cnn, pool_function=T.max)
+        #        l_lstm_backward=lasagne.layers.LSTMLayer(
+        #            l_lstm_backward,num_units=self.gru_size,mask_input=l_mask,grad_clipping=self.grad_clip,
+        #            ingate=self.gate_parameters, forgetgate=self.gate_parameters,
+        #            cell=self.cell_parameters, outgate=self.gate_parameters,
+        #            learn_init=True,only_return_final=True,backwards=True,name="l_lstm_backward2")
+
+        # Merge forward layers and backward layers
+        l_merge = lasagne.layers.ElemwiseSumLayer([l_lstm_forward, l_lstm_backward])
 
         # output dropout
-        l_sdp_drop = lasagne.layers.DropoutLayer(l_global_sdp_maxpooling, p=self.keep_prob_cnn)
-
-        l_out_den = lasagne.layers.DenseLayer( \
-            l_sdp_drop, num_units=200, \
-            nonlinearity=lasagne.nonlinearities.rectify)
-
-        #        #output dropout
-        #        l_merge_drop=lasagne.layers.DropoutLayer(l_merge,p=self.keep_prob_gru_output)
+        l_merge_drop = lasagne.layers.DropoutLayer(l_merge, p=self.keep_prob_gru_output)
 
         # Finally, we'll add the fully-connected output layer, of 10 softmax units:
         l_out = lasagne.layers.DenseLayer( \
-            l_out_den, num_units=self.num_classes, \
+            l_merge_drop, num_units=self.num_classes, \
             nonlinearity=lasagne.nonlinearities.softmax)
 
-        return l_out, l_in, l_mask, l_out_den, l_sdp_drop
+        return l_out, l_in, l_mask, l_merge, l_out
 
     def mask(self, mask_var, batch_size):
         """
@@ -347,8 +352,8 @@ if __name__ == "__main__":
 
     #    #Left sdp length
     #    left_sdp_length=T.imatrix('left_sdp_length')
-    # Sentences length
-    sen_length = T.imatrix('sen_length')
+    #    #Sentences length
+    #    sen_length=T.imatrix('sen_length')
 
     # negative loss
     negative_loss_alpha = T.fvector("negative_loss_alpha")
@@ -359,7 +364,7 @@ if __name__ == "__main__":
     Bulit GRU network
     ADAM
     """
-    gru_network, l_in, l_mask, l_gru_forward, l_split_cnn = model.bulit_gru(input_var, mask_var, sen_length)
+    gru_network, l_in, l_mask, l_gru_forward, l_split_cnn = model.bulit_gru(input_var, mask_var)
 
     # mask_train_input: where "1" is pass. where "0" isn't pass.
     mask_train_input = elmo_conll.mask_train_input(train_label, num_labels=model.num_labels)
@@ -438,11 +443,10 @@ if __name__ == "__main__":
     else:
         train_fn = theano.function(
             [input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha,
-             negative_loss_lamda, sen_length], [loss, train_acc, l_gru, l_split], updates=updates,
-            on_unused_input='warn')
+             negative_loss_lamda], [loss, train_acc, l_gru, l_split], updates=updates, on_unused_input='warn')
 
     # Compile a second function computing the validation loss and accuracy and F1-score:
-    val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, sen_length],
+    val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda],
                              [test_loss, test_acc, test_predicted_classid, test_prediction], on_unused_input='warn')
 
     """
@@ -520,8 +524,7 @@ if __name__ == "__main__":
             aa_inputs, targets, mask_sen_length = batch
             aa_mark_input = model.mask(mask_sen_length, model.batch_size)
             err, acc, aa_l_gru, aa_l_split = train_fn(aa_inputs, targets, aa_mark_input, learning_rate, adam_beta1,
-                                                      model.negative_loss_alpha, model.negative_loss_lamda,
-                                                      np.reshape(mask_sen_length, (-1, 1)))
+                                                      model.negative_loss_alpha, model.negative_loss_lamda)
             train_err += err
             train_acc += acc
             train_batches += 1
@@ -538,17 +541,14 @@ if __name__ == "__main__":
         test_predicted_classi_all = np.array([0])
 
         mark_input = model.mask(test_sen_length, len(test_sen_length))
-        err, acc, test_predicted_classid, test_prediction_all = val_fn(test_word_pos_vec3D, test_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, np.reshape(test_sen_length, (-1, 1)))
-
+        err, acc, test_predicted_classid, test_prediction_all = val_fn(test_word_pos_vec3D, test_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda)
         # for batch in elmo_conll.iterate_minibatches(test_word_pos_vec3D, \
         #                                           test_label_1hot, test_sen_length, model.batch_size,
         #                                           shuffle=False):
         #     inputs, targets, mask_sen_length = batch
         #     mark_input = model.mask(mask_sen_length, model.batch_size)
-        #     err, acc, test_predicted_classid, test_prediction = val_fn(inputs, targets, mark_input,
-        #                                                                model.negative_loss_alpha,
-        #                                                                model.negative_loss_lamda,
-        #                                                                np.reshape(mask_sen_length, (-1, 1)))
+        #     err, acc, test_predicted_classid = val_fn(inputs, targets, mark_input, model.negative_loss_alpha,
+        #                                               model.negative_loss_lamda)
         test_err += err
         test_acc += acc
         test_batches += 1
@@ -627,7 +627,6 @@ if __name__ == "__main__":
             # save loss picture(test)
             model.save_plt(num_epochs, test_loss_listplt, 'test loss', "Test Loss", "loss", model.save_lossTest_path,
                            showflag=False)
-
     # save the prediction
     save_data = dict(
         testing_label_1hot=test_label_1hot,
@@ -646,14 +645,14 @@ if __name__ == "__main__":
       testing_label_1hot, testing_sen_length, model.batch_size, shuffle=False):
         inputs, targets, mask_sen_length = batch
         mark_input=model.mask(mask_sen_length,model.batch_size)
-        err, acc, test_predicted_classid = val_fn(inputs, targets, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, np.reshape(mask_sen_length,(-1,1)))
+        err, acc, test_predicted_classid = val_fn(inputs, targets, mark_input, model.negative_loss_alpha, model.negative_loss_lamda)
         test_err += err
         test_acc += acc
         test_batches += 1
 
     #F1 value
     mark_input=model.mask(testing_sen_length,len(testing_sen_length))
-    err, acc, test_predicted_classid=val_fn(testing_word_pos_vec3D, testing_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, np.reshape(testing_sen_length,(-1,1)))
+    err, acc, test_predicted_classid=val_fn(testing_word_pos_vec3D, testing_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda)
     #confusion matrix
     test_con_mat=confusion_matrix(testing_label,test_predicted_classid)
 #    #support

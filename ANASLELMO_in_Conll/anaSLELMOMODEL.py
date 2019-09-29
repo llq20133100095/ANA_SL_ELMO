@@ -239,7 +239,7 @@ class Network:
             nonlinearity=lasagne.nonlinearities.selu))
 
         l_out_margin = lasagne.layers.DenseLayer(
-            l_merge_fc,
+            l_merge_drop,
             num_units=self.num_classes,
             W=lasagne.init.GlorotUniform(gain=1.0), b=lasagne.init.Constant(1.),
             nonlinearity=lasagne.nonlinearities.softmax)
