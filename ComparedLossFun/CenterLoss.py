@@ -12,34 +12,40 @@ import theano.tensor as T
 import theano
 from theano.compile.ops import as_op
 
-@as_op(itypes=[T.ivector],
-       otypes=[T.ivector, T.ivector, T.ivector])
-def unique_with_counts(x):
+@as_op(itypes=[T.ivector, T.fmatrix],
+       otypes=[T.ivector, T.ivector, T.fmatrix])
+def unique_with_counts(x, sub):
     """
     将函数转换为tensor函数操作
     :param x:
     :return:
     """
-    y = []
+    unique_y = []
     idx = []
     dict_count = {}
     count = []
     for v in x:
-        if v not in y:
-            y.append(v)
+        if v not in unique_y:
+            unique_y.append(v)
             dict_count[v] = 1
         else:
             dict_count[v] += 1
 
     for i in range(len(x)):
-        for j in range(len(y)):
-            if x[i] == y[j]:
+        for j in range(len(unique_y)):
+            if x[i] == unique_y[j]:
                 idx.append(j)
 
-    for j in range(len(y)):
-        count.append(dict_count[y[j]])
+    for j in range(len(unique_y)):
+        count.append(dict_count[unique_y[j]])
 
-    return np.array(y), np.array(idx), np.array(count)
+    count = np.array(count)
+    times = count[idx]
+
+    times = np.reshape(times, [-1, 1])
+    sub = np.array(sub) / np.float32((1 + times))
+
+    return np.array(unique_y), times, sub
 
 
 @as_op(itypes=[T.fmatrix, T.ivector, T.fmatrix],
@@ -71,16 +77,11 @@ def center_loss(features, labels, alpha, centers):
     diff = centers_batch - features
 
     # 获取一个batch中同一样本出现的次数，这里需要理解论文中的更新公式
-    unique_label, unique_idx, unique_count = unique_with_counts(labels)
-    appear_times = unique_count[unique_idx]
-    appear_times = T.reshape(appear_times, [-1, 1])
-
-    diff = diff / T.cast((1 + appear_times), "float32")
+    unique_label, appear_times, diff = unique_with_counts(labels, diff)
     diff = alpha * diff
 
     # 更新中心
-    centers = scatter_sub(centers, labels, diff)
-
+    centers = scatter_sub(centers[:], labels, diff)
     return loss, centers
 
 
@@ -97,22 +98,25 @@ def neg_center_loss(features, labels, alpha, centers):
 
 if __name__ == "__main__":
     features = T.fmatrix("features")
-    labels = T.fmatrix("labels")
+    labels = T.imatrix("labels")
     alpha = 0.5
     num_classes = 10
 
     centers = theano.shared(np.float32(np.zeros([num_classes, 250])), "centers")
     loss, new_centers = center_loss(features, labels, alpha, centers)
+    # diff_o, appear_times3, diff3, new_centers = center_loss(features, labels, alpha, centers)
 
     # input value
     features_in = np.float32(np.random.uniform(size=[100, 250]))
-    labels_in = np.float32(np.random.randint(low=0, high=100, size=[100, 10]) / 100)
+    labels_in = np.int32(np.random.randint(low=0, high=100, size=[100, 10]))
     labels_id = np.argmax(labels_in, axis=1)
     # centers_in = np.float32(np.zeros([num_classes, 250]))
 
-    train_fn = theano.function([features, labels], [loss, new_centers], on_unused_input='warn')
+    train_fn = theano.function([features, labels], [loss, centers], updates={centers:new_centers}, on_unused_input='warn')
+    # train_fn = theano.function([features, labels], [diff_o, appear_times3, diff3, new_centers], updates={centers:new_centers}, on_unused_input='warn')
 
     output_loss, output_centers = train_fn(features_in, labels_in)
+    # output_diff_o, output_appear_times3, output_diff3, output_new_centers = train_fn(features_in, labels_in)
 
 
     """ 2.tensorflow """

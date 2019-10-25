@@ -463,7 +463,7 @@ if __name__ == "__main__":
     # epoch_att=T.iscalar("epoch_att")
 
     # loss parameter
-    centers = T.constant(np.float32(np.zeros([model.num_classes, 250])), "centers")
+    centers = theano.shared(np.float32(np.zeros([model.num_classes, 250])), "centers")
 
     """
     2.
@@ -557,7 +557,7 @@ if __name__ == "__main__":
     elif model.network_type=="tempens":
         train_fn = theano.function([input_var, target_var, mask_var, z_target_var, mask_train, unsup_weight_var, learning_rate_var, adam_beta1_var], [loss,train_acc,prediction], updates=updates, on_unused_input='warn')
     else:
-        train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, loss_batch, prediction_batch], updates=updates, on_unused_input='warn')
+        train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, loss_batch, prediction_batch], updates=updates.update({centers:new_centers}), on_unused_input='warn')
 
     # Compile a second function computing the validation loss and accuracy and F1-score:
     val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [test_loss, test_acc, test_predicted_classid, test_prediction], on_unused_input='warn')
