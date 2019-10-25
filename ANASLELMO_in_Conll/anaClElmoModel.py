@@ -1,11 +1,11 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on 2019.9.24 14:00
+Created on 2019.10.25
 
 @author: llq
 @function:
-    1.realize the ANA-SL-ELMO model
+    1.realize the ANA-CL-ELMO model
 """
 
 import numpy as np
@@ -463,7 +463,7 @@ if __name__ == "__main__":
     # epoch_att=T.iscalar("epoch_att")
 
     # loss parameter
-    centers = theano.shared(np.float32(np.zeros([model.num_classes, 250])), "centers")
+    centers = T.constant(np.float32(np.zeros([model.num_classes, 250])), "centers")
 
     """
     2.
@@ -482,7 +482,7 @@ if __name__ == "__main__":
     l_split = lasagne.layers.get_output(l_merge_output)
 
     # loss,wrong_pre,true_pre,stimulative = Stimulation_loss(prediction, target_var)
-    center_loss_value, new_centers = center_loss(l_merge_output, target_var, model.alpha, centers)
+    center_loss_value, new_centers = center_loss(l_split, target_var, model.alpha, centers)
     loss = lasagne.objectives.categorical_crossentropy(prediction, target_var)
 
     # Pi model loss
@@ -509,7 +509,7 @@ if __name__ == "__main__":
     l_split = lasagne.layers.get_output(l_merge_output)
 
     # loss, wrong_pre, true_pre, stimulative = Stimulation_loss(l_merge_output, target_var)
-    center_loss_value, new_centers = center_loss(l_merge_output, target_var, model.alpha, centers)
+    center_loss_value, new_centers = center_loss(l_split, target_var, model.alpha, new_centers)
     loss_batch = lasagne.objectives.categorical_crossentropy(prediction, target_var)
     loss = T.mean(loss_batch, dtype=theano.config.floatX) + center_loss_value
     ######################################
@@ -557,7 +557,7 @@ if __name__ == "__main__":
     elif model.network_type=="tempens":
         train_fn = theano.function([input_var, target_var, mask_var, z_target_var, mask_train, unsup_weight_var, learning_rate_var, adam_beta1_var], [loss,train_acc,prediction], updates=updates, on_unused_input='warn')
     else:
-        train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, wrong_pre, true_pre, loss_batch, prediction_batch], updates=updates, on_unused_input='warn')
+        train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, loss_batch, prediction_batch], updates=updates, on_unused_input='warn')
 
     # Compile a second function computing the validation loss and accuracy and F1-score:
     val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [test_loss, test_acc, test_predicted_classid, test_prediction], on_unused_input='warn')
@@ -647,7 +647,7 @@ if __name__ == "__main__":
             train_label_1hot, train_sen_length, model.batch_size, train_root_embedding, train_e1_embedding, train_e2_embedding, shuffle=True):
             aa_inputs, targets, mask_sen_length, input_root, input_e1, input_e2 = batch
             aa_mark_input = model.mask(mask_sen_length, model.batch_size)
-            err, acc, aa_l_gru, aa_l_split, wrong_pre, true_pre, loss_each_batch, predict_each_batch = \
+            err, acc, aa_l_gru, aa_l_split, loss_each_batch, predict_each_batch = \
                 train_fn(aa_inputs, targets, aa_mark_input, learning_rate, adam_beta1, model.negative_loss_alpha, model.negative_loss_lamda, input_root, input_e1, input_e2)
 
             train_err+=err

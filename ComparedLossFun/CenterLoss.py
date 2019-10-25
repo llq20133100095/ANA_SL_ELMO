@@ -1,3 +1,12 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on 2019.10.25
+
+@author: llq
+@function:
+    1.center loss
+"""
 import numpy as np
 import theano.tensor as T
 import theano
