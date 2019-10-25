@@ -71,7 +71,7 @@ def center_loss(features, labels, alpha, centers):
     # 获取当前batch每个样本对应的中心
     centers_batch = centers[labels]
     # 计算center loss的数值
-    loss = T.sum((features - centers_batch) ** 2) / 2
+    loss = T.sqrt(T.sum((features - centers_batch) ** 2, axis=1))
 
     # 以下为更新中心的步骤
     diff = centers_batch - features

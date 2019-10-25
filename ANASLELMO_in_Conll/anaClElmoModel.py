@@ -496,7 +496,7 @@ if __name__ == "__main__":
         loss = T.mean(loss * mask_train, dtype=theano.config.floatX)
         loss += unsup_weight_var * T.mean(lasagne.objectives.squared_error(prediction, z_target_var))
     else:
-        loss = T.mean(loss, dtype=theano.config.floatX) + center_loss_value
+        loss = T.mean(loss + center_loss_value, dtype=theano.config.floatX)
 
     ###### Adversarial training ############
     new_embedding = model.adversarial(loss, input_var)
@@ -511,7 +511,7 @@ if __name__ == "__main__":
     # loss, wrong_pre, true_pre, stimulative = Stimulation_loss(l_merge_output, target_var)
     center_loss_value, new_centers = center_loss(l_split, target_var, model.alpha, new_centers)
     loss_batch = lasagne.objectives.categorical_crossentropy(prediction, target_var)
-    loss = T.mean(loss_batch, dtype=theano.config.floatX) + center_loss_value
+    loss = T.mean(loss_batch + center_loss_value, dtype=theano.config.floatX)
     ######################################
 
     # regularization:L1,L2
