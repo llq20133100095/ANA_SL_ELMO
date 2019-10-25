@@ -44,7 +44,7 @@ class Network:
         # the number of unrolled steps of LSTM
         self.num_steps = 107
         # the number of epoch(one epoch=N iterations)
-        self.num_epochs = 50
+        self.num_epochs = 10
         # the number of class
         self.num_classes = 3
         # the number of GRU units?
@@ -89,7 +89,7 @@ class Network:
         # Ramp learning rate and unsupervised loss weight up during first n epochs.
         self.rampup_length = 30
         # Ramp learning rate and Adam beta1 down during last n epochs.
-        self.rampdown_length = 30
+        self.rampdown_length = 0
         # Unsupervised loss maximum (w_max in paper). Set to 0.0 -> supervised loss only.
         self.scaled_unsup_weight_max = 100.0
         # Maximum learning rate.

@@ -29,3 +29,9 @@
 
 ### 2.3 splitTrainTest.py
 - 把数据分割成train文件和test文件
+
+### 2.4 prExperiment.py
+- 计算RP值和其曲线
+
+## 3. OtherModel
+- 用来实现其他模型的，包括：CNN，RNN，BLSTM，ATT-BLSTM，Att-Pooling-CNN

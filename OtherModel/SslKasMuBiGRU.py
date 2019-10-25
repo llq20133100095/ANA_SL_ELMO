@@ -1,13 +1,14 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Fri Apr 20 08:57:20 2018
+Created on Sat Jun 30 18:42:12 2018
 
-BiLSTM
+1.keyword-attention  SSL
+2.Mutual
+3.SSL:1-(y^+)+(y^-)   tanh()
 
 @author: llq
 """
-
 import numpy as np
 import theano
 import theano.tensor as T
@@ -17,12 +18,12 @@ import time
 import math
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
-from sklearn.metrics import precision_recall_fscore_support, f1_score, classification_report, confusion_matrix
+from sklearn.metrics import confusion_matrix
 
 from ANASLELMO_in_Conll.dataProcessConll import ELMO_CONLL
-from SdpNetwork.CustomLayers import SplitInLeft, SplitInRight, SplitInGlobal, HighwayNetwork1D, HighwayNetwork2D, \
-    MarginLossLayer
-from SdpNetwork.CustomLoss import Negative_loss, Margin_loss
+from CustomLossKbp import SSL_mutual2, kl_loss_compute
+from DotSofTraLayers import AttentionLayer, SelfAttEntRootLayer
+from SdpNetwork.CustomLayers import MarginLossLayer
 
 theano.config.floatX = "float32"
 
@@ -43,7 +44,7 @@ class Network:
         # the number of unrolled steps of LSTM
         self.num_steps = 107
         # the number of epoch(one epoch=N iterations)
-        self.num_epochs = 10
+        self.num_epochs = 20
         # the number of class
         self.num_classes = 3
         # the number of GRU units?
@@ -51,13 +52,13 @@ class Network:
         self.gru_size = 300  # use in gru
         # dropout probability
         self.keep_prob_input = 0.5  # use in input
-        self.keep_prob_gru_output = 0.5  # use in gru
+        self.keep_prob_gru_output = 0.3  # use in gru
         self.keep_prob_cnn = 0.5  # use in cnn
         self.keep_prob_cnn_gur_output = 0.5  # use in output
         # the number of entity pairs of each batch during training or testing
         self.batch_size = 100
         # learning rate
-        self.learning_rate = 0.001
+        self.learning_rate = 0.002
         # input shape
         self.embedding_len = 340
         self.input_shape = (None, self.num_steps, self.embedding_len)
@@ -86,13 +87,13 @@ class Network:
 
         """Pi_model and Tempens model"""
         # Ramp learning rate and unsupervised loss weight up during first n epochs.
-        self.rampup_length = 30
+        self.rampup_length = 60
         # Ramp learning rate and Adam beta1 down during last n epochs.
         self.rampdown_length = 0
         # Unsupervised loss maximum (w_max in paper). Set to 0.0 -> supervised loss only.
         self.scaled_unsup_weight_max = 100.0
         # Maximum learning rate.
-        self.learning_rate_max = 0.001
+        self.learning_rate_max = 0.002
         # Default value.
         self.adam_beta1 = 0.9
         # Target value for Adam beta1 for rampdown.
@@ -104,26 +105,32 @@ class Network:
 
         """Save Picture"""
         # save ACCURACY picture path
-        self.save_picAcc_path = "../result/BLSTM/train-test-accuracy.jpg"
+        self.save_picAcc_path = "../result/SSL-KAS-MUBIGRU/train-test-accuracy.jpg"
         # save F1 picture path
-        self.save_picF1_path = "../result/BLSTM/f1.jpg"
-        self.save_picAllAcc_path = "../result/BLSTM/test all accuracy.jpg"
-        self.save_picAllRec_path = "../result/BLSTM/test all recall.jpg"
+        self.save_picF1_path = "../result/SSL-KAS-MUBIGRU/f1.jpg"
+        self.save_picAllAcc_path = "../result/SSL-KAS-MUBIGRU/test all accuracy.jpg"
+        self.save_picAllRec_path = "../result/SSL-KAS-MUBIGRU/test all recall.jpg"
         # save train loss picture path
-        self.save_lossTrain_path = "../result/BLSTM/train-loss.jpg"
+        self.save_lossTrain_path = "../result/SSL-KAS-MUBIGRU/train-loss.jpg"
         # save test loss picture path
-        self.save_lossTest_path = "../result/BLSTM/test-loss.jpg"
+        self.save_lossTest_path = "../result/SSL-KAS-MUBIGRU/test-loss.jpg"
         # save result file
-        self.save_result = "../result/BLSTM/result.txt"
+        self.save_result = "../result/SSL-KAS-MUBIGRU/result.txt"
 
         """Negtive loss"""
         self.negative_loss_alpha = np.float32(np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.82375]))
         self.negative_loss_lamda = 1
 
-        """ PR-data """
-        self.pr_data = '../result/experiment_PR/BLSTM_conll04.npz'
+        """Input attention"""
+        self.input_shape_att = (None, 340)
 
-    def bulit_gru(self, input_var=None, mask_var=None):
+        """Self Attention"""
+        self.attention_size2 = 2
+
+        """ PR-data """
+        self.pr_data = '../result/experiment_PR/SSL-KAS-MUBIGRU_conll04.npz'
+
+    def bulit_gru(self, input_var=None, mask_var=None, input_root=None, input_e1=None, input_e2=None):
         """
         Bulit the GRU network
         """
@@ -136,44 +143,61 @@ class Network:
         # inpute dropout
         l_input_drop = lasagne.layers.DropoutLayer(l_in, p=self.keep_prob_input)
 
-        # Two lstm forward
-        l_lstm_forward = lasagne.layers.LSTMLayer(
+        """Input attention entity and root"""
+        l_in_root = lasagne.layers.InputLayer(shape=self.input_shape_att, input_var=input_root, name="l_in_root")
+        l_in_e1 = lasagne.layers.InputLayer(shape=self.input_shape_att, input_var=input_e1, name="l_in_e1")
+        l_in_e2 = lasagne.layers.InputLayer(shape=self.input_shape_att, input_var=input_e2, name="l_in_e2")
+
+        # Two GRU forward
+        l_gru_forward = lasagne.layers.GRULayer( \
             l_input_drop, num_units=self.gru_size, grad_clipping=self.grad_clip,
-            ingate=self.gate_parameters, forgetgate=self.gate_parameters,
-            cell=self.cell_parameters, outgate=self.gate_parameters,
-            learn_init=True, only_return_final=True, name="l_lstm_forward2")
+            resetgate=self.gate_parameters, updategate=self.gate_parameters,
+            hidden_update=self.cell_parameters, learn_init=True,
+            only_return_final=False, name="l_gru_forward1")
 
-        #        l_lstm_forward=lasagne.layers.LSTMLayer(
-        #            l_lstm_forward,num_units=self.gru_size,mask_input=l_mask,grad_clipping=self.grad_clip,
-        #            ingate=self.gate_parameters, forgetgate=self.gate_parameters,
-        #            cell=self.cell_parameters, outgate=self.gate_parameters,
-        #            learn_init=True,only_return_final=True,name="l_lstm_forward2")
+        l_gru_forward = lasagne.layers.GRULayer( \
+            l_gru_forward, num_units=self.gru_size, grad_clipping=self.grad_clip,
+            resetgate=self.gate_parameters, updategate=self.gate_parameters,
+            hidden_update=self.cell_parameters, learn_init=True,
+            only_return_final=False, name="l_gru_forward2")
 
-        # Two lstm backward
-        l_lstm_backward = lasagne.layers.LSTMLayer(
+        # Two GRU backward
+        l_gru_backward = lasagne.layers.GRULayer( \
             l_input_drop, num_units=self.gru_size, grad_clipping=self.grad_clip,
-            ingate=self.gate_parameters, forgetgate=self.gate_parameters,
-            cell=self.cell_parameters, outgate=self.gate_parameters,
-            learn_init=True, only_return_final=True, backwards=True, name="l_lstm_backward2")
+            resetgate=self.gate_parameters, updategate=self.gate_parameters,
+            hidden_update=self.cell_parameters, learn_init=True,
+            only_return_final=False, backwards=True, name="l_gru_backward1")
 
-        #        l_lstm_backward=lasagne.layers.LSTMLayer(
-        #            l_lstm_backward,num_units=self.gru_size,mask_input=l_mask,grad_clipping=self.grad_clip,
-        #            ingate=self.gate_parameters, forgetgate=self.gate_parameters,
-        #            cell=self.cell_parameters, outgate=self.gate_parameters,
-        #            learn_init=True,only_return_final=True,backwards=True,name="l_lstm_backward2")
+        l_gru_backward = lasagne.layers.GRULayer( \
+            l_gru_backward, num_units=self.gru_size, grad_clipping=self.grad_clip,
+            resetgate=self.gate_parameters, updategate=self.gate_parameters,
+            hidden_update=self.cell_parameters, learn_init=True,
+            only_return_final=False, backwards=True, name="l_gru_backward2")
 
         # Merge forward layers and backward layers
-        l_merge = lasagne.layers.ElemwiseSumLayer([l_lstm_forward, l_lstm_backward])
+        l_merge = lasagne.layers.ElemwiseSumLayer([l_gru_forward, l_gru_backward])
+
+        # Self-Attention
+        l_self_att = SelfAttEntRootLayer((l_in, l_in_e1, l_in_e2, l_in_root, l_merge),
+                                         attention_size2=self.attention_size2)
+        l_self_att = AttentionLayer(l_merge)
 
         # output dropout
-        l_merge_drop = lasagne.layers.DropoutLayer(l_merge, p=self.keep_prob_gru_output)
+        #        l_merge_drop=lasagne.layers.DropoutLayer(l_self_att,p=self.keep_prob_gru_output)
 
-        # Finally, we'll add the fully-connected output layer, of 10 softmax units:
-        l_out = lasagne.layers.DenseLayer( \
-            l_merge_drop, num_units=self.num_classes, \
-            nonlinearity=lasagne.nonlinearities.softmax)
+        #        l_merge_fc = lasagne.layers.DenseLayer(
+        #            l_merge_drop,
+        #            num_units=50,
+        #            W=lasagne.init.GlorotUniform(gain=1.0), b=lasagne.init.Constant(0.),
+        #            nonlinearity=lasagne.nonlinearities.selu)
 
-        return l_out, l_in, l_mask, l_merge, l_out
+        # Margin loss
+        # init w_classes: it's format is (class_number,network_output[1])
+        w_classes_init = np.sqrt(6.0 / (40 + self.gru_size))
+        l_out_margin = MarginLossLayer(l_self_att, w_classes=lasagne.init.Uniform(w_classes_init),
+                                       class_number=self.num_classes)
+
+        return l_out_margin, l_in, l_mask, l_self_att, l_out_margin
 
     def mask(self, mask_var, batch_size):
         """
@@ -265,6 +289,7 @@ class Network:
 
 
 if __name__ == "__main__":
+
     """
     1.Loading data:training data and test data
     """
@@ -310,6 +335,21 @@ if __name__ == "__main__":
     test_label = elmo_conll.label2id_in_data(elmo_conll.test_label_store_filename, elmo_conll.test_sen_number)
     test_label = np.int32(test_label)
 
+
+    """ 6.load the embedding of root, e1 and e2. """
+    train_root_embedding, train_e1_embedding, train_e2_embedding = \
+        elmo_conll.embedding_looking_root_e1_e2(elmo_conll.e1_sdp_train_file, elmo_conll.e2_sdp_train_file, elmo_conll.train_sen_number, train_sen_list2D, elmo_conll.train_elmo_file)
+    train_root_embedding = np.concatenate((train_root_embedding[:, :300], train_root_embedding[:, -40:]), axis=1)
+    train_e1_embedding = np.concatenate((train_e1_embedding[:, :300], train_e1_embedding[:, -40:]), axis=1)
+    train_e2_embedding = np.concatenate((train_e2_embedding[:, :300], train_e2_embedding[:, -40:]), axis=1)
+
+    test_root_embedding, test_e1_embedding, test_e2_embedding=\
+        elmo_conll.embedding_looking_root_e1_e2(elmo_conll.e1_sdp_test_file, elmo_conll.e2_sdp_test_file, elmo_conll.test_sen_number, test_sen_list2D, elmo_conll.test_elmo_file)
+    print("load the embedding of root, e1 and e2: %f s" % (time.time() - start_time))
+    test_root_embedding = np.concatenate((test_root_embedding[:, :300], test_root_embedding[:, -40:]), axis=1)
+    test_e1_embedding = np.concatenate((test_e1_embedding[:, :300], test_e1_embedding[:, -40:]), axis=1)
+    test_e2_embedding = np.concatenate((test_e2_embedding[:, :300], test_e2_embedding[:, -40:]), axis=1)
+
     """ 7.label id value and one-hot """
     label2id = elmo_conll.label2id
     train_label_1hot = elmo_conll.label2id_1hot(train_label, label2id)
@@ -326,6 +366,9 @@ if __name__ == "__main__":
     train_word_pos_vec3D = train_word_pos_vec3D[indices]
     train_sen_length = train_sen_length[indices]
     train_label_1hot = train_label_1hot[indices]
+    train_root_embedding = train_root_embedding[indices]
+    train_e1_embedding = train_e1_embedding[indices]
+    train_e2_embedding = train_e2_embedding[indices]
 
     """
     new model
@@ -359,12 +402,20 @@ if __name__ == "__main__":
     negative_loss_alpha = T.fvector("negative_loss_alpha")
     negative_loss_lamda = T.fscalar("negative_loss_lamda")
 
+    # input attention entity and root
+    input_root = T.fmatrix("input_root")
+    input_e1 = T.fmatrix("input_e1")
+    input_e2 = T.fmatrix("input_e2")
+    epoch_att = T.iscalar("epoch_att")
+
     """
     2.
     Bulit GRU network
     ADAM
     """
-    gru_network, l_in, l_mask, l_gru_forward, l_split_cnn = model.bulit_gru(input_var, mask_var)
+    gru_network, l_in, l_mask, l_gru_forward, l_split_cnn = model.bulit_gru(input_var, mask_var, input_root, input_e1,
+                                                                            input_e2)
+    gru_network2, _, _, _, _ = model.bulit_gru(input_var, mask_var, input_root, input_e1, input_e2)
 
     # mask_train_input: where "1" is pass. where "0" isn't pass.
     mask_train_input = elmo_conll.mask_train_input(train_label, num_labels=model.num_labels)
@@ -372,11 +423,13 @@ if __name__ == "__main__":
     # Create a loss expression for training, i.e., a scalar objective we want
     # to minimize (for our multi-class problem, it is the cross-entropy loss):
     prediction = lasagne.layers.get_output(gru_network)
+    prediction2 = lasagne.layers.get_output(gru_network2)
     l_gru = lasagne.layers.get_output(l_gru_forward)
     l_split = lasagne.layers.get_output(l_split_cnn)
 
-    #    loss,_,_ = Margin_loss(prediction, target_var)
-    loss = lasagne.objectives.categorical_crossentropy(prediction, target_var)
+    loss, _, _, st_loss = SSL_mutual2(prediction, target_var)
+    loss2, _, _, st_loss2 = SSL_mutual2(prediction2, target_var)
+    #    loss = lasagne.objectives.categorical_crossentropy(prediction, target_var)
 
     # Pi model loss
     if model.network_type == "pi":
@@ -391,14 +444,24 @@ if __name__ == "__main__":
         loss += unsup_weight_var * T.mean(lasagne.objectives.squared_error(prediction, z_target_var))
     else:
         loss = T.mean(loss, dtype=theano.config.floatX)
+        loss2 = T.mean(loss2, dtype=theano.config.floatX)
 
-    # regularization:L1,L2
-    l2_penalty = lasagne.regularization.regularize_network_params(gru_network,
-                                                                  lasagne.regularization.l2) * model.l2_loss
-    loss = loss + l2_penalty
+    #    #regularization:L1,L2
+    #    l2_penalty = lasagne.regularization.regularize_network_params(gru_network, lasagne.regularization.l2) * model.l2_loss
+    #    loss=loss+l2_penalty
+    #    l2_penalty2 = lasagne.regularization.regularize_network_params(gru_network2, lasagne.regularization.l2) * model.l2_loss
+    #    loss2=loss2+l2_penalty2
+
+    # KL-LOSS
+    l_mul = kl_loss_compute(prediction, prediction2)
+    loss = loss + l_mul
+    l_mul2 = kl_loss_compute(prediction2, prediction)
+    loss2 = loss2 + l_mul2
 
     train_acc = T.mean(T.eq(T.argmax(prediction, axis=1), T.argmax(target_var, axis=1)),
                        dtype=theano.config.floatX)
+    train_acc2 = T.mean(T.eq(T.argmax(prediction2, axis=1), T.argmax(target_var, axis=1)),
+                        dtype=theano.config.floatX)
     # We could add some weight decay as well here, see lasagne.regularization.
 
     # Create update expressions for training, i.e., how to modify the
@@ -407,6 +470,9 @@ if __name__ == "__main__":
     params = lasagne.layers.get_all_params(gru_network, trainable=True)
     updates = lasagne.updates.adam(
         loss, params, learning_rate=learning_rate_var, beta1=adam_beta1_var)
+    params2 = lasagne.layers.get_all_params(gru_network2, trainable=True)
+    updates2 = lasagne.updates.adam(
+        loss2, params2, learning_rate=learning_rate_var, beta1=adam_beta1_var)
 
     """
     3.test loss and accuracy
@@ -415,15 +481,22 @@ if __name__ == "__main__":
     # here is that we do a deterministic forward pass through the network,
     # disabling dropout layers.
     test_prediction = lasagne.layers.get_output(gru_network, deterministic=True)
-    #    test_loss,_,_ = Margin_loss(test_prediction,target_var)
-    test_loss = lasagne.objectives.categorical_crossentropy(test_prediction, target_var)
+    test_loss, _, _, _ = SSL_mutual2(test_prediction, target_var)
+    #    test_loss=lasagne.objectives.categorical_crossentropy(test_prediction, target_var)
     test_loss = T.mean(test_loss, dtype=theano.config.floatX)
+
+    test_prediction2 = lasagne.layers.get_output(gru_network2, deterministic=True)
+    test_loss2, _, _, _ = SSL_mutual2(test_prediction2, target_var)
+    test_loss2 = T.mean(test_loss2, dtype=theano.config.floatX)
 
     # As a bonus, also create an expression for the classification accuracy:
     # ????????????????????
     test_predicted_classid = T.argmax(test_prediction, axis=1)
     test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), T.argmax(target_var, axis=1)),
                       dtype=theano.config.floatX)
+    test_predicted_classid2 = T.argmax(test_prediction2, axis=1)
+    test_acc2 = T.mean(T.eq(T.argmax(test_prediction2, axis=1), T.argmax(target_var, axis=1)),
+                       dtype=theano.config.floatX)
 
     """
     4.
@@ -443,11 +516,20 @@ if __name__ == "__main__":
     else:
         train_fn = theano.function(
             [input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha,
-             negative_loss_lamda], [loss, train_acc, l_gru, l_split], updates=updates, on_unused_input='warn')
+             negative_loss_lamda, input_root, input_e1, input_e2, epoch_att],
+            [loss, train_acc, l_gru, l_split, l_mul, st_loss], updates=updates, on_unused_input='warn')
+        train_fn2 = theano.function(
+            [input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha,
+             negative_loss_lamda, input_root, input_e1, input_e2, epoch_att],
+            [loss2, train_acc2, l_gru, l_split, l_mul2, st_loss2], updates=updates2, on_unused_input='warn')
 
     # Compile a second function computing the validation loss and accuracy and F1-score:
-    val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda],
-                             [test_loss, test_acc, test_predicted_classid, test_prediction], on_unused_input='warn')
+    val_fn = theano.function(
+        [input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2,
+         epoch_att], [test_loss, test_acc, test_predicted_classid, test_prediction], on_unused_input='warn')
+    val_fn2 = theano.function(
+        [input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2,
+         epoch_att], [test_loss2, test_acc2, test_predicted_classid2, test_prediction2], on_unused_input='warn')
 
     """
     5.start train
@@ -479,6 +561,7 @@ if __name__ == "__main__":
 
     # Max f1
     f1_max = 0
+    f1_max2 = 0
     # Max num_epoch in F1-SCORE
     f1_max_num_epochs = 0
 
@@ -488,8 +571,17 @@ if __name__ == "__main__":
     test_loss_listplt = []
     mat_conf_list = []
 
+    aa_l_gru_epoch = []
+    aa_l_split_epoch = []
+
+    l_mul_listplt = []
+    l_mul2_listplt = []
+    stimulative_listplt = []
+    stimulative2_listplt = []
     # We iterate over epochs:
     for epoch in range(model.num_epochs):
+
+        epoch = np.int32(epoch)
 
         # Evaluate up/down ramps.
         rampup_value = model.rampup(epoch)
@@ -513,49 +605,126 @@ if __name__ == "__main__":
             # In each epoch, we do a full pass over the training data:
         train_err = 0
         train_acc = 0
+        train_err2 = 0
+        train_acc2 = 0
         train_pi_loss = 0
         train_batches = 0
         start_time = time.time()
 
-        # Ordinary model
-        for batch in elmo_conll.iterate_minibatches(train_word_pos_vec3D, \
-                                                  train_label_1hot, train_sen_length, model.batch_size,
-                                                  shuffle=True):
-            aa_inputs, targets, mask_sen_length = batch
-            aa_mark_input = model.mask(mask_sen_length, model.batch_size)
-            err, acc, aa_l_gru, aa_l_split = train_fn(aa_inputs, targets, aa_mark_input, learning_rate, adam_beta1,
-                                                      model.negative_loss_alpha, model.negative_loss_lamda)
-            train_err += err
-            train_acc += acc
-            train_batches += 1
+        l_mul = 0
+        l_mul2 = 0
+        stimulative = 0
+        stimulative2 = 0
+        # Pi model:run batch
+        if model.network_type == "pi":
+            for batch in elmo_conll.iterate_minibatches_pi(train_word_pos_vec3D, \
+                                                         train_label_1hot, train_sen_length, model.batch_size,
+                                                         mask_train_input, shuffle=True):
+                inputs, targets, mask_sen_length, mask_train = batch
+                mark_input = model.mask(mask_sen_length, model.batch_size)
+                err, acc, pi_loss = train_fn(inputs, targets, mark_input, inputs, mask_train, unsup_weight,
+                                             learning_rate, adam_beta1)
+                train_err += err
+                train_acc += acc
+                train_batches += 1
+        elif model.network_type == "tempens":
+            # Tempens model:run batch
+            for batch in elmo_conll.iterate_minibatches_tempens(train_word_pos_vec3D, \
+                                                              train_label_1hot, train_sen_length,
+                                                              model.batch_size, mask_train_input, training_targets,
+                                                              shuffle=True):
+                aa_inputs, targets, mask_sen_length, mask_train, z_targets, indices = batch
+                aa_mark_input = model.mask(mask_sen_length, model.batch_size)
+                err, acc, prediction = train_fn(aa_inputs, targets, aa_mark_input, z_targets, mask_train, unsup_weight,
+                                                learning_rate, adam_beta1)
+                for i, j in enumerate(indices):
+                    epoch_predictions[j] = prediction[i]  # Gather epoch predictions.
+                    epoch_execmask[j] = 1.0
+                train_err += err
+                train_acc += acc
+                train_batches += 1
+        else:
+            # Ordinary model
+            for batch in elmo_conll.iterate_minibatches_inputAttRootE1E2(train_word_pos_vec3D, \
+                                                                       train_label_1hot, train_sen_length,
+                                                                       model.batch_size, train_root_embedding,
+                                                                       train_e1_embedding, train_e2_embedding,
+                                                                       shuffle=True):
+                aa_inputs, targets, mask_sen_length, input_root, input_e1, input_e2 = batch
+                aa_mark_input = model.mask(mask_sen_length, model.batch_size)
+                err, acc, aa_l_gru, aa_l_split, mul, st_loss = train_fn(aa_inputs, targets, aa_mark_input,
+                                                                        learning_rate, adam_beta1,
+                                                                        model.negative_loss_alpha,
+                                                                        model.negative_loss_lamda, input_root, input_e1,
+                                                                        input_e2, epoch)
+                err2, acc2, _, _, mul2, st_loss2 = train_fn2(aa_inputs, targets, aa_mark_input, learning_rate,
+                                                             adam_beta1, model.negative_loss_alpha,
+                                                             model.negative_loss_lamda, input_root, input_e1, input_e2,
+                                                             epoch)
 
+                train_err += err
+                train_acc += acc
+                train_err2 += err2
+                train_acc2 += acc2
+
+                train_batches += 1
+
+                l_mul += mul
+                l_mul2 += mul2
+                stimulative += np.mean(st_loss)
+                stimulative2 += np.mean(st_loss2)
+
+            aa_l_gru_epoch.append(aa_l_gru)
+            aa_l_split_epoch.append(aa_l_split)
         # train accuracy
         train_acc_listplt.append(train_acc / train_batches * 100)
         # train loss
         train_loss_listplt.append(train_err / train_batches)
 
+        l_mul_listplt.append(l_mul / train_batches)
+        l_mul2_listplt.append(l_mul2 / train_batches)
+        stimulative_listplt.append(stimulative / train_batches)
+        stimulative2_listplt.append(stimulative2 / train_batches)
+
         # Each epoch training, we compute and print the test error:
         test_err = 0
         test_acc = 0
+        test_err2 = 0
+        test_acc2 = 0
         test_batches = 0
         test_predicted_classi_all = np.array([0])
+        test_predicted_classi_all2 = np.array([0])
 
         mark_input = model.mask(test_sen_length, len(test_sen_length))
-        err, acc, test_predicted_classid, test_prediction_all = val_fn(test_word_pos_vec3D, test_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda)
-        # for batch in elmo_conll.iterate_minibatches(test_word_pos_vec3D, \
-        #                                           test_label_1hot, test_sen_length, model.batch_size,
-        #                                           shuffle=False):
-        #     inputs, targets, mask_sen_length = batch
+        err, acc, test_predicted_classid, test_prediction_all = val_fn(test_word_pos_vec3D, test_label_1hot, mark_input, model.negative_loss_alpha,
+              model.negative_loss_lamda, test_root_embedding, test_e1_embedding, test_e2_embedding, epoch)
+        err2, acc2, test_predicted_classid2, test_prediction_all2 = val_fn(test_word_pos_vec3D, test_label_1hot, mark_input, model.negative_loss_alpha,
+              model.negative_loss_lamda, test_root_embedding, test_e1_embedding, test_e2_embedding, epoch)
+
+        # for batch in kbp_data.iterate_minibatches_inputAttRootE1E2(test_word_pos_vec3D, \
+        #                                                            test_label_1hot, testing_sen_length,
+        #                                                            model.batch_size, test_root_embedding,
+        #                                                            test_e1_embedding, test_e2_embedding, shuffle=False):
+        #     inputs, targets, mask_sen_length, input_root, input_e1, input_e2 = batch
         #     mark_input = model.mask(mask_sen_length, model.batch_size)
         #     err, acc, test_predicted_classid = val_fn(inputs, targets, mark_input, model.negative_loss_alpha,
-        #                                               model.negative_loss_lamda)
+        #                                               model.negative_loss_lamda, input_root, input_e1, input_e2, epoch)
+        #     err2, acc2, test_predicted_classid2 = val_fn2(inputs, targets, mark_input, model.negative_loss_alpha,
+        #                                                   model.negative_loss_lamda, input_root, input_e1, input_e2,
+        #                                                   epoch)
+
         test_err += err
         test_acc += acc
+        test_err2 += err2
+        test_acc2 += acc2
         test_batches += 1
 
         test_predicted_classi_all = np.concatenate((test_predicted_classi_all, test_predicted_classid))
+        test_predicted_classi_all2 = np.concatenate((test_predicted_classi_all2, test_predicted_classid2))
 
         test_predicted_classid = np.array(test_predicted_classi_all[1:])
+        test_predicted_classid2 = np.array(test_predicted_classi_all2[1:])
+
         # test accuracy
         test_acc_listplt.append(test_acc / test_batches * 100)
         # test loss
@@ -568,24 +737,38 @@ if __name__ == "__main__":
                         1.0 - model.prediction_decay) * epoch_predictions
             training_targets = ensemble_prediction / (1.0 - model.prediction_decay ** ((epoch - 0) + 1.0))
 
+        #        #F1 value
+        #        mark_input=model.mask(testing_sen_length,len(testing_sen_length))
+        #        err, acc, test_predicted_classid=val_fn(testing_word_pos_vec3D, testing_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, test_root_embedding, test_e1_embedding, test_e2_embedding)
         # confusion matrix
         test_con_mat = confusion_matrix(test_label, test_predicted_classid)
+        #        #support
+        #        _,_,_,support=precision_recall_fscore_support(testing_label,test_predicted_classid)
         # computer F1_Score
         precision, recall, f1 = model.precision_recall_f1(test_con_mat)
+
+        test_con_mat = confusion_matrix(test_label, test_predicted_classid2)
+        precision2, recall2, f12 = model.precision_recall_f1(test_con_mat)
 
         f1_listplt.append(f1 * 100)
         mat_conf_list.append(test_con_mat)
 
         # max f1-score
-        if f1_max < f1:
+        if (f1_max < f1):
             f1_max = f1
             f1_max_num_epochs = epoch + 1
+
+        if (f1_max2 < f12):
+            f1_max2 = f12
 
         # Then we print the results for this epoch:
         print("Epoch {} of {} took {:.3f}s".format(
             epoch + 1, model.num_epochs, time.time() - start_time))
         print("  training loss:\t\t{:.6f}".format(train_err / train_batches))
         print("  training accuracy:\t\t{:.2f} %".format(train_acc / train_batches * 100))
+        print("  training loss2:\t\t{:.6f}".format(train_err2 / train_batches))
+        print("  training accuracy2:\t\t{:.2f} %".format(train_acc2 / train_batches * 100))
+
         # Testing loss and accuracy
         print("  test loss:\t\t\t{:.6f}".format(test_err / test_batches))
         print("  test accuracy:\t\t{:.2f} %".format(
@@ -593,7 +776,10 @@ if __name__ == "__main__":
         print("  test precision:\t\t{:.2f} %".format(precision * 100))
         print("  test recall:\t\t{:.2f} %".format(recall * 100))
         print("  test f1:\t\t{:.2f} %".format(f1 * 100))
+        print("  test f1_2:\t\t{:.2f} %".format(f12 * 100))
+
         print("  max test f1:\t\t{:.2f} %".format(f1_max * 100))
+        print("  max test f1_2:\t\t{:.2f} %".format(f1_max2 * 100))
         print("  f1 max num epochs:" + str(f1_max_num_epochs))
 
         # Email content
@@ -602,17 +788,25 @@ if __name__ == "__main__":
         email_content = email_content + "  training loss:\t\t{:.6f}".format(train_err / train_batches) + "\n"
         email_content = email_content + "  training accuracy:\t\t{:.2f} %".format(
             train_acc / train_batches * 100) + "\n"
+        email_content = email_content + "  training loss2:\t\t{:.6f}".format(train_err2 / train_batches) + "\n"
+        email_content = email_content + "  training accuracy2:\t\t{:.2f} %".format(
+            train_acc2 / train_batches * 100) + "\n"
+
         email_content = email_content + "  test loss:\t\t\t{:.6f}".format(test_err / test_batches) + "\n"
         email_content = email_content + "  test accuracy:\t\t{:.2f} %".format(
             test_acc / test_batches * 100) + "\n"
         email_content = email_content + "  test precision:\t\t{:.2f} %".format(precision * 100) + "\n"
         email_content = email_content + "  test recall:\t\t{:.2f} %".format(recall * 100) + "\n"
         email_content = email_content + "  test f1:\t\t{:.2f} %".format(f1 * 100) + "\n"
+        email_content = email_content + "  test f1_2:\t\t{:.2f} %".format(f12 * 100) + "\n"
+
         email_content = email_content + "  max test f1:\t\t{:.2f} %".format(f1_max * 100) + "\n"
+        email_content = email_content + "  max test f1_2:\t\t{:.2f} %".format(f1_max2 * 100) + "\n"
+
         email_content = email_content + "  f1 max num epochs:" + str(f1_max_num_epochs) + "\n"
 
         # each 50 epoches,save picture
-        if (epoch % 50 == 0 and epoch != 0):
+        if (epoch % 10 == 0 and epoch != 0):
             num_epochs = range(epoch + 1)
             num_epochs = [i + 1 for i in num_epochs]
             # save Accuracy picture(train and test)
@@ -627,57 +821,77 @@ if __name__ == "__main__":
             # save loss picture(test)
             model.save_plt(num_epochs, test_loss_listplt, 'test loss', "Test Loss", "loss", model.save_lossTest_path,
                            showflag=False)
+
+            # save loss KL()
+            model.save_plt(num_epochs, l_mul_listplt, 'kl', "KL", "loss", save_path="../result/kl.jpg", showflag=False)
+            model.save_plt(num_epochs, l_mul2_listplt, 'kl2', "KL2", "loss", save_path="../result/kl2.jpg",
+                           showflag=False)
+            model.save_plt(num_epochs, stimulative_listplt, 'stimulation', "Stimulation", "loss",
+                           save_path="../result/Stimulation.jpg", showflag=False)
+            model.save_plt(num_epochs, stimulative2_listplt, 'stimulation2', "Stimulation2", "loss",
+                           save_path="../result/Stimulation2.jpg", showflag=False)
+
     # save the prediction
     save_data = dict(
         testing_label_1hot=test_label_1hot,
         test_prediction_all=test_prediction_all)
     np.savez(model.pr_data, **save_data)
 
-    '''
     """
     7.test model
     """
     # After training, we compute and print the test error:
-    test_err = 0
-    test_acc = 0
-    test_batches = 0
-    for batch in kbp_data.iterate_minibatches(testing_word_pos_vec3D, \
-      testing_label_1hot, testing_sen_length, model.batch_size, shuffle=False):
-        inputs, targets, mask_sen_length = batch
-        mark_input=model.mask(mask_sen_length,model.batch_size)
-        err, acc, test_predicted_classid = val_fn(inputs, targets, mark_input, model.negative_loss_alpha, model.negative_loss_lamda)
-        test_err += err
-        test_acc += acc
-        test_batches += 1
+    # test_err = 0
+    # test_acc = 0
+    # test_err2 = 0
+    # test_acc2 = 0
+    # test_batches = 0
+    # for batch in elmo_conll.iterate_minibatches_inputAttRootE1E2(test_word_pos_vec3D, \
+    #                                                            test_label_1hot, test_sen_length, model.batch_size,
+    #                                                            test_root_embedding, test_e1_embedding,
+    #                                                            test_e2_embedding, shuffle=False):
+    #     inputs, targets, mask_sen_length, input_root, input_e1, input_e2 = batch
+    #     mark_input = model.mask(mask_sen_length, model.batch_size)
+    #     err, acc, test_predicted_classid = val_fn(inputs, targets, mark_input, model.negative_loss_alpha,
+    #                                               model.negative_loss_lamda, input_root, input_e1, input_e2,
+    #                                               model.num_epochs)
+    #     err2, acc2, test_predicted_classid2 = val_fn2(inputs, targets, mark_input, model.negative_loss_alpha,
+    #                                                   model.negative_loss_lamda, input_root, input_e1, input_e2,
+    #                                                   model.num_epochs)
+    #
+    #     test_err += err
+    #     test_acc += acc
+    #     test_err2 += err2
+    #     test_acc2 += acc2
+    #     test_batches += 1
 
-    #F1 value
-    mark_input=model.mask(testing_sen_length,len(testing_sen_length))
-    err, acc, test_predicted_classid=val_fn(testing_word_pos_vec3D, testing_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda)
-    #confusion matrix
-    test_con_mat=confusion_matrix(testing_label,test_predicted_classid)
-#    #support
-#    _,_,_,support=precision_recall_fscore_support(testing_label,test_predicted_classid)   
-    #computer F1_Score
-    precision,recall,f1=model.precision_recall_f1(test_con_mat)
+    #    #F1 value
+    #    mark_input=model.mask(testing_sen_length,len(testing_sen_length))
+    #    err, acc, test_predicted_classid=val_fn(testing_word_pos_vec3D, testing_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, test_root_embedding, test_e1_embedding, test_e2_embedding, model.num_epochs)
+    #    #confusion matrix
+    #    test_con_mat=confusion_matrix(testing_label,test_predicted_classid)
+    ##    #support
+    ##    _,_,_,support=precision_recall_fscore_support(testing_label,test_predicted_classid)
+    #    #computer F1_Score
+    #    precision,recall,f1=model.precision_recall_f1(test_con_mat)
 
     print("Final results:")
     print("  test loss:\t\t\t{:.6f}".format(test_err / test_batches))
     print("  test accuracy:\t\t{:.2f} %".format(
         test_acc / test_batches * 100))
-    print("  test precision:\t\t{:.2f} %".format(precision*100))
-    print("  test recall:\t\t{:.2f} %".format(recall*100))
-    print("  test f1:\t\t{:.2f} %".format(f1*100))
-    print("  max test f1:\t\t{:.2f} %".format(f1_max*100))
-    print("  f1 max num epochs:"+str(f1_max_num_epochs))
+    print("  test precision:\t\t{:.2f} %".format(precision * 100))
+    print("  test recall:\t\t{:.2f} %".format(recall * 100))
+    print("  test f1:\t\t{:.2f} %".format(f1 * 100))
+    print("  max test f1:\t\t{:.2f} %".format(f1_max * 100))
+    print("  f1 max num epochs:" + str(f1_max_num_epochs))
 
-    #save the "testing_label" and "test_predicted_classid"
-    ture_predicted_save=np.concatenate((np.reshape(test_predicted_classid,(len(test_predicted_classid),1)),np.reshape(testing_label,(len(testing_label),1))),axis=1)
-    ture_pre_save_txt=open("../testResult/ture_predicted_save.txt","w")
-    for i in range(len(ture_predicted_save)):
-        ture_pre_save_txt.write(str(ture_predicted_save[i][0])+" "+str(ture_predicted_save[i][1]))
-        ture_pre_save_txt.write("\n")
-    ture_pre_save_txt.close()
-    '''
+    #    #save the "testing_label" and "test_predicted_classid"
+    #    ture_predicted_save=np.concatenate((np.reshape(test_predicted_classid,(len(test_predicted_classid),1)),np.reshape(testing_label,(len(testing_label),1))),axis=1)
+    #    ture_pre_save_txt=open("../testResult/ture_predicted_save.txt","w")
+    #    for i in range(len(ture_predicted_save)):
+    #        ture_pre_save_txt.write(str(ture_predicted_save[i][0])+" "+str(ture_predicted_save[i][1]))
+    #        ture_pre_save_txt.write("\n")
+    #    ture_pre_save_txt.close()
 
     """
     8.picture display
@@ -696,7 +910,7 @@ if __name__ == "__main__":
     model.save_plt(num_epochs, test_loss_listplt, 'test loss', "Test Loss", "loss", model.save_lossTest_path)
 
     """
-    9.send result to my email
+    9.save result
     """
     # Email content
     email_content = email_content + "Final results:" + "\n"
@@ -708,6 +922,38 @@ if __name__ == "__main__":
     email_content = email_content + "  max test f1:\t\t{:.2f} %".format(f1_max * 100) + "\n"
     email_content = email_content + "  f1 max num epochs:" + str(f1_max_num_epochs) + "\n"
 
+    result_file = open(model.save_result, "w")
+    result_file.write("num_steps=" + str(model.num_steps) + "\n")
+    result_file.write("num_epochs=" + str(model.num_epochs) + "\n")
+    result_file.write("num_classes=" + str(model.num_classes) + "\n")
+    result_file.write("cnn_gru_size=" + str(model.cnn_gru_size) + "\n")
+    result_file.write("gru_size=" + str(model.gru_size) + "\n")
+    result_file.write("keep_prob_input=" + str(model.keep_prob_input) + "\n")
+    result_file.write("keep_prob_gru_output=" + str(model.keep_prob_gru_output) + "\n")
+    result_file.write("keep_prob_cnn=" + str(model.keep_prob_cnn) + "\n")
+    result_file.write("keep_prob_cnn_gur_output=" + str(model.keep_prob_cnn_gur_output) + "\n")
+    result_file.write("batch_size=" + str(model.batch_size) + "\n")
+    result_file.write("learning_rate=" + str(model.learning_rate) + "\n")
+    result_file.write("network_type=" + str(model.network_type) + "\n")
+    result_file.write("\n")
+    result_file.write("PI MODEL or Tempens model" + "\n")
+    result_file.write("rampup_length=" + str(model.rampup_length) + "\n")
+    result_file.write("rampdown_length=" + str(model.rampdown_length) + "\n")
+    result_file.write("scaled_unsup_weight_max=" + str(model.scaled_unsup_weight_max) + "\n")
+    result_file.write("learning_rate_max=" + str(model.learning_rate_max) + "\n")
+    result_file.write("adam_beta1=" + str(model.adam_beta1) + "\n")
+    result_file.write("rampdown_beta1_target=" + str(model.rampdown_beta1_target) + "\n")
+    result_file.write("num_labels=" + str(model.num_labels) + "\n")
+    result_file.write("prediction_decay=" + str(model.prediction_decay) + "\n")
+    result_file.write("\n")
+    result_file.write("f1_max=" + str(f1_max) + ",f1_max_num_epochs=" + str(f1_max_num_epochs) + "\n")
+    result_file.write("\n")
+    result_file.write(email_content)
+    result_file.close()
+
+    """
+    10.send result to my email
+    """
     msg = MIMEMultipart()
     msg['Subject'] = subject
     msg['From'] = msg_from
@@ -738,36 +984,3 @@ if __name__ == "__main__":
         print "发送失败"
     finally:
         s.quit()
-
-    """
-    10.save result
-    """
-    result_file = open(model.save_result, "w")
-    result_file.write("num_steps=" + str(model.num_steps) + "\n")
-    result_file.write("num_epochs=" + str(model.num_epochs) + "\n")
-    result_file.write("num_classes=" + str(model.num_classes) + "\n")
-    result_file.write("cnn_gru_size=" + str(model.cnn_gru_size) + "\n")
-    result_file.write("gru_size=" + str(model.gru_size) + "\n")
-    result_file.write("keep_prob_input=" + str(model.keep_prob_input) + "\n")
-    result_file.write("keep_prob_gru_output=" + str(model.keep_prob_gru_output) + "\n")
-    result_file.write("keep_prob_cnn=" + str(model.keep_prob_cnn) + "\n")
-    result_file.write("keep_prob_cnn_gur_output=" + str(model.keep_prob_cnn_gur_output) + "\n")
-    result_file.write("batch_size=" + str(model.batch_size) + "\n")
-    result_file.write("learning_rate=" + str(model.learning_rate) + "\n")
-    result_file.write("network_type=" + str(model.network_type) + "\n")
-    result_file.write("\n")
-    result_file.write("PI MODEL or Tempens model" + "\n")
-    result_file.write("rampup_length=" + str(model.rampup_length) + "\n")
-    result_file.write("rampdown_length=" + str(model.rampdown_length) + "\n")
-    result_file.write("scaled_unsup_weight_max=" + str(model.scaled_unsup_weight_max) + "\n")
-    result_file.write("learning_rate_max=" + str(model.learning_rate_max) + "\n")
-    result_file.write("adam_beta1=" + str(model.adam_beta1) + "\n")
-    result_file.write("rampdown_beta1_target=" + str(model.rampdown_beta1_target) + "\n")
-    result_file.write("num_labels=" + str(model.num_labels) + "\n")
-    result_file.write("prediction_decay=" + str(model.prediction_decay) + "\n")
-    result_file.write("\n")
-    result_file.write("f1_max=" + str(f1_max) + ",f1_max_num_epochs=" + str(f1_max_num_epochs) + "\n")
-    result_file.write("\n")
-    result_file.write(email_content)
-    result_file.close()
-

@@ -3,3 +3,4 @@
 2.Ranking loss
 3.Distance loss
 4.SSL
+5.Center loss
