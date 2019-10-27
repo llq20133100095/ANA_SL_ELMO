@@ -23,7 +23,7 @@ import os
 from dataProcessConll import ELMO_CONLL
 from customLayers import Input_keywords_DotLayer, concat_attention_layer3_1, concat_attention_layer3_2, concat_attention_layer3_3
 from customLoss import Stimulation_loss
-from ComparedLossFun.CenterLoss import center_loss
+from ComparedLossFun.CenterLoss import center_loss, neg_center_loss
 
 import smtplib
 from email.mime.text import MIMEText
@@ -67,7 +67,7 @@ class Network:
         # All gradients above this will be clipped
         self.grad_clip = 5
         # l2_loss
-        self.l2_loss = 1e-4
+        self.l2_loss = 1e-3
         # Choose "pi" or "tempens" or "ordinary"
         self.network_type = "ordinary"
 
@@ -134,6 +134,7 @@ class Network:
         self.negative_loss_alpha = np.float32(np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.82375]))
         self.negative_loss_lamda = 1
         self.alpha = 0.5
+        self.cl_lambda = 1
 
         """Self Attention"""
         self.input_shape_att = (None, self.embedding_len)  # 1364
@@ -240,13 +241,13 @@ class Network:
             nonlinearity=lasagne.nonlinearities.selu))
 
         l_out_margin = lasagne.layers.DenseLayer(
-            l_merge_fc,
+            l_merge_drop,
             num_units=self.num_classes,
             W=lasagne.init.GlorotUniform(gain=1.0), b=lasagne.init.Constant(1.),
             nonlinearity=lasagne.nonlinearities.softmax)
 
         #        return l_out_margin,l_in,l_mask,alphas,l_self_att
-        return l_out_margin, l_in, l_mask, l_mask, l_merge_fc
+        return l_out_margin, l_in, l_mask, l_mask, l_merge_drop
 
     def mask(self, mask_var, batch_size):
         """
@@ -463,7 +464,7 @@ if __name__ == "__main__":
     # epoch_att=T.iscalar("epoch_att")
 
     # loss parameter
-    centers = theano.shared(np.float32(np.zeros([model.num_classes, 250])), "centers")
+    centers = theano.shared(np.float32(np.zeros([model.num_classes, 300])), "centers")
 
     """
     2.
@@ -481,9 +482,10 @@ if __name__ == "__main__":
     alpha = lasagne.layers.get_output(l_alphas)
     l_split = lasagne.layers.get_output(l_merge_output)
 
-    # loss,wrong_pre,true_pre,stimulative = Stimulation_loss(prediction, target_var)
-    center_loss_value, new_centers = center_loss(l_split, target_var, model.alpha, centers)
-    loss = lasagne.objectives.categorical_crossentropy(prediction, target_var)
+    _, wrong_pre, true_pre, stimulative = Stimulation_loss(prediction, target_var)
+    center_loss_value, new_centers = neg_center_loss(l_split, target_var, model.alpha, centers)
+    center_loss_value = model.cl_lambda * center_loss_value
+    loss = stimulative * lasagne.objectives.categorical_crossentropy(prediction, target_var)
 
     # Pi model loss
     if model.network_type=="pi":
@@ -509,8 +511,10 @@ if __name__ == "__main__":
     l_split = lasagne.layers.get_output(l_merge_output)
 
     # loss, wrong_pre, true_pre, stimulative = Stimulation_loss(l_merge_output, target_var)
-    center_loss_value, new_centers = center_loss(l_split, target_var, model.alpha, new_centers)
-    loss_batch = lasagne.objectives.categorical_crossentropy(prediction, target_var)
+    _, wrong_pre, true_pre, stimulative = Stimulation_loss(prediction, target_var)
+    center_loss_value, new_centers = neg_center_loss(l_split, target_var, model.alpha, centers)
+    loss_batch = stimulative * lasagne.objectives.categorical_crossentropy(prediction, target_var)
+    center_loss_value = model.cl_lambda * center_loss_value
     loss = T.mean(loss_batch + center_loss_value, dtype=theano.config.floatX)
     ######################################
 
@@ -557,7 +561,10 @@ if __name__ == "__main__":
     elif model.network_type=="tempens":
         train_fn = theano.function([input_var, target_var, mask_var, z_target_var, mask_train, unsup_weight_var, learning_rate_var, adam_beta1_var], [loss,train_acc,prediction], updates=updates, on_unused_input='warn')
     else:
-        train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, loss_batch, prediction_batch], updates=updates.update({centers:new_centers}), on_unused_input='warn')
+        # train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, loss_batch, prediction_batch], updates=updates, on_unused_input='warn')
+        train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, loss_batch, prediction_batch], updates=updates, on_unused_input='warn')
+        train_centers = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [centers], updates={centers:new_centers}, on_unused_input='warn')
+
 
     # Compile a second function computing the validation loss and accuracy and F1-score:
     val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [test_loss, test_acc, test_predicted_classid, test_prediction], on_unused_input='warn')
@@ -649,6 +656,8 @@ if __name__ == "__main__":
             aa_mark_input = model.mask(mask_sen_length, model.batch_size)
             err, acc, aa_l_gru, aa_l_split, loss_each_batch, predict_each_batch = \
                 train_fn(aa_inputs, targets, aa_mark_input, learning_rate, adam_beta1, model.negative_loss_alpha, model.negative_loss_lamda, input_root, input_e1, input_e2)
+            aa_centers = train_centers(aa_inputs, targets, aa_mark_input, learning_rate, adam_beta1, model.negative_loss_alpha, model.negative_loss_lamda, input_root, input_e1, input_e2)
+
 
             train_err+=err
             train_acc+=acc

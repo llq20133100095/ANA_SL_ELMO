@@ -35,3 +35,7 @@
 
 ## 3. OtherModel
 - 用来实现其他模型的，包括：CNN，RNN，BLSTM，ATT-BLSTM，Att-Pooling-CNN
+
+## 4.result
+- experiment_PR (copy)：文件夹存放了原始的用来做实验的pr图
+- experiment_PR：新存放的
