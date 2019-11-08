@@ -9,6 +9,7 @@ from sklearn import metrics
 from sklearn.metrics import confusion_matrix, precision_score
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.patches import ConnectionPatch
 
 
 def sample_data(precision, recall, sample=1000):
@@ -103,21 +104,21 @@ precision["att_pooling_cnn2"], recall["att_pooling_cnn2"] = sample_data(precisio
                                                                         recall["att_pooling_cnn"], sample)
 
 # 4.ANA-SL-ELAtBIGRU
-ana_sl_elatbigru_file = '../result/experiment_PR/ANA-SL-ElAtBiGRU_conll04.npz'
+ana_sl_elatbigru_file = '../result/experiment_PR/ANA-CL-ElAtBiGRU_conll04_98.14.npz'
 ana_sl_elatbigru_data = np.load(ana_sl_elatbigru_file)
 y_true = ana_sl_elatbigru_data['testing_label_1hot']
 y_scores = ana_sl_elatbigru_data['test_prediction_all']
 
-precision["ana_sl_elatbigru"], recall["ana_sl_elatbigru"], _ = metrics.precision_recall_curve(y_true.ravel(),
+precision["ana_sil_elatbigru"], recall["ana_sil_elatbigru"], _ = metrics.precision_recall_curve(y_true.ravel(),
                                                                                               y_scores.ravel())
 pr_score = metrics.average_precision_score(y_true.ravel(), y_scores.ravel())
 print pr_score
 
 # sample
-precision["ana_sl_elatbigru2"], recall["ana_sl_elatbigru2"] = sample_data(precision["ana_sl_elatbigru"],
-                                                                          recall["ana_sl_elatbigru"], sample)
+precision["ana_sil_elatbigru2"], recall["ana_sil_elatbigru2"] = sample_data(precision["ana_sil_elatbigru"],
+                                                                          recall["ana_sil_elatbigru"], sample)
 
-# 5.ANA-SL-ELAtBIGRU
+# 5.ANA-SIL-ELAtBIGRU
 ana_sl_elatbigru_glove_file = '../result/experiment_PR/ANA-SL-ElAtBiGRU_conll04_glove.npz'
 ana_sl_elatbigru_glove_file_data = np.load(ana_sl_elatbigru_glove_file)
 y_true = ana_sl_elatbigru_glove_file_data['testing_label_1hot']
@@ -161,6 +162,7 @@ precision["ssl_kas_mubigru2"], recall["ssl_kas_mubigru2"] = sample_data(
     precision["ssl_kas_mubigru"], recall["ssl_kas_mubigru"], sample)
 
 # plot
+'''
 save_path = "../result/experiment_PR/PR_in_Conll.jpg"
 plt.figure(figsize=(10, 10))
 plt.grid()  # open grid
@@ -183,10 +185,74 @@ plt.plot(recall["cnn_kbp2"], precision["cnn_kbp2"], '*-', label="CNN", linewidth
 plt.plot(recall["rnn_kbp2"], precision["rnn_kbp2"], 'd-', label="RNN", linewidth='3')
 plt.plot(recall["blstm2"], precision["blstm2"], 'g-', label="BLSTM", linewidth='3')
 plt.plot(recall["ana_sl_elatbigru_glove2"], precision["ana_sl_elatbigru_glove2"], '>-', color='yellow', label="SSL-KAS-MuBiGRU", linewidth='3')
-plt.plot(recall["ana_sl_elatbigru2"], precision["ana_sl_elatbigru2"], 'v-', label="ANA-SL-ElAtBiGRU", linewidth='3')
-plt.plot(recall["ssl_kas_mubigru2"], precision["ssl_kas_mubigru2"], '+-', label="ANA-SL-ElAtBiGRU (GloVe)", linewidth='3')
+plt.plot(recall["ana_sil_elatbigru2"], precision["ana_sil_elatbigru2"], 'v-', label="ANA-SIL-ElAtBiGRU", linewidth='3')
+plt.plot(recall["ssl_kas_mubigru2"], precision["ssl_kas_mubigru2"], '+-', label="ANA-SIL-ElAtBiGRU (GloVe)", linewidth='3')
 
 plt.legend(loc='best', fontsize=20)
 plt.savefig(save_path, dpi=500)
 plt.show()
 plt.close()
+'''
+
+save_path = "../result/experiment_PR/PR_in_Conll.jpg"
+plt.figure(figsize=(20, 10))
+plt.xticks(fontsize=30)
+plt.yticks(fontsize=30)
+p1 = plt.subplot(121)
+p2 = plt.subplot(122)
+p1.tick_params(labelsize=30)
+p2.tick_params(labelsize=30)
+
+p1.set_xlabel(r'Recall', fontsize=30)
+p1.set_ylabel("Precision", fontsize=30)
+p1.plot(recall["att_bilstm_kbp2"], precision["att_bilstm_kbp2"], 'o-', label="Att-BLSTM", linewidth='3')
+p1.plot(recall["att_pooling_cnn2"], precision["att_pooling_cnn2"], 'x-', label="Att-Pooling-CNN", linewidth='3')
+p1.plot(recall["cnn_kbp2"], precision["cnn_kbp2"], '*-', label="CNN", linewidth='3')
+p1.plot(recall["rnn_kbp2"], precision["rnn_kbp2"], 'd-', label="RNN", linewidth='3')
+p1.plot(recall["blstm2"], precision["blstm2"], 'g-', label="BLSTM", linewidth='3')
+p1.plot(recall["ana_sl_elatbigru_glove2"], precision["ana_sl_elatbigru_glove2"], '>-', color='yellow', label="SSL-KAS-MuBiGRU", linewidth='3')
+p1.plot(recall["ana_sil_elatbigru2"], precision["ana_sil_elatbigru2"], 'v-', label="ANA-SIL-ElAtBiGRU", linewidth='3')
+p1.plot(recall["ssl_kas_mubigru2"], precision["ssl_kas_mubigru2"], '+-', label="ANA-SIL-ElAtBiGRU (GloVe)", linewidth='3')
+
+# plot the box
+tx0 = 0.6
+tx1 = 1.005
+ty0 = 0.8
+ty1 = 1.005
+sx = [tx0, tx1, tx1, tx0, tx0]
+sy = [ty0, ty0, ty1, ty1, ty0]
+p1.plot(sx, sy, "black")
+
+p1.legend(loc='best', fontsize=20)
+p1.grid()  # open grid
+
+p2.set_xlabel(r'Recall', fontsize=30)
+p2.set_ylabel("Precision", fontsize=30)
+p2.set_ylim(0.8, 1.005)
+p2.set_xlim(0.6, 1.005)
+p2.plot(recall["att_bilstm_kbp2"], precision["att_bilstm_kbp2"], 'o-', label="Att-BLSTM", linewidth='3')
+p2.plot(recall["att_pooling_cnn2"], precision["att_pooling_cnn2"], 'x-', label="Att-Pooling-CNN", linewidth='3')
+p2.plot(recall["cnn_kbp2"], precision["cnn_kbp2"], '*-', label="CNN", linewidth='3')
+p2.plot(recall["rnn_kbp2"], precision["rnn_kbp2"], 'd-', label="RNN", linewidth='3')
+p2.plot(recall["blstm2"], precision["blstm2"], 'g-', label="BLSTM", linewidth='3')
+p2.plot(recall["ana_sl_elatbigru_glove2"], precision["ana_sl_elatbigru_glove2"], '>-', color='yellow', label="SSL-KAS-MuBiGRU", linewidth='3')
+p2.plot(recall["ssl_kas_mubigru2"], precision["ssl_kas_mubigru2"], 'v-', label="ANA-SIL-ElAtBiGRU", linewidth='3')
+p2.plot(recall["ana_sil_elatbigru2"], precision["ana_sil_elatbigru2"], '+-', label="ANA-SIL-ElAtBiGRU (GloVe)", linewidth='3')
+p2.legend(loc='best', fontsize=20)
+p2.grid()  # open grid
+
+# plot patch lines
+xy = (1.005, 1.005)
+xy2 = (0.6, 1.005)
+con = ConnectionPatch(xyA=xy2, xyB=xy, coordsA="data", coordsB="data", axesA=p2, axesB=p1)
+p2.add_artist(con)
+xy = (1.005, 0.8)
+xy2 = (0.6, 0.8)
+con = ConnectionPatch(xyA=xy2, xyB=xy, coordsA="data", coordsB="data", axesA=p2, axesB=p1)
+p2.add_artist(con)
+
+plt.savefig(save_path, dpi=500)
+plt.show()
+
+
+

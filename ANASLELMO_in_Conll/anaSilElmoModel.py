@@ -44,7 +44,7 @@ class Network:
         # the number of unrolled steps of LSTM
         self.num_steps = 107
         # the number of epoch(one epoch=N iterations)
-        self.num_epochs = 50
+        self.num_epochs = 30
         # the number of class
         self.num_classes = 3
         # the number of GRU units?
@@ -67,7 +67,7 @@ class Network:
         # All gradients above this will be clipped
         self.grad_clip = 5
         # l2_loss
-        self.l2_loss = 1e-3
+        self.l2_loss = 1e-2
         # Choose "pi" or "tempens" or "ordinary"
         self.network_type = "ordinary"
 

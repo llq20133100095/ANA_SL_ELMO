@@ -39,3 +39,7 @@
 ## 4.result
 - experiment_PR (copy)：文件夹存放了原始的用来做实验的pr图
 - experiment_PR：新存放的
+
+## 5.ComparedLossFun
+- 实现了SIL loss
+- 实现了各种不同的loss对比
