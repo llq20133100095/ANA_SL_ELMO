@@ -3,4 +3,6 @@
 2.Ranking loss
 3.Distance loss
 4.SSL
-5.Center loss
+5.Center loss:
+  (1)新增加了SIL
+  (2)新增加了SDL

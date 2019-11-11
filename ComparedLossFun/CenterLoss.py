@@ -144,6 +144,40 @@ def neg_center_loss(features, labels, alpha, centers):
     return loss_neg, centers
 
 
+def sdl(features, labels, alpha, centers):
+    """
+    梯度更新公式更新cneter
+    :param features:
+    :param labels:
+    :param alpha:
+    :param centers:
+    :return:
+    """
+    # 将特征reshape成一维
+    labels_index = T.reshape(T.argmax(labels, axis=1), [-1])
+    labels_index = T.cast(labels_index, "int32")
+
+    # loss_neg, labels_neg_index, centers_batch = cal_neg_distance(features, centers[:], labels_index)
+    labels_neg_index = cal_neg_distance(features, centers[:], labels_index)
+
+    # 获取当前batch每个样本对应的中心
+    centers_batch = centers[labels_neg_index]
+    # 计算center loss的数值
+    loss_neg = np.log(1 + np.exp(-T.sum((features - centers_batch) ** 2, axis=1) / 2.0))
+
+    # 以下为更新中心的步骤
+    diff = (features - centers_batch) * T.reshape((1 - 1 / (1 + np.exp(-T.sum((features - centers_batch) ** 2, axis=1) / 2.0))), (-1, 1))
+
+    # 获取一个batch中同一样本出现的次数，这里需要理解论文中的更新公式
+    unique_label, appear_times, diff = unique_with_counts(labels_neg_index, diff)
+    diff = alpha * diff
+
+    # 更新中心
+    centers = scatter_sub(centers[:], labels_neg_index, diff)
+
+    return loss_neg, centers
+
+
 if __name__ == "__main__":
     features = T.fmatrix("features")
     labels = T.imatrix("labels")

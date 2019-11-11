@@ -23,7 +23,7 @@ import os
 from dataProcessConll import ELMO_CONLL
 from customLayers import Input_keywords_DotLayer, concat_attention_layer3_1, concat_attention_layer3_2, concat_attention_layer3_3
 from customLoss import Stimulation_loss
-from ComparedLossFun.CenterLoss import center_loss, neg_center_loss
+from ComparedLossFun.CenterLoss import center_loss, neg_center_loss, sdl
 
 import smtplib
 from email.mime.text import MIMEText
@@ -118,15 +118,15 @@ class Network:
         # self.save_result = "../result/1/result.txt"
 
         # save ACCURACY picture path
-        self.save_picAcc_path = "../result/ANA-CL-ElAtBiGRU/train-test-accuracy.jpg"
+        self.save_picAcc_path = "../result/ANA-SDL-ElAtBiGRU/train-test-accuracy.jpg"
         # save F1 picture path
-        self.save_picF1_path = "../result/ANA-CL-ElAtBiGRU/f1.jpg"
-        self.save_picAllAcc_path = "../result/ANA-CL-ElAtBiGRU/test_all_accuracy.jpg"
-        self.save_picAllRec_path = "../result/ANA-CL-ElAtBiGRU/test_all_recall.jpg"
+        self.save_picF1_path = "../result/ANA-SDL-ElAtBiGRU/f1.jpg"
+        self.save_picAllAcc_path = "../result/ANA-SDL-ElAtBiGRU/test_all_accuracy.jpg"
+        self.save_picAllRec_path = "../result/ANA-SDL-ElAtBiGRU/test_all_recall.jpg"
         # save train loss picture path
-        self.save_lossTrain_path = "../result/ANA-CL-ElAtBiGRU/train_loss.jpg"
+        self.save_lossTrain_path = "../result/ANA-SDL-ElAtBiGRU/train_loss.jpg"
         # save test loss picture path
-        self.save_lossTest_path = "../result/ANA-CL-ElAtBiGRU/test_loss.jpg"
+        self.save_lossTest_path = "../result/ANA-SDL-ElAtBiGRU/test_loss.jpg"
         # save result file
         self.save_result = "../result/ANA-CL-ElAtBiGRU/result.txt"
 
@@ -142,7 +142,7 @@ class Network:
 
         """ PR-data """
         # self.pr_data = '../result/experiment_PR/1/ANA-SL-ElAtBiGRU_conll04.npz'
-        self.pr_data = '../result/experiment_PR/ANA-CL-ElAtBiGRU_conll04.npz'
+        self.pr_data = '../result/experiment_PR/ANA-SDL-ElAtBiGRU_conll04.npz'
 
     def bulit_gru(self, input_var=None, mask_var=None, input_root=None, input_e1=None, input_e2=None):
         """
@@ -483,7 +483,7 @@ if __name__ == "__main__":
     l_split = lasagne.layers.get_output(l_merge_output)
 
     _, wrong_pre, true_pre, stimulative = Stimulation_loss(prediction, target_var)
-    center_loss_value, new_centers = neg_center_loss(l_split, target_var, model.alpha, centers)
+    center_loss_value, new_centers = sdl(l_split, target_var, model.alpha, centers)
     center_loss_value = model.cl_lambda * center_loss_value
     loss = stimulative * lasagne.objectives.categorical_crossentropy(prediction, target_var)
 
@@ -512,7 +512,7 @@ if __name__ == "__main__":
 
     # loss, wrong_pre, true_pre, stimulative = Stimulation_loss(l_merge_output, target_var)
     _, wrong_pre, true_pre, stimulative = Stimulation_loss(prediction, target_var)
-    center_loss_value, new_centers = neg_center_loss(l_split, target_var, model.alpha, centers)
+    center_loss_value, new_centers = sdl(l_split, target_var, model.alpha, centers)
     loss_batch = stimulative * lasagne.objectives.categorical_crossentropy(prediction, target_var)
     center_loss_value = model.cl_lambda * center_loss_value
     loss = T.mean(loss_batch + center_loss_value, dtype=theano.config.floatX)
