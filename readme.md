@@ -43,4 +43,3 @@
 ## 5.ComparedLossFun
 - 实现了SIL loss, SDL
 - 实现了各种不同的loss对比
-- test
