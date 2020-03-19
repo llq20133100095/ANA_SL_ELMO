@@ -118,15 +118,15 @@ class Network:
         # self.save_result = "../result/1/result.txt"
 
         # save ACCURACY picture path
-        self.save_picAcc_path = "../result/ANA-SDL-ElAtBiGRU/train-test-accuracy.jpg"
+        self.save_picAcc_path = "../result/ANA-SDL-ElAtBiGRU/train-test-accuracy.png"
         # save F1 picture path
-        self.save_picF1_path = "../result/ANA-SDL-ElAtBiGRU/f1.jpg"
-        self.save_picAllAcc_path = "../result/ANA-SDL-ElAtBiGRU/test_all_accuracy.jpg"
-        self.save_picAllRec_path = "../result/ANA-SDL-ElAtBiGRU/test_all_recall.jpg"
+        self.save_picF1_path = "../result/ANA-SDL-ElAtBiGRU/f1.png"
+        self.save_picAllAcc_path = "../result/ANA-SDL-ElAtBiGRU/test_all_accuracy.png"
+        self.save_picAllRec_path = "../result/ANA-SDL-ElAtBiGRU/test_all_recall.png"
         # save train loss picture path
-        self.save_lossTrain_path = "../result/ANA-SDL-ElAtBiGRU/train_loss.jpg"
+        self.save_lossTrain_path = "../result/ANA-SDL-ElAtBiGRU/train_loss.png"
         # save test loss picture path
-        self.save_lossTest_path = "../result/ANA-SDL-ElAtBiGRU/test_loss.jpg"
+        self.save_lossTest_path = "../result/ANA-SDL-ElAtBiGRU/test_loss.png"
         # save result file
         self.save_result = "../result/ANA-CL-ElAtBiGRU/result.txt"
 
