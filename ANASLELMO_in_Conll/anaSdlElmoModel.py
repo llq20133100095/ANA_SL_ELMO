@@ -5,7 +5,7 @@ Created on 2019.10.25
 
 @author: llq
 @function:
-    1.realize the ANA-CL-ELMO model
+    realize the ANA-SDL-ELMO model
 """
 
 import numpy as np
