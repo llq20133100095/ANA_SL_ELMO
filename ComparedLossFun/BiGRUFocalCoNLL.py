@@ -1,11 +1,12 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on 2019.10.25
+Created on 2020.3.19
 
 @author: llq
 @function:
-    realize the ANA-SDL-ELMO model
+    1. realize the BiGRU model
+    2. use SDL function
 """
 
 import numpy as np
@@ -15,15 +16,17 @@ import lasagne
 from lasagne.utils import floatX
 import time
 import math
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from sklearn.metrics import confusion_matrix
 import os
+import sys
+sys.path.append("..")
 
-from dataProcessConll import ELMO_CONLL
-from customLayers import Input_keywords_DotLayer, concat_attention_layer3_1, concat_attention_layer3_2, concat_attention_layer3_3
-from customLoss import Stimulation_loss
-from ComparedLossFun.CenterLoss import center_loss, neg_center_loss, sdl
+from ANASLELMO_in_Conll.dataProcessConll import ELMO_CONLL
+from LossFunction import focal_loss
 
 import smtplib
 from email.mime.text import MIMEText
@@ -118,17 +121,17 @@ class Network:
         # self.save_result = "../result/1/result.txt"
 
         # save ACCURACY picture path
-        self.save_picAcc_path = "../result/ANA-SDL-ElAtBiGRU/train-test-accuracy.png"
+        self.save_picAcc_path = "../result/BiGRU/train-test-accuracy.png"
         # save F1 picture path
-        self.save_picF1_path = "../result/ANA-SDL-ElAtBiGRU/f1.png"
-        self.save_picAllAcc_path = "../result/ANA-SDL-ElAtBiGRU/test_all_accuracy.png"
-        self.save_picAllRec_path = "../result/ANA-SDL-ElAtBiGRU/test_all_recall.png"
+        self.save_picF1_path = "../result/BiGRU/f1.png"
+        self.save_picAllAcc_path = "../result/BiGRU/test_all_accuracy.png"
+        self.save_picAllRec_path = "../result/BiGRU/test_all_recall.png"
         # save train loss picture path
-        self.save_lossTrain_path = "../result/ANA-SDL-ElAtBiGRU/train_loss.png"
+        self.save_lossTrain_path = "../result/BiGRU/train_loss.png"
         # save test loss picture path
-        self.save_lossTest_path = "../result/ANA-SDL-ElAtBiGRU/test_loss.png"
+        self.save_lossTest_path = "../result/BiGRU/test_loss.png"
         # save result file
-        self.save_result = "../result/ANA-CL-ElAtBiGRU/result.txt"
+        self.save_result = "../result/BiGRU/result.txt"
 
         """loss parameter"""
         self.negative_loss_alpha = np.float32(np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.82375]))
@@ -142,7 +145,7 @@ class Network:
 
         """ PR-data """
         # self.pr_data = '../result/experiment_PR/1/ANA-SL-ElAtBiGRU_conll04.npz'
-        self.pr_data = '../result/experiment_PR/ANA-SDL-ElAtBiGRU_conll04.npz'
+        self.pr_data = '../result/experiment_PR/BiGRU_SDL_conll04.npz'
 
     def bulit_gru(self, input_var=None, mask_var=None, input_root=None, input_e1=None, input_e2=None):
         """
@@ -157,22 +160,6 @@ class Network:
         # inpute dropout
         l_input_drop = lasagne.layers.DropoutLayer(l_in, p=self.keep_prob_input)
 
-        """Input attention entity and root"""
-        l_in_root = lasagne.layers.InputLayer(shape=self.input_shape_att, input_var=input_root, name="l_in_root")
-        l_in_e1 = lasagne.layers.InputLayer(shape=self.input_shape_att, input_var=input_e1, name="l_in_e1")
-        l_in_e2 = lasagne.layers.InputLayer(shape=self.input_shape_att, input_var=input_e2, name="l_in_e2")
-
-        # Dot the "input" and "keywords"
-        l_in_root = lasagne.layers.ReshapeLayer(l_in_root, (-1, 1, self.input_shape_att[1]))
-        l_in_e1 = lasagne.layers.ReshapeLayer(l_in_e1, (-1, 1, self.input_shape_att[1]))
-        l_in_e2 = lasagne.layers.ReshapeLayer(l_in_e2, (-1, 1, self.input_shape_att[1]))
-        l_keywords = lasagne.layers.ConcatLayer([l_in_e1, l_in_root, l_in_e2], axis=1, name="l_keywords")
-
-        #        l_keywords=lasagne.layers.InputLayer(shape=(None,3,1364),input_var=input_keywords,name="l_input_keywords")
-
-        # (Batch_size,max_length,keywords_number)
-        l_in_dot = Input_keywords_DotLayer([l_in, l_keywords], name="input_keywords_dot")
-
         """main bi-gru"""
         # Two GRU forward
         l_gru_forward = lasagne.layers.GRULayer( \
@@ -185,7 +172,7 @@ class Network:
             l_gru_forward, num_units=self.gru_size, grad_clipping=self.grad_clip,
             resetgate=self.gate_parameters, updategate=self.gate_parameters,
             hidden_update=self.cell_parameters, learn_init=True, mask_input=l_mask,
-            only_return_final=False, name="l_gru_forward2")
+            only_return_final=True, name="l_gru_forward2")
 
         # Two GRU backward
         l_gru_backward = lasagne.layers.GRULayer( \
@@ -198,41 +185,13 @@ class Network:
             l_gru_backward, num_units=self.gru_size, grad_clipping=self.grad_clip,
             resetgate=self.gate_parameters, updategate=self.gate_parameters,
             hidden_update=self.cell_parameters, learn_init=True, mask_input=l_mask,
-            only_return_final=False, backwards=True, name="l_gru_backward2")
+            only_return_final=True, backwards=True, name="l_gru_backward2")
 
         # Merge forward layers and backward layers
         l_merge = lasagne.layers.ElemwiseSumLayer([l_gru_forward, l_gru_backward])
 
-        """auxiliary bi-gru"""
-        l_keywords = lasagne.layers.DropoutLayer(l_keywords, p=self.keep_prob_input)
-
-        l_aux_gru_forward = lasagne.layers.GRULayer( \
-            l_keywords, num_units=self.gru_size, grad_clipping=self.grad_clip,
-            resetgate=self.gate_parameters, updategate=self.gate_parameters,
-            hidden_update=self.cell_parameters, learn_init=True,
-            only_return_final=True, name="l_aux_gru_forward")
-
-        l_aux_gru_backward = lasagne.layers.GRULayer( \
-            l_keywords, num_units=self.gru_size, grad_clipping=self.grad_clip,
-            resetgate=self.gate_parameters, updategate=self.gate_parameters,
-            hidden_update=self.cell_parameters, learn_init=True,
-            only_return_final=True, backwards=True, name="l_aux_gru_backward")
-
-        # Merge forward layers and backward layers
-        l_aux_merge = lasagne.layers.ElemwiseSumLayer([l_aux_gru_forward, l_aux_gru_backward])
-
-        """concat attention"""
-        #        #(Batch_size,max_length,keywords_number)
-        #        l_h_dot=Input_keywords_DotLayer([l_merge,l_aux_merge],name="output_H_dot")
-
-        #        l_self_att=concat_attention_layer3([l_in_dot,l_merge,l_aux_merge], atten_size=20)
-
-        l_H_add = concat_attention_layer3_1([l_in_dot, l_merge, l_aux_merge])
-        alphas = concat_attention_layer3_2([l_in_dot, l_merge, l_aux_merge], atten_size=20)
-        l_self_att = concat_attention_layer3_3([l_H_add, alphas])
-
         # output dropout
-        l_merge_drop = lasagne.layers.DropoutLayer(l_self_att, p=self.keep_prob_gru_output)
+        l_merge_drop = lasagne.layers.DropoutLayer(l_merge, p=self.keep_prob_gru_output)
 
         l_merge_fc = lasagne.layers.batch_norm(lasagne.layers.DenseLayer(
             l_merge_drop,
@@ -241,7 +200,7 @@ class Network:
             nonlinearity=lasagne.nonlinearities.selu))
 
         l_out_margin = lasagne.layers.DenseLayer(
-            l_merge_drop,
+            l_merge_fc,
             num_units=self.num_classes,
             W=lasagne.init.GlorotUniform(gain=1.0), b=lasagne.init.Constant(1.),
             nonlinearity=lasagne.nonlinearities.softmax)
@@ -276,7 +235,7 @@ class Network:
         return embedding
 
     def save_plt(self, x, y, label, title, ylabel_name, save_path, twice=False, x2=None, y2=None, label2=None,
-                 showflag=True):
+                 showflag=False):
         """
         Save picture:
             1.Train Accuracy
@@ -399,16 +358,16 @@ if __name__ == "__main__":
     """ 6.load the embedding of root, e1 and e2. """
     train_root_embedding, train_e1_embedding, train_e2_embedding = \
         elmo_conll.embedding_looking_root_e1_e2(elmo_conll.e1_sdp_train_file, elmo_conll.e2_sdp_train_file, elmo_conll.train_sen_number, train_sen_list2D, elmo_conll.train_elmo_file)
-    # train_root_embedding = np.concatenate((train_root_embedding[:, :300], train_root_embedding[:, -40:]), axis=1)
-    # train_e1_embedding = np.concatenate((train_e1_embedding[:, :300], train_e1_embedding[:, -40:]), axis=1)
-    # train_e2_embedding = np.concatenate((train_e2_embedding[:, :300], train_e2_embedding[:, -40:]), axis=1)
+    train_root_embedding = np.concatenate((train_root_embedding[:, :300], train_root_embedding[:, -40:]), axis=1)
+    train_e1_embedding = np.concatenate((train_e1_embedding[:, :300], train_e1_embedding[:, -40:]), axis=1)
+    train_e2_embedding = np.concatenate((train_e2_embedding[:, :300], train_e2_embedding[:, -40:]), axis=1)
 
     test_root_embedding, test_e1_embedding, test_e2_embedding=\
         elmo_conll.embedding_looking_root_e1_e2(elmo_conll.e1_sdp_test_file, elmo_conll.e2_sdp_test_file, elmo_conll.test_sen_number, test_sen_list2D, elmo_conll.test_elmo_file)
     print("load the embedding of root, e1 and e2: %f s" % (time.time() - start_time))
-    # test_root_embedding = np.concatenate((test_root_embedding[:, :300], test_root_embedding[:, -40:]), axis=1)
-    # test_e1_embedding = np.concatenate((test_e1_embedding[:, :300], test_e1_embedding[:, -40:]), axis=1)
-    # test_e2_embedding = np.concatenate((test_e2_embedding[:, :300], test_e2_embedding[:, -40:]), axis=1)
+    test_root_embedding = np.concatenate((test_root_embedding[:, :300], test_root_embedding[:, -40:]), axis=1)
+    test_e1_embedding = np.concatenate((test_e1_embedding[:, :300], test_e1_embedding[:, -40:]), axis=1)
+    test_e2_embedding = np.concatenate((test_e2_embedding[:, :300], test_e2_embedding[:, -40:]), axis=1)
 
     """ 7.label id value and one-hot """
     label2id = elmo_conll.label2id
@@ -433,7 +392,7 @@ if __name__ == "__main__":
     """
     new model
     """
-    model=Network()
+    model = Network()
 
     # Prepare Theano variables for inputs and targets
     input_var = T.tensor3('inputs')
@@ -454,8 +413,8 @@ if __name__ == "__main__":
     adam_beta1_var = T.scalar('adam_beta1')
 
     # negative loss
-    negative_loss_alpha=T.fvector("negative_loss_alpha")
-    negative_loss_lamda=T.fscalar("negative_loss_lamda")
+    negative_loss_alpha = T.fvector("negative_loss_alpha")
+    negative_loss_lamda = T.fscalar("negative_loss_lamda")
 
     # input attention entity and root
     input_root = T.fmatrix("input_root")
@@ -482,10 +441,7 @@ if __name__ == "__main__":
     alpha = lasagne.layers.get_output(l_alphas)
     l_split = lasagne.layers.get_output(l_merge_output)
 
-    _, wrong_pre, true_pre, stimulative = Stimulation_loss(prediction, target_var)
-    center_loss_value, new_centers = sdl(l_split, target_var, model.alpha, centers)
-    center_loss_value = model.cl_lambda * center_loss_value
-    loss = stimulative * lasagne.objectives.categorical_crossentropy(prediction, target_var)
+    loss, _, _, _ = focal_loss(prediction, target_var)
 
     # Pi model loss
     if model.network_type=="pi":
@@ -498,25 +454,7 @@ if __name__ == "__main__":
         loss = T.mean(loss * mask_train, dtype=theano.config.floatX)
         loss += unsup_weight_var * T.mean(lasagne.objectives.squared_error(prediction, z_target_var))
     else:
-        loss = T.mean(loss + center_loss_value, dtype=theano.config.floatX)
-
-    ###### Adversarial training ############
-    new_embedding = model.adversarial(loss, input_var)
-
-    gru_network, l_in, l_mask, l_alphas, l_merge_output = model.bulit_gru(new_embedding, mask_var, input_root, input_e1, input_e2)
-    # mask_train_input: where "1" is pass. where "0" isn't pass.
-    mask_train_input = elmo_conll.mask_train_input(train_label, num_labels=model.num_labels)
-    prediction = lasagne.layers.get_output(gru_network)
-    alpha = lasagne.layers.get_output(l_alphas)
-    l_split = lasagne.layers.get_output(l_merge_output)
-
-    # loss, wrong_pre, true_pre, stimulative = Stimulation_loss(l_merge_output, target_var)
-    _, wrong_pre, true_pre, stimulative = Stimulation_loss(prediction, target_var)
-    center_loss_value, new_centers = sdl(l_split, target_var, model.alpha, centers)
-    loss_batch = stimulative * lasagne.objectives.categorical_crossentropy(prediction, target_var)
-    center_loss_value = model.cl_lambda * center_loss_value
-    loss = T.mean(loss_batch + center_loss_value, dtype=theano.config.floatX)
-    ######################################
+        loss = T.mean(loss, dtype=theano.config.floatX)
 
     # regularization:L1,L2
     l2_penalty = lasagne.regularization.regularize_network_params(gru_network, lasagne.regularization.l2) * model.l2_loss
@@ -541,7 +479,7 @@ if __name__ == "__main__":
     # here is that we do a deterministic forward pass through the network,
     # disabling dropout layers.
     test_prediction = lasagne.layers.get_output(gru_network, deterministic=True)
-    test_loss,_,_,_ = Stimulation_loss(test_prediction,target_var)
+    test_loss,_,_,st_loss = focal_loss(prediction, target_var)
     test_loss = T.mean(test_loss,dtype=theano.config.floatX)
 
     # As a bonus, also create an expression for the classification accuracy:
@@ -562,9 +500,7 @@ if __name__ == "__main__":
         train_fn = theano.function([input_var, target_var, mask_var, z_target_var, mask_train, unsup_weight_var, learning_rate_var, adam_beta1_var], [loss,train_acc,prediction], updates=updates, on_unused_input='warn')
     else:
         # train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, loss_batch, prediction_batch], updates=updates, on_unused_input='warn')
-        train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, loss_batch, prediction_batch], updates=updates, on_unused_input='warn')
-        train_centers = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [centers], updates={centers:new_centers}, on_unused_input='warn')
-
+        train_fn = theano.function([input_var, target_var, mask_var, learning_rate_var, adam_beta1_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [loss, train_acc, alpha, l_split, prediction_batch], updates=updates, on_unused_input='warn')
 
     # Compile a second function computing the validation loss and accuracy and F1-score:
     val_fn = theano.function([input_var, target_var, mask_var, negative_loss_alpha, negative_loss_lamda, input_root, input_e1, input_e2], [test_loss, test_acc, test_predicted_classid, test_prediction], on_unused_input='warn')
@@ -645,7 +581,6 @@ if __name__ == "__main__":
         stimulative=0
 
         # loss_compare: compare the SL and the cross entropy
-        loss_batch = []
         predict_batch = []
         batch_i = 0
 
@@ -654,10 +589,8 @@ if __name__ == "__main__":
             train_label_1hot, train_sen_length, model.batch_size, train_root_embedding, train_e1_embedding, train_e2_embedding, shuffle=True):
             aa_inputs, targets, mask_sen_length, input_root, input_e1, input_e2 = batch
             aa_mark_input = model.mask(mask_sen_length, model.batch_size)
-            err, acc, aa_l_gru, aa_l_split, loss_each_batch, predict_each_batch = \
+            err, acc, aa_l_gru, aa_l_split, predict_each_batch = \
                 train_fn(aa_inputs, targets, aa_mark_input, learning_rate, adam_beta1, model.negative_loss_alpha, model.negative_loss_lamda, input_root, input_e1, input_e2)
-            aa_centers = train_centers(aa_inputs, targets, aa_mark_input, learning_rate, adam_beta1, model.negative_loss_alpha, model.negative_loss_lamda, input_root, input_e1, input_e2)
-
 
             train_err+=err
             train_acc+=acc
@@ -665,11 +598,9 @@ if __name__ == "__main__":
             train_batches += 1
 
             if(batch_i == 0):
-                loss_batch = np.array(loss_each_batch)
                 predict_batch = np.array(predict_each_batch)
                 batch_i = 1
             else:
-                loss_batch = np.concatenate((loss_batch, np.array(loss_each_batch)), axis=0)
                 predict_batch = np.concatenate((predict_batch, np.array(predict_each_batch)), axis=0)
 
         aa_l_gru_epoch.append(aa_l_gru)
@@ -688,12 +619,6 @@ if __name__ == "__main__":
 
         mark_input = model.mask(test_sen_length, len(test_sen_length))
         err, acc, test_predicted_classid, test_prediction_all = val_fn(test_word_pos_vec3D, test_label_1hot, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, test_root_embedding, test_e1_embedding, test_e2_embedding)
-
-        # for batch in elmo_conll.iterate_minibatches_inputAttRootE1E2(test_word_pos_vec3D, \
-        #   test_label_1hot, test_sen_length, model.batch_size, test_root_embedding, test_e1_embedding, test_e2_embedding, shuffle=False):
-        #     inputs, targets, mask_sen_length, input_root, input_e1, input_e2 = batch
-        #     mark_input=model.mask(mask_sen_length,model.batch_size)
-        #     err, acc, test_predicted_classid = val_fn(inputs, targets, mark_input, model.negative_loss_alpha, model.negative_loss_lamda, input_root, input_e1, input_e2, epoch)
 
         test_err += err
         test_acc += acc
