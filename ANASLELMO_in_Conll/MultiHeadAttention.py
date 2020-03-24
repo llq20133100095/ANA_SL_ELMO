@@ -69,6 +69,7 @@ def theano_matmul(x, y):
     output = np.matmul(x, y)
     return output
 
+
 class multihead_attention(lasagne.layers.MergeLayer):
     """
     Function:
@@ -79,7 +80,7 @@ class multihead_attention(lasagne.layers.MergeLayer):
         3. l_merge: (batch_size, max_length, gru_size)
         4. l_aux_merge: (batch_size, gru_size)
     Reutrn:
-        1.
+        1. output: (batch_size, keywords_num, gru_size)
     """
 
     def __init__(self, incomings, num_heads=5, **kwargs):
@@ -95,10 +96,10 @@ class multihead_attention(lasagne.layers.MergeLayer):
         w_aux = theano_split(w_aux, self.num_heads)
         w_main = theano_split(w_main, self.num_heads)
 
-        output = scaled_dot_product_attention(w_aux, w_main)
+        output = scaled_dot_product_attention(w_aux, w_main) # (batch_size * h, keywords_num, max_length)
 
-        # softmax
-        outputs = T.nnet.softmax(output)
+        # softmax:
+        outputs = T.nnet.softmax(T.reshape(output, [-1, output.shape[-1]]))
 
         # l_H_add = l_merge + l_aux_merge: (batch_size, max_length, gru_size)
         l_H_add, updates = theano.scan(lambda i, x, y: x[i] + T.reshape(y[i], (1, -1)), \
@@ -106,8 +107,11 @@ class multihead_attention(lasagne.layers.MergeLayer):
                                        sequences=T.arange(l_merge.shape[0]), \
                                        non_sequences=[l_merge, l_aux_merge])
 
-        # weighted sum (context vectors): (batch_size * h, keywords_num, gru_size)
-        outputs = T.dot(outputs, l_H_add)
+        # (batch_size * h, max_length, gru_size / h)
+        l_H_add = theano_split(l_H_add, self.num_heads)
+
+        # weighted sum (context vectors): (batch_size * h, keywords_num, gru_size / h)
+        outputs = theano_matmul(T.reshape(output, [-1, output.shape[1], output.shape[2]]), l_H_add)
 
         # Restore shape
         outputs = theano_split_restore(outputs, self.num_heads)
@@ -115,8 +119,9 @@ class multihead_attention(lasagne.layers.MergeLayer):
         return outputs
 
     def get_output_shape_for(self, input_shapes):
-        shapes_sec = input_shapes[1]
-        return (shapes_sec[0], shapes_sec[1], shapes_sec[2])
+        shapes_fir = input_shapes[0]
+        shapes_third = input_shapes[2]
+        return (shapes_fir[0], shapes_fir[1], shapes_third[2])
 
 
 def test(w_aux, w_main, l_merge, l_aux_merge, num_heads):
