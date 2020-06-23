@@ -161,6 +161,9 @@ print pr_score
 precision["ssl_kas_mubigru2"], recall["ssl_kas_mubigru2"] = sample_data(
     precision["ssl_kas_mubigru"], recall["ssl_kas_mubigru"], sample)
 
+precision["Bi-SDP-Att"], recall["Bi-SDP-Att"] = sample_data(
+    precision["blstm2"], recall["blstm2"], sample)
+
 # plot
 '''
 save_path = "../result/experiment_PR/PR_in_Conll.jpg"
@@ -211,6 +214,7 @@ p1.plot(recall["cnn_kbp2"], precision["cnn_kbp2"], '*-', label="CNN", linewidth=
 p1.plot(recall["rnn_kbp2"], precision["rnn_kbp2"], 'd-', label="RNN", linewidth='3')
 p1.plot(recall["blstm2"], precision["blstm2"], 'g-', label="BLSTM", linewidth='3')
 p1.plot(recall["ana_sl_elatbigru_glove2"], precision["ana_sl_elatbigru_glove2"], '>-', color='yellow', label="SSL-KAS-MuBiGRU", linewidth='3')
+p1.plot(recall["Bi-SDP-Att"], precision["Bi-SDP-Att"], '-', label="Bi-SDP-Att", linewidth='3')
 p1.plot(recall["ana_sil_elatbigru2"], precision["ana_sil_elatbigru2"], 'v-', label="depLCNN", linewidth='3')
 p1.plot(recall["ssl_kas_mubigru2"], precision["ssl_kas_mubigru2"], '+-', label="ANA-SDL-ElAtBiGRU", linewidth='3')
 
@@ -236,8 +240,9 @@ p2.plot(recall["cnn_kbp2"], precision["cnn_kbp2"], '*-', label="CNN", linewidth=
 p2.plot(recall["rnn_kbp2"], precision["rnn_kbp2"], 'd-', label="RNN", linewidth='3')
 p2.plot(recall["blstm2"], precision["blstm2"], 'g-', label="BLSTM", linewidth='3')
 p2.plot(recall["ana_sl_elatbigru_glove2"], precision["ana_sl_elatbigru_glove2"], '>-', color='yellow', label="SSL-KAS-MuBiGRU", linewidth='3')
-p2.plot(recall["ssl_kas_mubigru2"], precision["ssl_kas_mubigru2"], 'v-', label="depLCNN", linewidth='3')
-p2.plot(recall["ana_sil_elatbigru2"], precision["ana_sil_elatbigru2"], '+-', label="ANA-SDL-ElAtBiGRU", linewidth='3')
+p2.plot(recall["Bi-SDP-Att"], precision["Bi-SDP-Att"], '-', label="Bi-SDP-Att", linewidth='3')
+p2.plot(recall["ana_sil_elatbigru2"], precision["ana_sil_elatbigru2"], 'v-', label="depLCNN", linewidth='3')
+p2.plot(recall["ssl_kas_mubigru2"], precision["ssl_kas_mubigru2"], '+-', label="ANA-SDL-ElAtBiGRU", linewidth='3')
 p2.legend(loc='best', fontsize=20)
 p2.grid()  # open grid
 
