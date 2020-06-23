@@ -60,7 +60,7 @@ class Network:
         # learning rate
         self.learning_rate = 0.002
         # input shape
-        self.embedding_len = 1364 # 1364
+        self.embedding_len = 1364 # 1364 or 340
         self.input_shape = (None, self.num_steps, self.embedding_len)
         # mask shape
         self.mask_shape = (None, self.num_steps)

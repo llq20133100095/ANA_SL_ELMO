@@ -2,7 +2,7 @@
 <module version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 2.7 (py2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 2.7 (ANA_SL_ELMO)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

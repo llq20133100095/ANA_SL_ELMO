@@ -43,3 +43,11 @@
 ## 5.ComparedLossFun
 - 实现了SIL loss, SDL
 - 实现了各种不同的loss对比
+
+## 6.ANA_in_KBP
+
+主要实现在KBP中的ANA-SDL-MuBiGRU模型：
+- 实现了multi-haed attention：MultiHeadAttention、MultiheadAttention_Op
+
+## 7.NewModelNetwork
+主要实现在SemEval中的ANA-SDL-MuBiGRU模型，还有画出损失函数的对比图像

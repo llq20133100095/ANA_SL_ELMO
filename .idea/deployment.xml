@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="127.12.92.22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/llq/linux_software/python/piGruRE" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="llq@127.12.92.22:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/llq/linux_software/python/ANA_SL_ELMO" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
